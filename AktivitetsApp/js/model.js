@@ -43,7 +43,8 @@ const model = {
     },
 
     data: {
-        activityData:{
+        activities: [
+            {
                 img: "",
                 activityName: "",
                 rating: "",
@@ -51,8 +52,25 @@ const model = {
                 difficulty: "",
                 description: "",
                 tags: [],
-        },
+            },
+             {
+                img: "",
+                activityName: "",
+                rating: "",
+                duration: "",
+                difficulty: "",
+                description: "",
+                tags: [],
+            }
+    ],
         popularActivities: [
+                {img: "img/mountain-climbing.jpg",
+                activityName: "",
+                rating: "",
+                duration: "",
+                difficulty: "",
+                description: "",
+                tags: []}
 
         ],
         categoryActivities: [
@@ -62,11 +80,11 @@ const model = {
             
         ],
         profileInfo: {
-            name: "",
-            img: "",
-            bio: "",
-            topActivities: [],
-            following: [],
+            name: "Felix Berget",
+            img: "test.jpg",
+            bio: "Jeg heter Felix og liker å klatre i fjellet",
+            topActivities: ["Klatre lokalt fjell","Klatre fjellene ved elven","Løpetur"],
+            following: ["John Smith","Ola Normann"],
         }
 
     }

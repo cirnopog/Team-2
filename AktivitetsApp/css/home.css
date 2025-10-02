@@ -1,0 +1,51 @@
+
+#popular-activities{
+    padding: 2rem;
+    display: flex;
+    position: relative;
+    margin: auto auto;
+    width:fit-content;
+    
+}
+.activity-container{
+    margin: 2rem;
+    width: 40%;
+}
+.activity-stats {
+    display: flex;
+    
+}
+.activity-stats > p{
+    margin-right: 1rem;
+}
+.activity-description{
+    margin-top: 1rem;
+    
+}
+.tags{
+    display: flex;
+    position: absolute;
+    bottom: 45px;
+}
+.tags > p{
+    margin-right: 1rem;
+}
+.popular-btn-r{
+    position: absolute;
+    top: 300px;
+    right: 400px;
+}
+.popular-btn-l{
+    position: absolute;
+    top: 300px;
+    left: 200px;
+}
+.popular-btn-l,
+.popular-btn-r{
+    padding: 1.25rem;
+    border-radius: 100%;
+    border: none;
+    background-color: #4285f4;
+    color: white;
+    font-size: 20px;
+}
