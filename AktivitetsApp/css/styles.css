@@ -32,6 +32,10 @@ header > div > input {
   border-radius: 1rem;
   border: none;
 }
+header > div > p > a{
+    text-decoration: none;
+    color: white;
+}
 .fa-magnifying-glass {
   position: absolute;
   left: 260px;
