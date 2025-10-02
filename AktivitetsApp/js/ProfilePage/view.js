@@ -9,9 +9,9 @@ function showProfilePage(){
         <li class="act">${model.data.profileInfo.topActivities[i]}</li>`
     }
     app.innerHTML+=
-    `<ol id="actList">
+    `<ul id="actList">
     ${storedHtml}
-    </ol>
+    </ul>
     <img src=${model.data.profileInfo.img} id="profilePic">`
     storedHtml=`<li class="topOfList">${model.data.profileInfo.name} følger disse personene</li>`
     for(i in model.data.profileInfo.following){
@@ -20,8 +20,8 @@ function showProfilePage(){
     }
     app.innerHTML+=`
     </br>
-    <ol id="followList">
+    <ul id="followList">
     ${storedHtml}
-    </ol>`
+    </ul>`
 
 }
