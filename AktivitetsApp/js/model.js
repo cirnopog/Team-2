@@ -37,7 +37,7 @@ const model = {
                 duration: "",
                 difficulty: "",
                 description: "",
-                tags: ["",""],
+                tags: [],
                 search: ""
         }
     },
@@ -50,7 +50,7 @@ const model = {
                 duration: "",
                 difficulty: "",
                 description: "",
-                tags: ["",""],
+                tags: [],
         },
         popularActivities: [
 
