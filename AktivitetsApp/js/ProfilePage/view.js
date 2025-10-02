@@ -1,22 +1,27 @@
 let app = document.getElementById("app")
 function showProfilePage(){
+    storedHtml = `<li class="topOfList">${model.data.profileInfo.name} sine favoritaktivteter</li>`
     app.innerHTML=`
     <div id="header">${model.data.profileInfo.name}</div>
-    <div id="bio">${model.data.profileInfo.bio}</div>
-    <ol id="actList">`
+    <div id="bio">${model.data.profileInfo.bio}</div>`
     for(i in model.data.profileInfo.topActivities){
-        app.innerHTML+=`
+        storedHtml+=`
         <li class="act">${model.data.profileInfo.topActivities[i]}</li>`
     }
-    app.innerHTML+=`
+    app.innerHTML+=
+    `<ol id="actList">
+    ${storedHtml}
     </ol>
-    <img src=${model.data.profileInfo.img}>
-    <ol id="followList">`
+    <img src=${model.data.profileInfo.img} id="profilePic">`
+    storedHtml=`<li class="topOfList">${model.data.profileInfo.name} følger disse personene</li>`
     for(i in model.data.profileInfo.following){
-        app.innerHTML+=`
-        <li class="act">${model.data.profileInfo.following[i]}</li>`
+        storedHtml+=`
+        <li class="fol">${model.data.profileInfo.following[i]}</li>`
     }
     app.innerHTML+=`
+    </br>
+    <ol id="followList">
+    ${storedHtml}
     </ol>`
 
 }
