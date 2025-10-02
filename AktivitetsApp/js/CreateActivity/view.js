@@ -1,3 +1,4 @@
+// Tegner opp registrerings-skjema for ny aktivitet
 newActivityHtml()
 
 function newActivityHtml() {
@@ -5,7 +6,7 @@ function newActivityHtml() {
     document.getElementById('newActivity').innerHTML = /*HTML*/`
     <h3>Lag ny aktivitet</h3>
     <br>
-    <form>
+    <form id="newActivityForm">
         <label for="activityName">Navn på aktivitet:</label>
         <input id="activityName" type="text" name="activityName"/>
         <br>
@@ -31,7 +32,7 @@ function newActivityHtml() {
         <input type="file" id="activityImage" name="activityImage" accept="image/*">
         <br>
         <label for="activityRegistration"></label>
-        <input type="submit" onclick="registerNewActivity()" value="Registrer">
+        <input type="button" onclick="registerNewActivity()" value="Registrer">
     </form>
     `;
 }
