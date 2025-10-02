@@ -1,0 +1,47 @@
+#header{
+  font-size: 30px;
+}
+
+#bio{
+  border: 1px solid #4285f4;
+  font-size: 15px;
+  width: 40%;
+}
+#actList{
+  background-color: lightblue;
+  border: 3px solid #4285f4;
+  font-size: 15px;
+  width: 40%;
+}
+.act{
+    border: 2px solid #4285f4;
+    text-align: center;
+}
+
+#profilePic{
+  top: 20%;
+  left: 60%;
+  position: absolute;
+}
+#followList{
+  background-color: lightgreen;
+  border: 3px solid darkcyan;
+  font-size: 15px;
+  width: 40%;
+}
+
+.fol{
+  border: 2px solid darkcyan;
+  text-align: center;
+}
+
+#profilePic{
+  border: 1px solid darkcyan;
+  width: 150px;
+  height: 150px;
+}
+
+.topOfList{
+  background-color: darkblue;
+  color: azure;
+}
