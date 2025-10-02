@@ -43,7 +43,8 @@ const model = {
     },
 
     data: {
-        activityData:{
+        activities: [
+            {
                 img: "",
                 activityName: "",
                 rating: "",
@@ -51,9 +52,25 @@ const model = {
                 difficulty: "",
                 description: "",
                 tags: [],
-        },
+            },
+             {
+                img: "",
+                activityName: "",
+                rating: "",
+                duration: "",
+                difficulty: "",
+                description: "",
+                tags: [],
+            }
+    ],
         popularActivities: [
-
+                {img: "img/mountain-climbing.jpg",
+                activityName: "",
+                rating: "",
+                duration: "",
+                difficulty: "",
+                description: "",
+                tags: []}
         ],
         categoryActivities: [
 
