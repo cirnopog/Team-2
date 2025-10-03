@@ -1,29 +1,29 @@
-function updateView(){
-   document.getElementById("homePage").innerHTML+=/*HTML*/`
+function updateView(i = 0){
+   document.getElementById("homePage").innerHTML=/*HTML*/`
      <section id="popular-activities">
         <div>
             <h2>🔥Populære aktiviteter</h2>
-            <img src="${model.data.popularActivities[0].img}" width="600px" alt="">
+            <img src="${model.data.popularActivities[i].img}" width="600px" alt="">
         </div>
         <div class="activity-container">
-            <h3>${model.data.popularActivities[0].activityName}</h3>
+            <h3>${model.data.popularActivities[i].activityName}</h3>
 
             <div class="activity-stats">
                 <p class="rating">
-                    ${ratingStars(model.data.popularActivities[0].rating)}
+                    ${ratingStars(model.data.popularActivities[i].rating)}
                 </p>
                 <p class="difficulty">
-                    ${model.data.popularActivities[0].difficulty}
+                    ${model.data.popularActivities[i].difficulty}
                 </p>
                 <p class="duration">
-                    🕐${model.data.popularActivities[0].duration}
+                    🕐${model.data.popularActivities[i].duration}
                 </p>
             </div>
             <div class="activity-description">
-                <p>${model.data.popularActivities[0].description}</p>
+                <p>${model.data.popularActivities[i].description}</p>
             </div>
             <div class="tags">
-                ${createTags(0)}
+                ${createTags(i)}
             </div>
         </div>
     </div>
