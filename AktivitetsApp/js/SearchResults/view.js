@@ -2,9 +2,9 @@ function showSearchPage(searchList){
     let app = document.getElementById("app")
     let storedString = `<ol id="dropdown">`
     app.innerHTML=`
-    <div id="header">Søk i listen</div>
+    <div id="head">Søk i listen</div>
     <div id="paragraph">Her er der du kan søke gjennom aktiviteter og brukere(kan kun søke i lowercase intil videre)</div>
-    <button onclick="resetList()">Reset listen</button>
+    <button onclick="resetList()" id="reset">Reset listen</button>
     </br>
     <input type="text" id="input" onchange="filter()"/>
     `
