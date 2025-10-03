@@ -6,11 +6,11 @@ function updateView(){
             <img src="${model.data.popularActivities[0].img}" width="500px" alt="">
         </div>
         <div class="activity-container">
-            <h3>Activity title</h3>
+            <h3>${model.data.popularActivities[0].activityName}</h3>
 
             <div class="activity-stats">
                 <p class="rating">
-                    ⭐⭐⭐⭐⭐9.5
+                    ${ratingStars(model.data.popularActivities[0].rating)}
                 </p>
                 <p class="difficulty">
                     Vanskelighet: 2/5
@@ -35,3 +35,9 @@ function updateView(){
    `;
 }
 updateView()
+
+function ratingStars(rating){
+   let star = "⭐"
+   let starsCalc = star.repeat(Math.floor(rating/2))
+   return starsCalc
+}
