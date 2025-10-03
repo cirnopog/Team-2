@@ -3,13 +3,15 @@
     padding: 2rem;
     display: flex;
     position: relative;
-    margin: auto auto;
+    margin: 2rem auto;
+    justify-content: center;
     width:fit-content;
     
 }
 .activity-container{
     margin: 2rem;
-    width: 40%;
+    width: 30%;
+    
 }
 .activity-stats {
     display: flex;
@@ -26,19 +28,26 @@
     display: flex;
     position: absolute;
     bottom: 45px;
+    
 }
 .tags > p{
     margin-right: 1rem;
+    background-color: #4285f4;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .popular-btn-r{
     position: absolute;
-    top: 300px;
-    right: 400px;
+    top: 210px;
+    right: 140px;
 }
 .popular-btn-l{
     position: absolute;
-    top: 300px;
-    left: 200px;
+    top: 210px;
+    left: 130px;
 }
 .popular-btn-l,
 .popular-btn-r{

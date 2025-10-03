@@ -10,3 +10,19 @@ function showLoginPage(){
     <button id="loginButton" onclick="login()">Logg Inn</button>
     <button id="registerButton" onclick="register()">Registrer</button>`
 }
+
+function register(){
+    let password = document.getElementById("password")
+    let username = document.getElementById("username")
+
+    password.value=""
+    username.value=""
+}
+
+function login(){
+    let password = document.getElementById("password")
+    let username = document.getElementById("username")
+
+    password.value=""
+    username.value=""
+}
