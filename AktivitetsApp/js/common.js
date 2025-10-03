@@ -20,3 +20,17 @@ let html = /*HTML*/`
 document.body.insertAdjacentHTML("afterbegin", html);
 }
 createHeader()
+
+function ratingStars(rating){
+    let star = "⭐"
+    let starsCalc = star.repeat(Math.floor(rating/2))
+    return starsCalc
+ }
+ 
+  function createTags(i){
+     html=``;
+     for(tag of model.data.popularActivities[i].tags){
+         html+=`<p>${tag}</p>`
+     }
+     return html;
+  }

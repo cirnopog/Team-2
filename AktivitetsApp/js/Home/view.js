@@ -13,7 +13,7 @@ function updateView(i = 0){
                     ${ratingStars(model.data.popularActivities[i].rating)}
                 </p>
                 <p class="difficulty">
-                    ${model.data.popularActivities[i].difficulty}
+                    Vanskelighet: ${model.data.popularActivities[i].difficulty}
                 </p>
                 <p class="duration">
                     🕐${model.data.popularActivities[i].duration}
