@@ -65,14 +65,24 @@ const model = {
     ],
         popularActivities: [
                 {img: "img/mountain-climbing.jpg",
-                name: "Fjellklatring",
-                rating: 9.5,
+                activityName: "Fjellklatring",
+                rating: 10,
                 duration: "2t 30min",
-                difficulty: "4/5",
+                difficulty: "3/5",
                 description: "Fjellklatring er en spennende aktivitet som kombinerer styrke, utholdenhet og teknikk. Du beveger deg oppover naturlige klippevegger eller kunstige vegger, ofte med sikringstau og utstyr. Aktiviteten passer både for nybegynnere og erfarne, og gir en unik opplevelse av mestring og nærhet til naturen.",
-                tags: []}
+                tags: ["Friluftsliv", "Klatring", "Natur"]
+                },
+                {img: "img/kayaking.jpg",
+                activityName: "Kajakkpadling",
+                rating: 9,
+                duration: "1t 45min",
+                difficulty: "2/5",
+                description: "Kajakkpadling er en rolig og naturnær aktivitet der du beveger deg over vann med padleårer. Det kan gjøres på innsjøer, elver eller langs kysten, og passer både til rekreasjon, trening og eventyr.",
+                tags: ["Friluftsliv", "Vannaktivitet", "Natur"]
+                },
 
         ],
+        displayedActivity: 0,
         categoryActivities: [
 
         ],

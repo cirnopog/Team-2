@@ -13,7 +13,7 @@ function newActivityHtml() {
         <label for="activityInfo">Beskrivelse:</label>
         <input id="activityInfo" type="text" name="activityInfo"/>
         <br>
-        <label for="activityTags">Tag(s):</label>
+        <label for="activityTags">Tags (Eks: Natur, fjell, klatring):</label>
         <input id="activityTags" type="text" name="activityTags"/>
         <br>
         <label for="activityDifficulty">Vanskelighetsgrad (1-5):</label>
@@ -32,7 +32,7 @@ function newActivityHtml() {
         <input type="file" id="activityImage" name="activityImage" accept="image/*">
         <br>
         <label for="activityRegistration"></label>
-        <input type="button" onclick="registerNewActivity()" value="Registrer">
+        <input id="register-btn" type="button" onclick="registerNewActivity()" value="Registrer">
     </form>
     `;
 }
