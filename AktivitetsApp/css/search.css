@@ -9,3 +9,13 @@
 #input{
     width: 40%;
 }
+
+#head{
+    font-size: 150%;
+}
+
+#reset{
+    color: white;
+    background-color: black;
+    border: aqua solid 2px;
+}
