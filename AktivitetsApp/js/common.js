@@ -10,7 +10,8 @@ let html = /*HTML*/`
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" id="search">
             <p>
-                <a href="login.html">Logg inn</a>
+                <a href="login.html">${model.app.currentUser==null?"Logg inn":
+            `<img class="user-profile-pic" src="${model.app.currentUser.img}" width="20px" alt="">`}</a>
             </p>
         </div>
     </header>

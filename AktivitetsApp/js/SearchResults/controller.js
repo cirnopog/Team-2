@@ -1,9 +1,4 @@
-let fullList=[]
-for(i in model.data.activities){
-    fullList.push(model.data.activities[i])
-}
-fullList.push(model.data.profileInfo)
-showSearchPage(fullList)
+resetList()
 
 function resetList(){
     fullList = []

@@ -29,7 +29,9 @@ function updateView(i = 0){
     </div>
     <button onclick="nextActivity()" class="popular-btn-l"><i class="fa-solid fa-arrow-left"></i></button>
     <button onclick="nextActivity()" class="popular-btn-r"><i class="fa-solid fa-arrow-right"></i></button>
+
     </section>
+    <button class="new-activity-btn"><a href="create-activity.html">+ Ny aktivitet</a></button>
    `;
 }
 updateView()
