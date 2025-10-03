@@ -3,7 +3,7 @@ function updateView(){
      <section id="popular-activities">
         <div>
             <h2>🔥Populære aktiviteter</h2>
-            <img src="${model.data.popularActivities[0].img}" width="500px" alt="">
+            <img src="${model.data.popularActivities[0].img}" width="600px" alt="">
         </div>
         <div class="activity-container">
             <h3>${model.data.popularActivities[0].activityName}</h3>
@@ -13,10 +13,10 @@ function updateView(){
                     ${ratingStars(model.data.popularActivities[0].rating)}
                 </p>
                 <p class="difficulty">
-                    Vanskelighet: 2/5
+                    ${model.data.popularActivities[0].difficulty}
                 </p>
                 <p class="duration">
-                    🕐2t 30min
+                    🕐${model.data.popularActivities[0].duration}
                 </p>
             </div>
             <div class="activity-description">
@@ -27,8 +27,8 @@ function updateView(){
             </div>
         </div>
     </div>
-    <button class="popular-btn-l"><i class="fa-solid fa-arrow-left"></i></button>
-    <button class="popular-btn-r"><i class="fa-solid fa-arrow-right"></i></button>
+    <button onclick="nextActivity()" class="popular-btn-l"><i class="fa-solid fa-arrow-left"></i></button>
+    <button onclick="nextActivity()" class="popular-btn-r"><i class="fa-solid fa-arrow-right"></i></button>
     </section>
    `;
 }

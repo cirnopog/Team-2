@@ -3,7 +3,7 @@
     padding: 2rem;
     display: flex;
     position: relative;
-    margin: auto auto;
+    margin: 2rem auto;
     justify-content: center;
     width:fit-content;
     
@@ -28,14 +28,21 @@
     display: flex;
     position: absolute;
     bottom: 45px;
+    
 }
 .tags > p{
     margin-right: 1rem;
+    background-color: #4285f4;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .popular-btn-r{
     position: absolute;
     top: 210px;
-    right: 130px;
+    right: 140px;
 }
 .popular-btn-l{
     position: absolute;
