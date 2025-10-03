@@ -32,7 +32,7 @@ const model = {
         },
         activityCreator:{
                 img: "",
-                activityName: "",
+                name: "",
                 rating: "",
                 duration: "",
                 difficulty: "",
@@ -46,7 +46,7 @@ const model = {
         activities: [
             {
                 img: "",
-                activityName: "",
+                name: "Gå tur i skogen",
                 rating: "",
                 duration: "",
                 difficulty: "",
@@ -55,7 +55,7 @@ const model = {
             },
              {
                 img: "",
-                activityName: "",
+                name: "Fjellklatring",
                 rating: "",
                 duration: "",
                 difficulty: "",
@@ -65,7 +65,7 @@ const model = {
     ],
         popularActivities: [
                 {img: "img/mountain-climbing.jpg",
-                activityName: "Fjellklatring",
+                name: "Fjellklatring",
                 rating: 9.5,
                 duration: "2t 30min",
                 difficulty: "4/5",

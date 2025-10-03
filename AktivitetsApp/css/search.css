@@ -1,0 +1,11 @@
+#dropdown{
+    width: 40%;
+    background-color: gray;
+    border: 1px lightgreen solid;
+}
+.part{
+    border: 1px lightgreen solid;
+}
+#input{
+    width: 40%;
+}
