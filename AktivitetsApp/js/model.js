@@ -70,7 +70,7 @@ const model = {
                 duration: "2t 30min",
                 difficulty: "4/5",
                 description: "Fjellklatring er en spennende aktivitet som kombinerer styrke, utholdenhet og teknikk. Du beveger deg oppover naturlige klippevegger eller kunstige vegger, ofte med sikringstau og utstyr. Aktiviteten passer både for nybegynnere og erfarne, og gir en unik opplevelse av mestring og nærhet til naturen.",
-                tags: []}
+                tags: ["Friluftsliv", "Klatring", "Natur"]}
 
         ],
         categoryActivities: [

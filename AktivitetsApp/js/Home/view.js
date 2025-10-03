@@ -20,12 +20,10 @@ function updateView(){
                 </p>
             </div>
             <div class="activity-description">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, fuga, sequi unde dolore similique maiores.</p>
+                <p>${model.data.popularActivities[0].description}</p>
             </div>
             <div class="tags">
-                <p>Tag 1</p>
-                <p>Tag 2</p>
-                <p>Tag 3</p>
+                ${createTags(0)}
             </div>
         </div>
     </div>
@@ -41,3 +39,11 @@ function ratingStars(rating){
    let starsCalc = star.repeat(Math.floor(rating/2))
    return starsCalc
 }
+
+ function createTags(i){
+    html=``;
+    for(tag of model.data.popularActivities[i].tags){
+        html+=`<p>${tag}</p>`
+    }
+    return html;
+ }
