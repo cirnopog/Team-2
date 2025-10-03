@@ -1,4 +1,5 @@
 
+
 #popular-activities{
     padding: 2rem;
     display: flex;
@@ -22,7 +23,9 @@
 }
 .activity-description{
     margin-top: 1rem;
-    
+    text-wrap: pretty;
+    line-height: 130%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .tags{
     display: flex;
@@ -58,4 +61,29 @@
     color: white;
     font-size: 20px;
     cursor: pointer;
+}
+.new-activity-btn{
+   position: absolute;
+   background-color: #4285f4;
+   border: none;
+   color: white;
+   border-radius: 1.5rem;
+   left: 48%;
+   bottom: 50px;
+   padding: 18px;
+   font-size:1.3rem
+}
+.new-activity-btn > a{
+    color: white;
+    text-decoration: none;
+}
+.new-activity-btn > a:visited{
+    color: white;
+    text-decoration: none; 
+}
+h2,h3{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h2{
+    line-height: 160%
 }
