@@ -45,5 +45,6 @@
 
     -Tommel opp/ned, se hvem som har likt
 
-    -
+# Design
+    -Høst, varme farger
 
