@@ -49,3 +49,9 @@ Lage en enkel og brukervennlig nettside hvor du og dine venner kan foreslå bøk
     -Navn: Bokklubben Ulest
 
     Geir oppfordrer til å sende ny mail hvis det er mer vi lurer på. 
+
+    spørsmål:
+    -skal brukere kunne kommentere på dato for neste møte, slik at det blir lettere å
+    finne en dato som passer?
+
+    -
