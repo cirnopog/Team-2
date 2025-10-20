@@ -1,6 +1,7 @@
-# Hovedside
-
+# Hovedside (Prioritet)
     -Header, logo og meny
+
+    -Putt neste møte øverst på siden!
 
     -Avstemmning, bok forslag, legge til nytt forslag,
     kommentar på forslag?
@@ -15,7 +16,7 @@
 
     -Evt tidligere vinnere?
 
-# Admin side
+# Admin side (Prioritet)
 
     -Registrerings skjema, navn etternavn, evt avatar
 
@@ -27,12 +28,12 @@
 
     -velge dato for bokmøte
 
-# Profil side
+# Profil side 
 
     -Navn, etternavn, (avatar), liste over bøker,
     (Hvis tid: Legge til bok fra liste som forslag)
     -(favoritter, merke som favoritt)
-    -Mulighet for å redigere egen profil
+    -Mulighet for å redigere egen profil, navn og passord
     -(Velge avatar)
 
 # Info om bok
@@ -52,7 +53,7 @@
 
     -Tommel opp/ned, se hvem som har likt
 
-# Bibliotek
+# Bibliotek()
 
     -Legg til funksjonalitet hvor du får opp bok tittel (+forfatter) på hover
 
