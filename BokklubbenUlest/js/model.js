@@ -44,6 +44,7 @@ const model = {
         },
         booksInVoting: [
             {
+                id:"",
                 img: "",
                 title: "",
                 votes: "",
@@ -63,7 +64,7 @@ const model = {
                 password: "",
                 avatar: "",
                 addedBooks: [""],
-                favorites: [""],
+                favorites: [""]
             }
         ],
         bookInfo: {

@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* =============== HEADER =================*/
+header {
+  background-color: chocolate;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  position: relative;
+}
+header > div > .fa-bars {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+#logIn {
+  position: absolute;
+  top: 4.4rem;
+  border: solid 1px black;
+  padding: 2rem;
+  right: 0.2rem;
+  display: flex;
+  flex-direction: column;
+}
+#logIn > label {
+  margin-top: 1rem;
+}
+#logIn > button {
+  margin-top: 1.5rem;
+}
+.hidden {
+  opacity: 0;
+}
+.show {
+  opacity: 1;
+}
+/* ========= Lists(admin og booklist) ======== */
+/*Husk at siden må bli centered på en eller annen måte uten å centere andre sider*/
+.lists {
+  display: inline-block;
+  text-align: left;
+  width: 40%;
+}
+.editButton {
+  background-color: blue;
+  font-size: 20px;
+  color: white;
+  width: 2rem;
+}
+.deleteButton {
+  background-color: darkred;
+  font-size: 20px;
+  color: white;
+  width: 2rem;
+}
