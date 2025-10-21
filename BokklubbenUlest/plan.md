@@ -60,3 +60,21 @@
 # Design
 
     -Høst, varme farger
+
+======================================================================================================
+# OPPGAVE FORDELING
+
+# ADMIN
+
+-Admin navigasjon: 
+
+-Brukerliste: Felix
+
+-Registrere ny bruker: Stian
+
+-Opprette avstemning: Martinius
+
+-Nytt møte: Bence
+
+-Header: Irene
+
