@@ -10,7 +10,7 @@ function userRegistrationPage() {
                 <br>
                 <label for="userPassword">Passord:</label>
                 <br>
-                <input type="text" id="userPassword" name="password" oninput="model.viewState.userRegistrationPage.password = this.value" required>
+                <input type="text" id="userPassword" name="password" oninput="model.viewState.userRegistrationPage.password = this.value" required minlength="10" placeholder="Minimum 10 tegn">
                 <br>
                 <button class="registerUserButton" type="submit" onclick="registerNewUser()">Registrer</button>
             </form>
@@ -25,10 +25,10 @@ function userRegistrationPage() {
 
 
 // USER LIST
-function createUserList(){
+function showUserList(){
     fullList = `<ol class="lists">`
     for(i in model.users){
-        fullList+= /*HTML*/`<li>${model.users[i].name}<button onclick="editUser(${i})">edit</button> 
+        fullList+= /*HTML*/`<li>${model.users[i].name}<button onclick="showEditPage(${i})">edit</button> 
         <button onclick="deleteUser(${i})">delete</button></li>`
     }
     fullList+= `</ol>`

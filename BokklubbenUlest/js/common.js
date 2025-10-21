@@ -8,6 +8,7 @@ let html = /*HTML*/`
         <button onclick="toggleLogIn()">Logg inn</button>
 
         <div id="logIn" class="hidden">
+            <i onclick="toggleLogIn()" class="fa-solid fa-xmark"></i>
             <h3>Logg inn</h3>
 
             <label for="nameInput">Navn</label>

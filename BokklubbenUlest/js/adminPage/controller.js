@@ -1,6 +1,15 @@
 // REGISTRATION
 
 function registerNewUser() {
+    const password = model.viewState.userRegistrationPage.password;
+
+    const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,}$");
+
+    if (!strongPasswordRegex.test(password)) {
+        alert("Passordet må inneholde min. 10 tegn og inkludere: én stor bokstav, én liten bokstav, ett tall, og ett symbol.");
+        return;
+    }
+
     let newUser = {
         name: model.viewState.userRegistrationPage.name,
         password: model.viewState.userRegistrationPage.password,
@@ -20,15 +29,20 @@ function registerNewUser() {
 
 // USER LIST
 //bare for å tenke hvordan en kan gjøre endringer i brukere
+
+function showEditPage(){
+    
+}
 function editUser(usrNr){
-    users[usrNr] == {name:"test", password:"test",avatar:"test",addedBooks: [""],favorites: [""]}
+    let usr = users[usrNr]
+    users[usrNr] == {name:"test", password:"test",avatar:usr.avatar,addedBooks:usr.addedBooks,favorites:usr.favorites}
     createHeader()
-    createUserList()
+    showUserList()
 }
 function deleteUser(usrNr){
     users.splice(usrNr,0)
     createHeader()
-    createUserList()
+    showUserList()
 }
 
 

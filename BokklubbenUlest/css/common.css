@@ -17,6 +17,9 @@ header > div > .fa-bars {
   margin-right: 1rem;
   font-size: 1.3rem;
 }
+header > div > button{
+    padding: 3px 6px;
+}
 #logIn {
   position: absolute;
   top: 4.4rem;
@@ -26,11 +29,20 @@ header > div > .fa-bars {
   display: flex;
   flex-direction: column;
 }
+#logIn > h3{
+    font-size: 1.5rem;
+}
 #logIn > label {
   margin-top: 1rem;
+  font-weight: 800;
 }
 #logIn > button {
   margin-top: 1.5rem;
+}
+#logIn > .fa-xmark{
+    position: absolute;
+    right: 1rem;
+    font-size: 1.3rem;
 }
 .hidden {
   opacity: 0;

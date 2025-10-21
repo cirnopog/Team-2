@@ -1,12 +1,11 @@
 //Voting polls
-var books = [
-{id: 1, title:" bok1", votes: 0},
-{id: 2, title:" bok2", votes: 0},
-{id: 3, title:" bok3", votes: 0}
-];
+
 
 function  booksInVoting(){
-    for (var i = 0; )
+    for (var i = 0; i < books.length; i++){
+        if (books[i].id === bookId){books[i].votes += 1;}
+        
+    }
 }
 /* 
 Finn ut hvilke bok som skal endres med ID
