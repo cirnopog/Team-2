@@ -1,20 +1,25 @@
 const model = {
     app: {
-        currentPage: "home",
+        currentPage: "homePage",
         currentUser: null,
         isAdmin: false,
     },
     viewState: {
-        // Kombinere login og registration?
-        logIn: {
+        homePage: {
+            chooseBook: {
+                chosenBook: "",
+                search: "",
+            },
+        },
+        logInPage: {
             name: "",
             password: "",
         },
-        userRegistration: {
+        userRegistrationPage: {
             name: "",
             password: "",
         },
-        bookRegistration: {
+        bookRegistrationPage: {
             title: "",
             author: "",
             description: "",
@@ -22,20 +27,13 @@ const model = {
             coverImg: "",
             addToVoting: false,
         },
-        voteTime: {
+        votePage: {
             startDate: "",
             endDate: "",
         },
-        meetingTime: {
+        meetingPage: {
             date:  "",
         },
-        // Velg fra bibliotek i + Nytt forslag-knapp
-        // viewState eller data?
-        chooseBook: {
-            chosenBook: "",
-            search: "",
-        },
-        rating: 0,
         
         // Er favoritt en input, og skal den inn i viewState?
     },
@@ -81,6 +79,7 @@ const model = {
             purchaseLink: "",
             isFavorite: false
 
-        }
+        },
+        bookList: []
     }
 }
