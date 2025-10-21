@@ -18,8 +18,16 @@ let html = /*HTML*/`
             <input type="password" id="passwordInput">
             
             <button>Logg inn</button>
-            
         </div>
+        <div>
+            <ul>
+                <li>Admin</li>
+                <li>Profil</li>
+                <li>Legg til bok</li>
+                
+            </ul>
+        </div>
+
     </div>
 </header>
 `;
@@ -29,4 +37,7 @@ createHeader()
 
 function toggleLogIn(){
     document.getElementById("logIn").classList.toggle("hidden");
+}
+function toggleMenu(){
+
 }

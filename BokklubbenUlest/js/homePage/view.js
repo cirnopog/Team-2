@@ -1,9 +1,23 @@
 //Voting polls
+var bookList = document.getElementsById("booklist");
 
 
-function  booksInVoting(){
-    for (var i = 0; i < books.length; i++){
-        if (books[i].id === bookId){books[i].votes += 1;}
+
+
+
+
+
+
+function  vote(bookId, value){
+    for (var i = 0; i < model.booksInVoting.length; i++){
+        if (model.booksInVoting[i].id === bookId) {
+            model.booksInVoting[i].votes += value;
+            document.getElementById("votes"+ bookId).textContent = model.booksInVoting[i].votes;
+            break;
+
+            
+
+        }
         
     }
 }

@@ -1,8 +1,8 @@
 // REGISTRATION
-
 function userRegistrationPage() {
     document.getElementById('app').innerHTML += /*HTML*/`
         <div class="userRegFormDiv">
+            <h3>Registrer ny bruker</h3>
             <form id="userRegistrationForm">
                 <label for="name">Navn:</label>
                 <br>
@@ -25,6 +25,7 @@ function userRegistrationPage() {
 
 
 // USER LIST
+
 function showUserList(){
     fullList = `<ol class="lists">`
     for(i in model.users){
