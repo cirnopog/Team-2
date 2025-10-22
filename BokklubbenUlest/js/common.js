@@ -19,7 +19,7 @@ let html = /*HTML*/`
             <p id="loginErrorMessage" class="hidden">Feil brukernavn eller passord.</p>
             
             
-            <button onclick="validateLogin()">Logg inn</button>
+            <button onclick="validateLogin()">Logg inn <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
         </div>
         <div id="menu" class="hidden">
         
