@@ -27,15 +27,20 @@ function userRegistrationPage() {
 // USER LIST
 
 function showUserList(){
-    fullList = `<ol class="lists">`
-    for(i in model.users){
-        fullList+= /*HTML*/`<li>${model.users[i].name}<button onclick="showEditPage(${i})">edit</button> 
+    let fullList = `<ol class="lists">`
+    for(i in model.data.users){
+        fullList+= /*HTML*/`<li>${model.data.users[i].name}<button onclick="showEditPage(${i})">edit</button> 
         <button onclick="deleteUser(${i})">delete</button></li>`
     }
     fullList+= `</ol>`
     document.getElementById('app').innerHTML += fullList
+    document.getElementById('app').innerHTML += `<div id="popup">
+    <h1>Edit bruker</h1>
+    <label for="name"></label>
+    </div>`
 
 }
+showUserList()
 
 
 
