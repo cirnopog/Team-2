@@ -4,12 +4,18 @@
   padding: 0;
 }
 :root{
+    /* COLORS */
     --background-color: #F7F3E8;
     --brown-color: #4A3728; 
     --brown-lighter: #71573E; 
     --accent-color: #B36A38; 
     --contrast-accent: #7C9862; 
     --alert: #D14C3C; 
+
+    /* FONTS */
+    --logo-font: "Leckerli One", cursive;
+    --heading-font: "Luxurious Roman", serif;
+    --regular-text: "Inter", sans-serif;
 }
 body{
     background-color: var(--background-color);
@@ -24,6 +30,11 @@ header {
   align-items: center;
   position: relative;
 }
+header > h1{
+    font-family: var(--logo-font);
+    font-size: 2rem;
+    font-weight: 400;
+}
 header > div > .fa-bars {
   margin-right: 1rem;
   font-size: 1.3rem;
@@ -35,7 +46,7 @@ header > div > button{
   position: absolute;
   top: 4.4rem;
   border: solid 1px black;
-  padding: 2rem;
+  padding: 1.5rem;
   right: 0.2rem;
   display: flex;
   flex-direction: column;
@@ -68,7 +79,7 @@ header > div > button{
 }
 #menu > h3{
     font-size: 1.8rem;
-    padding: 0.8rem;
+    padding: 1rem;
 }
 #menu ul{
     list-style-type: none;
