@@ -4,7 +4,7 @@ let html = /*HTML*/`
     <h1>Bokklubben Ulest</h1>
 
     <div>
-        <i class="fa-solid fa-bars"></i>
+        <i onclick="toggleMenu()" class="fa-solid fa-bars"></i>
         <button onclick="toggleLogIn()">Logg inn</button>
 
         <div id="logIn" class="hidden">
@@ -19,11 +19,17 @@ let html = /*HTML*/`
             
             <button>Logg inn</button>
         </div>
-        <div>
+        <div id="menu" class="hidden">
+        <h3>Meny</h3>
             <ul>
-                <li>Admin</li>
-                <li>Profil</li>
-                <li>Legg til bok</li>
+                <li onclick="model.app.currentPage='adminPage'">Admin</li>
+                <li onclick="
+                model.app.currentUser!== null?
+                model.app.currentPage='userProfile'
+                : toggleMenu()
+                toggleLogIn()
+                ">Profil</li>
+                <li onclick="model.app.currentPage='adminPage'">Legg til bok</li>
                 
             </ul>
         </div>
@@ -39,5 +45,5 @@ function toggleLogIn(){
     document.getElementById("logIn").classList.toggle("hidden");
 }
 function toggleMenu(){
-
+    document.getElementById("menu").classList.toggle("hidden");
 }
