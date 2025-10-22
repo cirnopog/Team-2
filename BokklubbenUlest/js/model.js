@@ -2,7 +2,6 @@ const model = {
     app: {
         currentPage: "homePage",
         currentUser: null,
-        isAdmin: false,
     },
     viewState: {
         homePage: {
@@ -66,7 +65,8 @@ const model = {
                 password: "Book_Worm88",
                 avatar: "moose.png",
                 addedBooks: [""],
-                favorites: [""]
+                favorites: [""],
+                isAdmin: true
             }
 
             
