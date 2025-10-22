@@ -50,8 +50,8 @@ function registerNewUser(event) {
 //bare for å tenke hvordan en kan gjøre endringer i brukere
 function showEditPage(usrNr){
     let popup = document.getElementById("popup")
-    let editButton = document.getElementById("editButton")
-    editButton.outerHTML=`<button type="submit" onclick="editUser(${usrNr})" id="editButton">Rediger</button>`
+    let completeEditButton = document.getElementById("completeEditButton")
+    completeEditButton.outerHTML=`<button type="submit" onclick="editUser(${usrNr})" id="completeEditButton">Rediger</button>`
     popup.style.visibility="visible"
 }
 function removeEditPage(){
