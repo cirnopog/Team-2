@@ -1,0 +1,32 @@
+/* CSS for admin page */
+
+/* User registration page */
+
+#userRegistrationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 25px auto;;
+    width: 325px;
+    padding: 25px 40px 25px;
+    font-size: 1.2rem;
+    border: 2px solid grey;
+    border-radius: 10%;
+}
+
+#userRegistrationForm > input {
+    padding: 5px;
+    font-size: 1.1rem;
+}
+
+#userRegistrationForm > p {
+    font-size: 0.9rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#userRegistrationForm > button {
+    width: fit-content;
+    padding: 5px;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
