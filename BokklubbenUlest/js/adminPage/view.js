@@ -46,7 +46,6 @@ function showUserList(){
     </div>`
 
 }
-showUserList()
 
 
 

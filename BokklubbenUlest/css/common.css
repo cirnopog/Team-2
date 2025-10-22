@@ -106,7 +106,6 @@ header > div > button{
   color: white;
   border: 0px;
   width: 4rem;
-  object-position: right;
 }
 #deleteButton {
   background-color: darkred;
@@ -114,7 +113,6 @@ header > div > button{
   color: white;
   border: 0px;
   width: 4rem;
-  object-position: right;
 }
 #popup{
   visibility: hidden;
@@ -125,5 +123,18 @@ header > div > button{
   font-size: 1.25rem;
   border-radius: 0.5rem;
   color: bisque;
+}
+#completeEditButton{
+  background-color:#D14C3C;
+  font-size: 1.25rem;
+  color: white;
+  border:#B36A38 solid 0.5rem;
+  width: 8rem;
+}
+#newName{
+  width: 90%;
+}
+#newPassword{
+  width: 90%;
 }
 
