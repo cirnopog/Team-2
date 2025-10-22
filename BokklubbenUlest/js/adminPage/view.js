@@ -40,11 +40,10 @@ function showUserList(){
     <input type="text" id="newName" name="newName">
     <label for="newPassword">Passord</label>
     <input type="text" id="newPassword" name="newPassword">
-    <button type="submit" onclick="editUser()">Rediger</button>
+    <button type="submit" onclick="editUser()" id="editButton">Rediger</button>
     </div>`
 
 }
-showUserList()
 
 
 
