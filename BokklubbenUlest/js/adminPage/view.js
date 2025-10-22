@@ -25,7 +25,7 @@ function userRegistrationPage() {
             <p>Minimum 10 tegn og minst en stor bokstav, en liten bokstav, et symbol og et tall.</p>
             <input type="text" id="userPassword" name="password" oninput="model.viewState.userRegistrationPage.password = this.value" required minlength="10">
             <button type="submit">Registrer</button>
-            <p id="password-error" style="color: red;"></p>
+            <p id="password-error" style="color: orangered;"></p>
         </form>
     `;
 }

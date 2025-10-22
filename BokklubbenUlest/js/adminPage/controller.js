@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (form) {
         form.addEventListener('input', () => {
             errorElement.textContent = '';
-            errorElement.style.color = 'red';
+            errorElement.style.color = 'orangered';
         });
     }
 });
