@@ -38,6 +38,7 @@ const model = {
         // Er favoritt en input, og skal den inn i viewState?
     },
     data: {
+        meetingdate: '',
         meetingAttendees: {
             coming: 0,
             notComing: 0,

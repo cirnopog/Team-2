@@ -58,7 +58,14 @@ function showUserList(){
 
 
 
-
+function newMeeting(){
+    let html = /*HTML*/`
+    <h4>Dato for nytt møte</h4>
+    <input onchange="model.viewstate.meetingPage.date = this.value">
+    <button onclick="setNewMeetingDate()">Start</button>
+    `
+    return html;
+}
 
 
 
