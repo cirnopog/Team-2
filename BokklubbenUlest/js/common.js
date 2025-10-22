@@ -46,9 +46,11 @@ document.getElementById("mainHeader").innerHTML= html;
 createHeader()
 
 function toggleLogIn(){
+    document.getElementById("menu").classList.add("hidden");
     document.getElementById("logIn").classList.toggle("hidden");
 }
 function toggleMenu(){
+    document.getElementById("logIn").classList.add("hidden");
     document.getElementById("menu").classList.toggle("hidden");
 }
 function validateLogin(){
