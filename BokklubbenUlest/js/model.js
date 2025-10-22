@@ -60,9 +60,9 @@ const model = {
         // evt egen for user info?
         users: [
             {
-                name: "",
-                password: "",
-                avatar: "",
+                name: "Geir",
+                password: "Book_Worm88",
+                avatar: "moose.png",
                 addedBooks: [""],
                 favorites: [""]
             }
