@@ -106,9 +106,8 @@ header > div > button{
 /* ========= Lists(admin og booklist) ======== */
 /*Husk at siden må bli centered på en eller annen måte uten å centere andre sider*/
 .lists {
-  display: inline-block;
-  text-align: left;
-  width: 75%;
+  display: flex;
+  justify-content: center;
   border:black solid 0.05rem;
   border-radius: 0.5rem;
   font-size: 1.5rem;
