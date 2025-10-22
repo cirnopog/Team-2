@@ -56,6 +56,9 @@ header > div > button{
     right: 1rem;
     font-size: 1.3rem;
 }
+#loginErrorMessage{
+    color: var(--alert);
+}
 #menu{
     position: absolute;
     border: solid 1px black;
@@ -84,11 +87,11 @@ header > div > button{
     font-size: 1.3rem;
 }
 .hidden {
-  opacity: 0;
+  
+  display: none !important;
+  
 }
-.show {
-  opacity: 1;
-}
+
 /* ========= Lists(admin og booklist) ======== */
 /*Husk at siden må bli centered på en eller annen måte uten å centere andre sider*/
 .lists {
