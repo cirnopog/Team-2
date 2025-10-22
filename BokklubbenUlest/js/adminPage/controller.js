@@ -6,7 +6,7 @@ function registerNewUser() {
     const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,}$");
 
     if (!strongPasswordRegex.test(password)) {
-        alert("Passordet må inneholde min. 10 tegn og inkludere: én stor bokstav, én liten bokstav, ett tall, og ett symbol.");
+        alert("Passordet må inneholde min. 10 tegn og inkludere: en stor bokstav, en liten bokstav, et tall, og et symbol.");
         return;
     }
 
