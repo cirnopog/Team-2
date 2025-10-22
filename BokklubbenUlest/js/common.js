@@ -16,10 +16,12 @@ let html = /*HTML*/`
 
             <label for="passwordInput">Passord</label>
             <input type="password" id="passwordInput" oninput="model.viewState.logInPage.password = this.value">
-            
+            <p id="loginErrorMessage" class="hidden">${model.viewState.logInPage.message}</p>
+
             <button onclick="validateLogin()">Logg inn</button>
         </div>
         <div id="menu" class="hidden">
+        
         <h3>Meny</h3>
             <i onclick="toggleMenu()" class="fa-solid fa-xmark"></i>
             <ul>
@@ -50,5 +52,11 @@ function toggleMenu(){
     document.getElementById("menu").classList.toggle("hidden");
 }
 function validateLogin(){
-    
+    const user = model.data.users.find(
+        user => user.name === model.viewState.logInPage.name && user.password === model.viewState.logInPage.password
+    );
+
+    if(user){
+        model.app.currentUser = model.viewState.logInPage.name
+    }
 }

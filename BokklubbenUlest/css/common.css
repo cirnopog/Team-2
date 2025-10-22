@@ -3,10 +3,21 @@
   box-sizing: border-box;
   padding: 0;
 }
-
+:root{
+    --background-color: #F7F3E8;
+    --brown-color: #4A3728; 
+    --brown-lighter: #71573E; 
+    --accent-color: #B36A38; 
+    --contrast-accent: #7C9862; 
+    --alert: #D14C3C; 
+}
+body{
+    background-color: var(--background-color);
+}
 /* =============== HEADER =================*/
 header {
-  background-color: chocolate;
+  background-color: var(--brown-color);
+  color: var(--background-color);
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -28,6 +39,7 @@ header > div > button{
   right: 0.2rem;
   display: flex;
   flex-direction: column;
+  color: black;
 }
 #logIn > h3{
     font-size: 1.5rem;
@@ -39,7 +51,7 @@ header > div > button{
 #logIn > button {
   margin-top: 1.5rem;
 }
-header .fa-xmark{
+#logIn .fa-xmark{
     position: absolute;
     right: 1rem;
     font-size: 1.3rem;
@@ -49,6 +61,7 @@ header .fa-xmark{
     border: solid 1px black;
     right: 0.4rem;
     top: 4.8rem;
+    color: black;
 }
 #menu > h3{
     font-size: 1.8rem;
@@ -64,11 +77,12 @@ header .fa-xmark{
     text-align: center;
     font-size: 1.3rem;
 }
-/* #menu > .fa-xmark{
+#menu > .fa-xmark{
     position: absolute;
-    right: 0;
+    right: 1rem;
     top: 1rem;
-} */
+    font-size: 1.3rem;
+}
 .hidden {
   opacity: 0;
 }
@@ -93,12 +107,4 @@ header .fa-xmark{
   font-size: 20px;
   color: white;
   width: 2rem;
-}
-
-#popup{
-  visibility: hidden;
-  position: absolute;
-  width: 30%;
-  height: 30%;
-  background-color: darkgoldenrod;
 }

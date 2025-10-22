@@ -14,6 +14,7 @@ const model = {
         logInPage: {
             name: "",
             password: "",
+            message: "",
         },
         userRegistrationPage: {
             name: "",
