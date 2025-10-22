@@ -60,9 +60,15 @@ function removeEditPage(){
 }
 function editUser(usrNr){
     let usr = model.data.users[usrNr]
-    let newName = document.getElementById("newName")
-    let newPassword = document.getElementById("newPassword")
-    model.data.users[usrNr] = {name:newName.value, password:newPassword.value, avatar:usr.avatar, addedBooks:usr.addedBooks, favorites:usr.favorites}
+    let newName = document.getElementById("newName").value
+    let newPassword = document.getElementById("newPassword").value
+    if(newName==""){
+        newName=usr.name
+    }
+    if(newPassword==""){
+        newPassword=usr.password
+    }
+    model.data.users[usrNr] = {name:newName, password:newPassword, avatar:usr.avatar, addedBooks:usr.addedBooks, favorites:usr.favorites}
     showUserList()
     removeEditPage()
 }

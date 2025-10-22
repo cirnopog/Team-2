@@ -96,6 +96,7 @@ header > div > button{
   text-align: left;
   width: 40%;
   border: 2px black solid;
+  font-size: 1.25rem;
 }
 #editButton {
   background-color: blue;
@@ -111,7 +112,9 @@ header > div > button{
 }
 #popup{
   visibility: hidden;
+  position: absolute;
   background-color: #B36A38;
   border: #D14C3C solid 2px;
   width: 35%;
+  font-size: 1.25rem;
 }
