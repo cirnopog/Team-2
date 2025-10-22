@@ -12,16 +12,18 @@ let html = /*HTML*/`
             <h3>Logg inn</h3>
 
             <label for="nameInput">Navn</label>
-            <input type="text" id="nameInput">
+            <input type="text" id="nameInput" oninput="model.viewState.logInPage.name = this.value">
 
             <label for="passwordInput">Passord</label>
-            <input type="password" id="passwordInput">
+            <input type="password" id="passwordInput" oninput="model.viewState.logInPage.password = this.value">
             
-            <button>Logg inn</button>
+            <button onclick="validateLogin()">Logg inn</button>
         </div>
         <div id="menu" class="hidden">
         <h3>Meny</h3>
+            <i onclick="toggleMenu()" class="fa-solid fa-xmark"></i>
             <ul>
+                
                 <li onclick="model.app.currentPage='adminPage'">Admin</li>
                 <li onclick="
                 model.app.currentUser!== null?
@@ -46,4 +48,7 @@ function toggleLogIn(){
 }
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("hidden");
+}
+function validateLogin(){
+    
 }
