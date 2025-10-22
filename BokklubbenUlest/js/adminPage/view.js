@@ -39,22 +39,27 @@ function userRegistrationPage() {
 // USER LIST
 function showUserList(){
     let fullList = `<ol class="lists">`
+    let longestWord = 0
+    console.log(longestWord)
     for(i in model.data.users){
-        fullList+= /*HTML*/`<li>${model.data.users[i].name}<button id="editButton" onclick="showEditPage(${i})">Endre</button> 
+        let itemName = model.data.users[i].name
+        console.log(itemName)
+        fullList+= /*HTML*/`<li>${itemName}<button id="editButton" onclick="showEditPage(${i})">Endre</button> 
         <button id="deleteButton" onclick="deleteUser(${i})">Slett</button></li>`
     }
     fullList+= `</ol>`
-    document.getElementById('app').innerHTML += fullList
+    document.getElementById('app').innerHTML = fullList
     document.getElementById('app').innerHTML += `<div id="popup">
-    <h1>Edit bruker</h1>
+    <h1>Rediger bruker</h1>
     <label for="newName">Navn</label>
     <input type="text" id="newName" name="newName">
     <label for="newPassword">Passord</label>
-    <input type="text" id="newPassword" name="newPassword">
+    <input type="password" id="newPassword" name="newPassword">
     <button type="submit" onclick="editUser()" id="completeEditButton">Rediger</button>
     </div>`
 
 }
+showUserList()
 
 
 
