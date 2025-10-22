@@ -1,12 +1,28 @@
 // REGISTRATION
 
-function registerNewUser() {
-    const password = model.viewState.userRegistrationPage.password;
+document.addEventListener('DOMContentLoaded', (event) => {
+    const form = document.getElementById('userRegistrationForm');
+    const errorElement = document.getElementById('password-error');
 
-    const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,}$");
+    if (form) {
+        form.addEventListener('input', () => {
+            errorElement.textContent = '';
+            errorElement.style.color = 'red';
+        });
+    }
+});
+
+function registerNewUser(event) {
+    event.preventDefault();
+
+    const password = model.viewState.userRegistrationPage.password;
+    const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{10,}$");
+    const errorElement = document.getElementById('password-error');
+
+    errorElement.textContent = '';
 
     if (!strongPasswordRegex.test(password)) {
-        alert("Passordet må inneholde min. 10 tegn og inkludere: en stor bokstav, en liten bokstav, et tall, og et symbol.");
+        errorElement.textContent = "Passordet må inneholde min. 10 tegn og inkludere: en stor bokstav, en liten bokstav, et tall, og et symbol!";
         return;
     }
 
@@ -18,6 +34,9 @@ function registerNewUser() {
     model.data.users.push(newUser);
 
     document.getElementById('userRegistrationForm').reset();
+
+    errorElement.style.color = 'green';
+    errorElement.textContent = 'Ny bruker er registrert!';
 }
 
 
@@ -29,16 +48,22 @@ function registerNewUser() {
 
 // USER LIST
 //bare for å tenke hvordan en kan gjøre endringer i brukere
-
-function showEditPage(){
+function showEditPage(usrNr){
     let popup = document.getElementById("popup")
+    let completeEditButton = document.getElementById("completeEditButton")
+    completeEditButton.outerHTML=`<button type="submit" onclick="editUser(${usrNr})" id="completeEditButton">Rediger</button>`
     popup.style.visibility="visible"
+}
+function removeEditPage(){
+    let popup = document.getElementById("popup")
+    popup.style.visibility="hidden"
 }
 function editUser(usrNr){
     let usr = model.data.users[usrNr]
-    model.data.users[usrNr] == {name:"test", password:"test",avatar:usr.avatar,addedBooks:usr.addedBooks,favorites:usr.favorites}
-    createHeader()
-    showUserList()
+    let newName = document.getElementById("newName")
+    let newPassword = document.getElementById("newPassword")
+    model.data.users[usrNr] = {name:newName.value, password:newPassword.value, avatar:usr.avatar, addedBooks:usr.addedBooks, favorites:usr.favorites}
+    removeEditPage()
 }
 function deleteUser(usrNr){
     model.data.users.splice(usrNr,0)
