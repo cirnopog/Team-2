@@ -69,3 +69,11 @@ header > div > button{
   color: white;
   width: 2rem;
 }
+
+#popup{
+  visibility: hidden;
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  background-color: darkgoldenrod;
+}

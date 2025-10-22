@@ -34,15 +34,13 @@ function showEditPage(){
     
 }
 function editUser(usrNr){
-    let usr = users[usrNr]
-    users[usrNr] == {name:"test", password:"test",avatar:usr.avatar,addedBooks:usr.addedBooks,favorites:usr.favorites}
+    let usr = model.data.users[usrNr]
+    model.data.users[usrNr] == {name:"test", password:"test",avatar:usr.avatar,addedBooks:usr.addedBooks,favorites:usr.favorites}
     createHeader()
     showUserList()
 }
 function deleteUser(usrNr){
-    users.splice(usrNr,0)
-    createHeader()
-    showUserList()
+    model.data.users.splice(usrNr,0)
 }
 
 

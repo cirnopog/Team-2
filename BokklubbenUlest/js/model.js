@@ -66,6 +66,8 @@ const model = {
                 addedBooks: [""],
                 favorites: [""]
             }
+
+            
         ],
         bookInfo: {
             title: "",
