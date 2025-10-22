@@ -81,18 +81,19 @@ header .fa-xmark{
   display: inline-block;
   text-align: left;
   width: 40%;
+  border: 2px black solid;
 }
-.editButton {
+#editButton {
   background-color: blue;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: white;
-  width: 2rem;
+  width: 4rem;
 }
-.deleteButton {
+#deleteButton {
   background-color: darkred;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: white;
-  width: 2rem;
+  width: 4rem;
 }
 
 #popup{
