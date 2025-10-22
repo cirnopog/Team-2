@@ -1,6 +1,6 @@
 function createHeader(){
 let html = /*HTML*/`
-<header>
+
     <h1>Bokklubben Ulest</h1>
 
     <div>
@@ -16,8 +16,9 @@ let html = /*HTML*/`
 
             <label for="passwordInput">Passord</label>
             <input type="password" id="passwordInput" oninput="model.viewState.logInPage.password = this.value">
-            <p id="loginErrorMessage" class="hidden">${model.viewState.logInPage.message}</p>
-
+            <p id="loginErrorMessage" class="hidden">Feil brukernavn eller passord.</p>
+            
+            
             <button onclick="validateLogin()">Logg inn</button>
         </div>
         <div id="menu" class="hidden">
@@ -39,9 +40,8 @@ let html = /*HTML*/`
         </div>
 
     </div>
-</header>
 `;
-document.body.insertAdjacentHTML("afterbegin", html);
+document.getElementById("mainHeader").innerHTML= html;
 }
 createHeader()
 
@@ -57,6 +57,21 @@ function validateLogin(){
     );
 
     if(user){
-        model.app.currentUser = model.viewState.logInPage.name
-    }
+        model.app.currentUser = model.viewState.logInPage.name;
+        createHeader()
+        
+    }else{
+       document.getElementById("loginErrorMessage").classList.remove("hidden");
+        
 }
+    }
+// function headerBtnAndProfileSwitch(){
+//     html = ``;
+//     if(model.app.currentUser === null){
+//         html = `<button onclick="validateLogin()">Logg inn</button>`
+//         return html;
+//     }else{
+//         html  `<p onclick="model.app.currentPage='profilePage'">Profil</p>`;
+//         return html;
+//     }
+// }
