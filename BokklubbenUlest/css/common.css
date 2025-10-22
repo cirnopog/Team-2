@@ -39,7 +39,7 @@ header > div > button{
 #logIn > button {
   margin-top: 1.5rem;
 }
-#logIn > .fa-xmark{
+header .fa-xmark{
     position: absolute;
     right: 1rem;
     font-size: 1.3rem;
@@ -60,10 +60,15 @@ header > div > button{
 #menu > ul >li{
     border-top: solid 1px black;
     width: 100%;
-    padding: 0.8rem 6rem;
+    padding: 0.8rem 4rem;
     text-align: center;
     font-size: 1.3rem;
 }
+/* #menu > .fa-xmark{
+    position: absolute;
+    right: 0;
+    top: 1rem;
+} */
 .hidden {
   opacity: 0;
 }
