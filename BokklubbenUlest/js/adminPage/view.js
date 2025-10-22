@@ -26,8 +26,12 @@ function userRegistrationPage() {
 // USER LIST
 function showUserList(){
     let fullList = `<ol class="lists">`
+    let longestWord = 0
+    console.log(longestWord)
     for(i in model.data.users){
-        fullList+= /*HTML*/`<li>${model.data.users[i].name}     <button id="editButton" onclick="showEditPage(${i})">Endre</button> 
+        let itemName = model.data.users[i].name
+        console.log(itemName)
+        fullList+= /*HTML*/`<li>${itemName}<button id="editButton" onclick="showEditPage(${i})">Endre</button> 
         <button id="deleteButton" onclick="deleteUser(${i})">Slett</button></li>`
     }
     fullList+= `</ol>`
@@ -42,6 +46,7 @@ function showUserList(){
     </div>`
 
 }
+showUserList()
 
 
 
