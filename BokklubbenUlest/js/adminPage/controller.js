@@ -66,7 +66,8 @@ function editUser(usrNr){
     removeEditPage()
 }
 function deleteUser(usrNr){
-    model.data.users.splice(usrNr,0)
+    model.data.users.splice(usrNr,1)
+    console.log(model.data.users)
 }
 
 
