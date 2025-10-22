@@ -1,4 +1,5 @@
 // REGISTRATION
+
 function userRegistrationPage() {
     document.getElementById('app').innerHTML += /*HTML*/`
         <div class="userRegFormDiv">
@@ -25,7 +26,6 @@ function userRegistrationPage() {
 
 
 // USER LIST
-
 function showUserList(){
     let fullList = `<ol class="lists">`
     for(i in model.data.users){
@@ -36,7 +36,11 @@ function showUserList(){
     document.getElementById('app').innerHTML += fullList
     document.getElementById('app').innerHTML += `<div id="popup">
     <h1>Edit bruker</h1>
-    <label for="name"></label>
+    <label for="newName">Navn</label>
+    <input type="text" id="newName" name="newName">
+    <label for="newPassword">Passord</label>
+    <input type="text" id="newPassword" name="newPassword">
+    <button type="submit" onclick="editUser()">Rediger</button>
     </div>`
 
 }

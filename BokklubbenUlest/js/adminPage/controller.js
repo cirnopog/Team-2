@@ -31,7 +31,8 @@ function registerNewUser() {
 //bare for å tenke hvordan en kan gjøre endringer i brukere
 
 function showEditPage(){
-    
+    let popup = document.getElementById("popup")
+    popup.style.visibility="visible"
 }
 function editUser(usrNr){
     let usr = model.data.users[usrNr]
