@@ -3,7 +3,7 @@
 adminPage();
 
 function adminPage() {
-    document.getElementById('app').innerHTML += /*HTML*/`
+    document.getElementById('app').innerHTML = /*HTML*/`
         <h1 class="adminHeading">Administrasjon</h1>
         <div id="adminNavigation">
             <button type="button" onclick="userRegistrationPage()">Ny bruker</button>
@@ -16,7 +16,7 @@ function adminPage() {
 }
 
 function userRegistrationPage() {
-    document.getElementById('app').innerHTML += /*HTML*/`
+    document.getElementById('adminStuff').innerHTML = /*HTML*/`
         <form id="userRegistrationForm" onsubmit="registerNewUser(event)">
             <h3>Registrer ny bruker</h3>
             <label for="nameOfUser">Navn:</label>
@@ -48,8 +48,8 @@ function showUserList(){
         <button id="deleteButton" onclick="deleteUser(${i})">Slett</button></li>`
     }
     fullList+= `</ol>`
-    document.getElementById('app').innerHTML = fullList
-    document.getElementById('app').innerHTML += `<div id="popup">
+    document.getElementById('adminStuff').innerHTML = fullList
+    document.getElementById('adminStuff').innerHTML += `<div id="popup">
     <h1>Rediger bruker</h1>
     <label for="newName">Navn</label>
     <input type="text" id="newName" name="newName">

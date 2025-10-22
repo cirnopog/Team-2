@@ -41,4 +41,4 @@ function vote(bookId, value) {
 }
 
 
-renderBooksInVoting();
+// renderBooksInVoting();
