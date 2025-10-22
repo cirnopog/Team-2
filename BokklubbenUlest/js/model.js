@@ -2,6 +2,7 @@ const model = {
     app: {
         currentPage: "homePage",
         currentUser: null,
+        savedUser: localStorage.getItem('currentUser')
     },
     viewState: {
         homePage: {

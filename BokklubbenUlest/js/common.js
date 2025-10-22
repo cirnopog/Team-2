@@ -5,7 +5,12 @@ let html = /*HTML*/`
 
     <div>
         <i onclick="toggleMenu()" class="fa-solid fa-bars"></i>
-        <button onclick="toggleLogIn()">Logg inn</button>
+        ${model.app.currentUser !== null?
+        `<img onclick="model.app.currentPage='userProfile'; updateView()" src="img/${model.app.currentUser.avatar}" alt="Profile" class="avatar">`
+        :
+        `<button onclick="toggleLogIn()">Logg inn</button>`   
+        }
+        
 
         <div id="logIn" class="hidden">
             <i onclick="toggleLogIn()" class="fa-solid fa-xmark"></i>
@@ -43,7 +48,10 @@ let html = /*HTML*/`
 `;
 document.getElementById("mainHeader").innerHTML= html;
 }
+// checkSavedLogin()
 createHeader()
+
+
 
 function toggleLogIn(){
     document.getElementById("menu").classList.add("hidden");
@@ -53,28 +61,26 @@ function toggleMenu(){
     document.getElementById("logIn").classList.add("hidden");
     document.getElementById("menu").classList.toggle("hidden");
 }
+
+
 function validateLogin(){
     const user = model.data.users.find(
-        user => user.name === model.viewState.logInPage.name && user.password === model.viewState.logInPage.password
+        user => user.name === model.viewState.logInPage.name &&
+        user.password === model.viewState.logInPage.password
     );
-        console.log('this is user' + user)
+
     if(user){
         model.app.currentUser = user;
+        localStorage.setItem('currentUser', JSON.stringify(user));
         createHeader()
         
     }else{
        document.getElementById("loginErrorMessage").classList.remove("hidden");
         
-}
-    
     }
-// function headerBtnAndProfileSwitch(){
-//     html = ``;
-//     if(model.app.currentUser === null){
-//         html = `<button onclick="validateLogin()">Logg inn</button>`
-//         return html;
-//     }else{
-//         html  `<p onclick="model.app.currentPage='profilePage'">Profil</p>`;
-//         return html;
-//     }
-// }
+}
+function checkSavedLogin(){
+    if(model.app.savedUser){
+        model.app.currentUser = JSON.parse(model.app.savedUser)
+    }
+}
