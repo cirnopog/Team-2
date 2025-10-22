@@ -46,24 +46,27 @@ document.getElementById("mainHeader").innerHTML= html;
 createHeader()
 
 function toggleLogIn(){
+    document.getElementById("menu").classList.add("hidden");
     document.getElementById("logIn").classList.toggle("hidden");
 }
 function toggleMenu(){
+    document.getElementById("logIn").classList.add("hidden");
     document.getElementById("menu").classList.toggle("hidden");
 }
 function validateLogin(){
     const user = model.data.users.find(
         user => user.name === model.viewState.logInPage.name && user.password === model.viewState.logInPage.password
     );
-
+        console.log('this is user' + user)
     if(user){
-        model.app.currentUser = model.viewState.logInPage.name;
+        model.app.currentUser = user;
         createHeader()
         
     }else{
        document.getElementById("loginErrorMessage").classList.remove("hidden");
         
 }
+    
     }
 // function headerBtnAndProfileSwitch(){
 //     html = ``;
