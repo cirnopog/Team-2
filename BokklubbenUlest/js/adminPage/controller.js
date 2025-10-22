@@ -1,12 +1,28 @@
 // REGISTRATION
 
-function registerNewUser() {
-    const password = model.viewState.userRegistrationPage.password;
+document.addEventListener('DOMContentLoaded', (event) => {
+    const form = document.getElementById('userRegistrationForm');
+    const errorElement = document.getElementById('password-error');
 
-    const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,}$");
+    if (form) {
+        form.addEventListener('input', () => {
+            errorElement.textContent = '';
+            errorElement.style.color = 'red';
+        });
+    }
+});
+
+function registerNewUser(event) {
+    event.preventDefault();
+
+    const password = model.viewState.userRegistrationPage.password;
+    const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{10,}$");
+    const errorElement = document.getElementById('password-error');
+
+    errorElement.textContent = '';
 
     if (!strongPasswordRegex.test(password)) {
-        alert("Passordet må inneholde min. 10 tegn og inkludere: en stor bokstav, en liten bokstav, et tall, og et symbol.");
+        errorElement.textContent = "Passordet må inneholde min. 10 tegn og inkludere: en stor bokstav, en liten bokstav, et tall, og et symbol!";
         return;
     }
 
@@ -18,6 +34,9 @@ function registerNewUser() {
     model.data.users.push(newUser);
 
     document.getElementById('userRegistrationForm').reset();
+
+    errorElement.style.color = 'green';
+    errorElement.textContent = 'Ny bruker er registrert!';
 }
 
 
