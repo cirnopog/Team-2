@@ -97,18 +97,36 @@ header > div > button{
 .lists {
   display: inline-block;
   text-align: left;
-  width: 40%;
-  border: 2px black solid;
+  width: 75%;
+  border:#D14C3C solid 0.25rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  color: #4A3728;
 }
 #editButton {
-  background-color: blue;
+  background-color: darkblue;
   font-size: 1.25rem;
   color: white;
+  border: 0px;
   width: 4rem;
+  object-position: right;
 }
 #deleteButton {
   background-color: darkred;
   font-size: 1.25rem;
   color: white;
+  border: 0px;
   width: 4rem;
+  object-position: right;
 }
+#popup{
+  visibility: hidden;
+  position: absolute;
+  background-color: #B36A38;
+  border: #D14C3C solid 2px;
+  width: 40%;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  color: bisque;
+}
+
