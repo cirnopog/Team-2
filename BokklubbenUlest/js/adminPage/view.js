@@ -31,7 +31,7 @@ function showUserList(){
         <button id="deleteButton" onclick="deleteUser(${i})">Slett</button></li>`
     }
     fullList+= `</ol>`
-    document.getElementById('app').innerHTML += fullList
+    document.getElementById('app').innerHTML = fullList
     document.getElementById('app').innerHTML += `<div id="popup">
     <h1>Edit bruker</h1>
     <label for="newName">Navn</label>

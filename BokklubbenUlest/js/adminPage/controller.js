@@ -63,11 +63,13 @@ function editUser(usrNr){
     let newName = document.getElementById("newName")
     let newPassword = document.getElementById("newPassword")
     model.data.users[usrNr] = {name:newName.value, password:newPassword.value, avatar:usr.avatar, addedBooks:usr.addedBooks, favorites:usr.favorites}
+    showUserList()
     removeEditPage()
 }
 function deleteUser(usrNr){
     model.data.users.splice(usrNr,1)
     console.log(model.data.users)
+    showUserList()
 }
 
 
