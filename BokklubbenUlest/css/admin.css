@@ -1,12 +1,37 @@
 /* CSS for admin page */
 
+.adminHeading {
+    margin: 25px;
+    text-align: center;
+}
+
+#adminNavigation {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+#adminNavigation > button {
+    background-color: burlywood;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+#adminNavigation > button:hover {
+    cursor: pointer;
+    color: #4A3728;
+}
+
 /* User registration page */
 
 #userRegistrationForm {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin: 25px auto;;
+    margin: 25px auto;
     width: 325px;
     padding: 25px 40px 25px;
     font-size: 1.2rem;
@@ -29,4 +54,8 @@
     padding: 5px;
     letter-spacing: 1px;
     font-size: 1.1rem;
+}
+
+#userRegistrationForm > button:hover {
+    cursor: pointer;
 }
