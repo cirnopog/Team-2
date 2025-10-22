@@ -38,6 +38,7 @@ const model = {
         // Er favoritt en input, og skal den inn i viewState?
     },
     data: {
+        meetingdate: '',
         meetingAttendees: {
             coming: 0,
             notComing: 0,
@@ -60,12 +61,14 @@ const model = {
         // evt egen for user info?
         users: [
             {
-                name: "",
-                password: "",
-                avatar: "",
+                name: "Geir",
+                password: "Book_Worm88",
+                avatar: "moose.png",
                 addedBooks: [""],
                 favorites: [""]
             }
+
+            
         ],
         bookInfo: {
             title: "",

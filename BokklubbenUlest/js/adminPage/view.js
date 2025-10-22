@@ -24,15 +24,22 @@ function userRegistrationPage() {
 
 
 // USER LIST
-
 function showUserList(){
-    fullList = `<ol class="lists">`
-    for(i in model.users){
-        fullList+= /*HTML*/`<li>${model.users[i].name}<button onclick="showEditPage(${i})">edit</button> 
+    let fullList = `<ol class="lists">`
+    for(i in model.data.users){
+        fullList+= /*HTML*/`<li>${model.data.users[i].name}<button onclick="showEditPage(${i})">edit</button> 
         <button onclick="deleteUser(${i})">delete</button></li>`
     }
     fullList+= `</ol>`
     document.getElementById('app').innerHTML += fullList
+    document.getElementById('app').innerHTML += `<div id="popup">
+    <h1>Edit bruker</h1>
+    <label for="newName">Navn</label>
+    <input type="text" id="newName" name="newName">
+    <label for="newPassword">Passord</label>
+    <input type="text" id="newPassword" name="newPassword">
+    <button type="submit" onclick="editUser()" id="editButton">Rediger</button>
+    </div>`
 
 }
 
@@ -49,7 +56,14 @@ function showUserList(){
 
 
 
-
+function newMeeting(){
+    let html = /*HTML*/`
+    <h4>Dato for nytt møte</h4>
+    <input onchange="model.viewstate.meetingPage.date = this.value">
+    <button onclick="setNewMeetingDate()">Start</button>
+    `
+    return html;
+}
 
 
 

@@ -39,11 +39,36 @@ header > div > button{
 #logIn > button {
   margin-top: 1.5rem;
 }
-#logIn > .fa-xmark{
+header .fa-xmark{
     position: absolute;
     right: 1rem;
     font-size: 1.3rem;
 }
+#menu{
+    position: absolute;
+    border: solid 1px black;
+    right: 0.4rem;
+    top: 4.8rem;
+}
+#menu > h3{
+    font-size: 1.8rem;
+    padding: 0.8rem;
+}
+#menu ul{
+    list-style-type: none;
+}
+#menu > ul >li{
+    border-top: solid 1px black;
+    width: 100%;
+    padding: 0.8rem 4rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+/* #menu > .fa-xmark{
+    position: absolute;
+    right: 0;
+    top: 1rem;
+} */
 .hidden {
   opacity: 0;
 }
@@ -68,4 +93,12 @@ header > div > button{
   font-size: 20px;
   color: white;
   width: 2rem;
+}
+
+#popup{
+  visibility: hidden;
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  background-color: darkgoldenrod;
 }
