@@ -48,27 +48,17 @@ function registerNewUser(event) {
 
 // USER LIST
 //bare for å tenke hvordan en kan gjøre endringer i brukere
-function showEditPage(usrNr){
-    let popup = document.getElementById("popup")
-    let completeEditButton = document.getElementById("completeEditButton")
-    completeEditButton.outerHTML=`<button type="submit" onclick="editUser(${usrNr})" id="completeEditButton">Rediger</button>`
-    popup.style.visibility="visible"
-}
 function removeEditPage(){
     let popup = document.getElementById("popup")
     popup.style.visibility="hidden"
 }
 function editUser(usrNr){
+    const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{10,}$");
     let usr = model.data.users[usrNr]
-    let newName = document.getElementById("newName").value
-    let newPassword = document.getElementById("newPassword").value
-    if(newName==""){
-        newName=usr.name
+    if(!strongPasswordRegex.test(usr.password)){
+        console.log("wrong")
+        return
     }
-    if(newPassword==""){
-        newPassword=usr.password
-    }
-    model.data.users[usrNr] = {name:newName, password:newPassword, avatar:usr.avatar, addedBooks:usr.addedBooks, favorites:usr.favorites}
     showUserList()
     removeEditPage()
 }
