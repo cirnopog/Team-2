@@ -46,6 +46,7 @@ header > h1{
     font-family: var(--logo-font);
     font-size: 2.3rem;
     font-weight: 400;
+    cursor: pointer;
 }
 header > div > .fa-bars {
   margin-right: 1.5rem;
@@ -104,12 +105,18 @@ font-size: 16px;
   padding: 6px 12px;
   border-radius: 1rem;
   font-size: 17px;
+  cursor: pointer;
   
+}
+#logIn > button:hover{
+    background-color: var(--contrast-accent);
+    transition: 0.3s;
 }
 #logIn .fa-xmark{
     position: absolute;
     right: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 #loginErrorMessage{
     color: var(--alert);
@@ -153,6 +160,7 @@ font-size: 16px;
     right: 1rem;
     top: 1.5rem;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 .hidden {
   
