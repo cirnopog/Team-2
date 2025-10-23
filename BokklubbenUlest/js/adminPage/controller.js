@@ -92,7 +92,19 @@ function setNewMeetingDate(){
 
 // VOTE START
 
+function startVote() {
 
+    let newVote = {
+        startDate: model.viewState.votePage.startDate,
+        endDate: model.viewState.votePage.endDate,
+    }
+
+    model.data.currentVote.push(newVote);
+
+    document.getElementById('votePageForm').reset();
+
+    document.getElementById('voteCreatedMessage').innerHTML = 'Ny avstemning er opprettet på forsiden!';
+}
 
 
 
