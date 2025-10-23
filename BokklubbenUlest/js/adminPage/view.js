@@ -56,6 +56,7 @@ function showUserList(){
     <label for="newPassword">Passord</label>
     <input type="password" id="newPassword" name="newPassword">
     <button type="submit" onclick="editUser()" id="completeEditButton">Rediger</button>
+    <p id="registration-error"></p>
     </div>`
 
 }

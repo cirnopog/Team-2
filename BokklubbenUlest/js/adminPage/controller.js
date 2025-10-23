@@ -49,14 +49,15 @@ function registerNewUser(event) {
 // USER LIST
 //bare for å tenke hvordan en kan gjøre endringer i brukere
 function removeEditPage(){
-    let popup = document.getElementById("popup")
+    const popup = document.getElementById("popup")
     popup.style.visibility="hidden"
 }
 function editUser(usrNr){
+    const error = document.getElementById("registration-error")
     const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{10,}$");
     let usr = model.data.users[usrNr]
     if(!strongPasswordRegex.test(usr.password)){
-        console.log("wrong")
+        error.textContent="Passordet må inneholde min. 10 tegn og inkludere: en stor bokstav, en liten bokstav, et tall, og et symbol!"
         return
     }
     showUserList()
