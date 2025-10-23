@@ -11,6 +11,8 @@ function adminPage() {
             <button type="button" onclick="votePage()">Opprett avstemning</button>
             <button type="button" onclick="newMeeting()">Avtal møte</button>
         </div>
+
+        <div id="adminStuff"></div>
     `;
     userRegistrationPage();
 }
