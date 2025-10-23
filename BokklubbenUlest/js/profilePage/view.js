@@ -1,20 +1,10 @@
 function generateOtherUserProfile(usr){
-    let favorites = `<ul id="favs">`
-    let readBooks = `<ul id="readbooks">`
-    for(i in usr.addedBooks){
-        readBooks+=usr.addedBooks[i]
-    }
-    readBooks+=`</ul>`
-    for(i in usr.favorites){
-        favorites+=usr.favorites[i]
-    }
-    favorites+=`</ul>`
     const app = document.getElementById("app")
     app.innerHTML=`
     <h1>${usr.name}</h1>
     <img src="img/${usr.avatar}" alt="${usr.avatar}" 20%" width="20%">
-    ${readBooks}
-    ${favorites}
+    ${allReadBooks}
+    ${favoriteBooks}
     `
 }
 
