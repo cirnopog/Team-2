@@ -40,7 +40,11 @@ const model = {
     },
     data: {
         avatars:[
-          "moose.png"  
+          "austronaut.png",
+          "bird.png",
+          "moose.png",
+          "robot.png",
+          "wizard.png"
         ],
         meetingdate: '',
         meetingAttendees: {
