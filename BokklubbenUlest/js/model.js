@@ -39,6 +39,9 @@ const model = {
         // Er favoritt en input, og skal den inn i viewState?
     },
     data: {
+        avatars:[
+          "moose.png"  
+        ],
         meetingdate: '',
         meetingAttendees: {
             coming: 0,
