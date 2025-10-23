@@ -1,3 +1,16 @@
+homePage()
+function homePage(){
+    document.getElementById("app").innerHTML =`
+    ${drawMeetingBanner()}
+
+    
+    
+    `
+}
+
+
+
+
 // Bøker i avstemning
 function renderBooksInVoting() {
     var bookList = document.getElementById("bookListContainer"); 
@@ -42,3 +55,45 @@ function vote(bookId, value) {
 
 
 // renderBooksInVoting();
+
+
+
+
+
+
+
+
+
+// MEETING BANNER
+// document.getElementById("app").innerHTML=
+function drawMeetingBanner(){
+html=`
+<div id="meetingBanner">
+    <h2>Neste møte er</h2>
+
+    <div class="meeting-info-container">
+        <p>${
+            model.viewState.meetingPage.date!==null?
+            `${model.viewState.meetingPage.date}`
+            : 
+            `Mer info kommer snart!`
+        }</p>
+    </div>
+    <p class="meeting-attendees">
+        <i class="fa-solid fa-thumbs-up"></i>
+        Kommer: 2 
+        &nbsp;
+        <i class="fa-solid fa-thumbs-down"></i>
+        Kommer ikke: 0
+    </p>
+
+    <div class="btn-container">
+        <button>Kommer</button>
+        <button>Kommer ikke</button>
+    </div>
+</div>
+`
+return html;
+}
+
+

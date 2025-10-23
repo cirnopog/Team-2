@@ -1,12 +1,12 @@
 function createHeader(){
 let html = /*HTML*/`
 
-    <h1>Bokklubben Ulest</h1>
+    <h1 onclick="homePage()">Bokklubben Ulest</h1>
 
     <div>
         <i onclick="toggleMenu()" class="fa-solid fa-bars"></i>
         ${model.app.currentUser !== null?
-        `<img onclick="model.app.currentPage='userProfile'; updateView()" src="img/${model.app.currentUser.avatar}" alt="Profile" class="avatar">`
+        `<img onclick="model.app.currentPage='userProfile'; generateYourProfile(model.app.currentUser)" src="img/${model.app.currentUser.avatar}" alt="Profile" class="avatar">`
         :
         `<button onclick="toggleLogIn()">Logg inn</button>`   
         }
@@ -32,13 +32,12 @@ let html = /*HTML*/`
             <i onclick="toggleMenu()" class="fa-solid fa-xmark"></i>
             <ul>
                 
-                <li onclick="model.app.currentPage='adminPage'">Admin</li>
+                <li onclick="model.app.currentPage='adminPage'; adminPage();">Admin</li>
                 <li onclick="
-                model.app.currentUser!== null?
+                model.app.currentUser !== null ?
                 model.app.currentPage='userProfile'
-                : toggleMenu()
-                toggleLogIn()
-                ">Profil</li>
+                : toggleLogIn()">
+                Profil</li>
                 <li onclick="model.app.currentPage='adminPage'">Legg til bok</li>
                 
             </ul>
@@ -48,7 +47,7 @@ let html = /*HTML*/`
 `;
 document.getElementById("mainHeader").innerHTML= html;
 }
-// checkSavedLogin()
+checkSavedLogin()
 createHeader()
 
 

@@ -1,6 +1,6 @@
 // REGISTRATION
 
-adminPage();
+// adminPage()
 
 function adminPage() {
     document.getElementById('app').innerHTML = /*HTML*/`
@@ -39,7 +39,6 @@ function userRegistrationPage() {
 // USER LIST
 function showUserList(){
     let fullList = `<ol class="lists">`
-    let longestWord = 0
     for(i in model.data.users){
         let itemName = model.data.users[i].name
         fullList+= /*HTML*/`<li>${itemName}<button id="editButton" onclick="showEditPage(${i})">Endre</button> 
