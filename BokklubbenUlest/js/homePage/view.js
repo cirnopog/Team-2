@@ -4,9 +4,22 @@ function homePage(){
     ${drawMeetingBanner()}
     
     <div id="bookVoting">
-        <div id="bookListContainer"></div>
+        <div class="container">
+            <h2>Bok avstemning</h1>
+            <h3>
+            <i class="fa-solid fa-hourglass-half"></i>
+            ... dager igjen
+            </h3>
+        </div>
+
+        <div id="bookListContainer">
+        
+        </div>
+      
     </div>
     `
+    renderBooksInVoting()
+
     
 }
 
@@ -14,13 +27,41 @@ function homePage(){
 
 
 // Bøker i avstemning
+// function renderBooksInVoting() {
+//     var bookList = document.getElementById("bookListContainer"); 
+//     if (!bookList) return; 
+//     bookList.innerHTML = ""; 
+
+//     var books = model.data.booksInVoting;
+//     console.log(books)
+//     for (var i = 0; i < books.length; i++) {
+//         var book = books[i];
+
+        
+//         if (book.votes === "") book.votes = 0;
+//         book.votes = Number(book.votes);
+
+//         var div = document.createElement("div");
+//         div.id = "book" + book.id;
+//         div.innerHTML = `
+//             <div style="margin-bottom:10px;">
+//                 ${book.img ? `<img src="../img/${book.img}" alt="${book.title}" style="width:50px; height:70px;">` : ""}
+//                 <strong>${book.title}</strong>
+//                 <button onclick="vote(${book.id},1)">👍</button>
+//                 <span id="votes${book.id}">${book.votes}</span>
+//                 <button onclick="vote(${book.id},-1)">👎</button>
+//             </div>
+//         `;
+//         bookList.appendChild(div);
+//     }
+// }
 function renderBooksInVoting() {
     var bookList = document.getElementById("bookListContainer"); 
     if (!bookList) return; 
     bookList.innerHTML = ""; 
 
     var books = model.data.booksInVoting;
-
+    console.log(books)
     for (var i = 0; i < books.length; i++) {
         var book = books[i];
 
@@ -31,16 +72,28 @@ function renderBooksInVoting() {
         var div = document.createElement("div");
         div.id = "book" + book.id;
         div.innerHTML = `
-            <div style="margin-bottom:10px;">
-                ${book.img ? `<img src="${book.img}" alt="${book.title}" style="width:50px; height:70px;">` : ""}
-                <strong>${book.title}</strong>
-                <button onclick="vote(${book.id},1)">👍</button>
-                <span id="votes${book.id}">${book.votes}</span>
-                <button onclick="vote(${book.id},-1)">👎</button>
-            </div>
+                ${book.img ?
+                 `<img src="img/${book.img}" alt="${book.title}" style="width:220px; ">`: ""}
+                
+                
+                
+
+                <div class="container">
+                    <h3>${book.title}</h3>
+                    <div class="btn-container">
+                        <button onclick="vote(${book.id},1)">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </button>
+                        <span id="votes${book.id}">${book.votes}</span>
+                        <button onclick="vote(${book.id},-1)">
+                            <i class="fa-solid fa-thumbs-down"></i>
+                        </button>
+                    </div>
+                </div>
         `;
         bookList.appendChild(div);
     }
+    
 }
 
 // stemme funksjon
@@ -54,13 +107,6 @@ function vote(bookId, value) {
         }
     }
 }
-
-
-// renderBooksInVoting();
-
-
-
-
 
 
 

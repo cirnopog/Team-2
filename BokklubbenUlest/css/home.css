@@ -57,3 +57,78 @@
         transition: 0.3s;
     }
 /*=================================================*/
+
+
+
+/*=========== < VOTING SECTION > ==================*/
+#bookVoting{
+    padding: 1.5rem;
+}
+#bookVoting > .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#bookVoting > .container> h2{
+    font-size: 2.5rem;
+    font-family: var(--heading-font);
+    color: var(--brown-color);
+}
+#bookVoting > .container> h3{
+    font-size: 1.4rem;
+    font-family: var(--heading-font);
+    color: var(--brown-color);
+}
+#bookVoting > button{
+    background-color: var(--brown-lighter);
+    color: white;
+    margin: auto;
+
+}
+#bookListContainer{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: var(--regular-text);
+    color: var(--brown-color);
+}
+#bookListContainer > div >img{
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .4));
+}
+#bookListContainer > div >.container{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+    font-weight:800;
+    font-size: 19px;
+    gap: 5px;
+    align-items: center;
+    
+}
+#bookListContainer > div >.container > h3{
+    font-weight: 800;
+    line-height: 130%;
+}
+#bookListContainer > div > .container > .btn-container > button{
+    font-size: 14px;
+    background-color: var(--contrast-accent);
+    color: white;
+    padding: 5px;
+    border-radius: 20%;
+    border: none;
+    border: var(--brown-color)solid  2px;
+    cursor: pointer;
+    box-shadow:0 3px 6px rgba(0, 0, 0, .2) ;
+    transition:  transform 0.2s ease-in-out;
+    
+    
+}
+#bookListContainer > div > .container > .btn-container > button:hover{
+    background-color: var( --accent-color);
+    transform: scale(1.05);
+}
+#bookListContainer > div > .container > .btn-container > span{
+    font-size: 20px;
+}
+/*=================================================*/

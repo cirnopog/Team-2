@@ -53,7 +53,7 @@ const model = {
         },
         booksInVoting: [
             {
-                id:"",
+                id:"1",
                 img: "lake-of-darkness.webp",
                 author: "Adam Roberts",
                 title: "Lake of Darkness",
@@ -62,7 +62,7 @@ const model = {
                 
             },
             {
-                id:"",
+                id:"2",
                 img: "dune.webp",
                 author: "Frank Herbert",
                 title: "Dune",
