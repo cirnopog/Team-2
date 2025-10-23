@@ -19,45 +19,43 @@ function generateOtherUserProfile(usr){
 }
 
 function generateYourProfile(){
-    let favorites = `<ul id="favs">`
-    let readBooks = `<ul id="readbooks">`
-    const app = document.getElementById("app")
-    var allAvatars = ""
-    for(i in model.app.currentUser.addedBooks){
-        readBooks+=model.app.currentUser.addedBooks[i]
-    }
-    readBooks+=`</ul>`
-    for(i in model.app.currentUser.favorites){
-        favorites+=model.app.currentUser.favorites[i]
-    }
-    favorites+=`</ul>`
-    for(i in model.data.avatars){
-        allAvatars += `<img src="img/${model.data.avatars[i]}" alt="${model.data.avatars[i]}" height="25%" width="25%" onclick="avatarChosen('${model.data.avatars[i]}')">`
-    }
     app.innerHTML=`
     <h1>${model.app.currentUser.name}</h1>
     <img src="img/${model.app.currentUser.avatar}" alt="${model.app.currentUser.avatar}" height="20%" width="20%" onclick="chooseAvatar()">
     <div id="avatarPopup">
     <h1>Endre avatar</h1>
-    ${allAvatars}
+    ${createAvatarList()}
     </div>
-    ${readBooks}
-    ${favorites}
+    ${allReadBooks()}
+    ${favoriteBooks()}
     `
 }
 
 
-function chooseAvatar(){
-    const avatarPopup = document.getElementById("avatarPopup")
-    avatarPopup.style.visibility="visible"
-    
+function createAvatarList(){
+    var allAvatars = ""
+    for(i in model.data.avatars){
+        allAvatars += `<img src="img/${model.data.avatars[i]}" alt="${model.data.avatars[i]}" height="25%" width="25%" onclick="avatarChosen('${model.data.avatars[i]}')">`
+    }
+    return allAvatars
+
 }
 
-function avatarChosen(newAvatar){
-    const avatarPopup = document.getElementById("avatarPopup")
-    model.app.currentUser.avatar=newAvatar
-    avatarPopup.style.visibility="hidden"
-    generateYourProfile()
-    createHeader()
-    
+function favoriteBooks(){
+    let favorites = `<ul id="favs">`
+    for(i in model.app.currentUser.favorites){
+        favorites+=model.app.currentUser.favorites[i]
+    }
+    favorites+=`</ul>`
+    return favorites
+}
+
+function allReadBooks(){
+    let readBooks = `<ul id="readbooks">`
+    const app = document.getElementById("app")
+    for(i in model.app.currentUser.addedBooks){
+        readBooks+=model.app.currentUser.addedBooks[i]
+    }
+    readBooks+=`</ul>`
+    return readBooks
 }

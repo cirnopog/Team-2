@@ -7,3 +7,18 @@ function findProfile(usrId){
     }
     generateOtherUserProfile(user)
 }
+
+function chooseAvatar(){
+    const avatarPopup = document.getElementById("avatarPopup")
+    avatarPopup.style.visibility="visible"
+    
+}
+
+function avatarChosen(newAvatar){
+    const avatarPopup = document.getElementById("avatarPopup")
+    model.app.currentUser.avatar=newAvatar
+    avatarPopup.style.visibility="hidden"
+    generateYourProfile()
+    createHeader()
+    
+}
