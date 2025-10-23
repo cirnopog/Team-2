@@ -171,8 +171,8 @@ font-size: 16px;
 /* ========= Lists(admin og booklist) ======== */
 /*Husk at siden må bli centered på en eller annen måte uten å centere andre sider*/
 .lists {
-  display: flex;
-  justify-content: center;
+  display: inline-block;
+  margin-left: 3rem;
   border:black solid 0.05rem;
   border-radius: 0.5rem;
   font-size: 1.5rem;
@@ -200,18 +200,19 @@ font-size: 16px;
   right: 30%;
   flex-direction: column;
   margin: 25px auto;
-  background-color: #B36A38;
-  border: black solid 0.05rem;
+  background-color: bisque;
+  border:bisque solid 0.05rem;
   width: 40%;
   font-size: 1.25rem;
   border-radius: 0.5rem;
-  color: bisque;
+  color:#B36A38;
 }
 #completeEditButton{
-  background-color:#D14C3C;
+  background-color:#B36A38;
   font-size: 1.25rem;
   color: white;
-  border:#B36A38 solid 0.5rem;
+  border:bisque solid 0.5rem;
+  border-radius: 0.15rem;
   width: 8rem;
 }
 #newName{

@@ -40,10 +40,8 @@ function userRegistrationPage() {
 function showUserList(){
     let fullList = `<ol class="lists">`
     let longestWord = 0
-    console.log(longestWord)
     for(i in model.data.users){
         let itemName = model.data.users[i].name
-        console.log(itemName)
         fullList+= /*HTML*/`<li>${itemName}<button id="editButton" onclick="showEditPage(${i})">Endre</button> 
         <button id="deleteButton" onclick="deleteUser(${i})">Slett</button></li>`
     }
@@ -52,14 +50,24 @@ function showUserList(){
     document.getElementById('adminStuff').innerHTML += `<div id="popup">
     <h1>Rediger bruker</h1>
     <label for="newName">Navn</label>
-    <input type="text" id="newName" name="newName">
+    <input type="text" id="newName" name="newName" oninput="model.vie>
     <label for="newPassword">Passord</label>
     <input type="password" id="newPassword" name="newPassword">
     <button type="submit" onclick="editUser()" id="completeEditButton">Rediger</button>
+    <p id="registration-error"></p>
     </div>`
 
 }
-
+function showEditPage(usrNr){
+    let popup = document.getElementById("popup")
+    let newName = document.getElementById("newName")
+    let newPassword = document.getElementById("newPassword")
+    let completeEditButton = document.getElementById("completeEditButton")
+    newName.outerHTML=`<input type="text" id="newName" name="newName" oninput="model.data.users[${usrNr}].name = this.value">`
+    newPassword.outerHTML=`<input type="password" id="newPassword" name="newPassword" oninput="model.data.users[${usrNr}].password = this.value">`
+    completeEditButton.outerHTML=`<button type="submit" onclick="editUser(${usrNr})" id="completeEditButton">Rediger</button>`
+    popup.style.visibility="visible"
+}
 
 
 
