@@ -71,6 +71,7 @@ function validateLogin(){
     if(user){
         model.app.currentUser = user;
         localStorage.setItem('currentUser', JSON.stringify(user));
+        generateYourProfile()
         createHeader()
         
     }else{

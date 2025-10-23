@@ -17,8 +17,10 @@ function adminPage() {
     userRegistrationPage();
 }
 
+const adminStuff = document.getElementById('adminStuff');
+
 function userRegistrationPage() {
-    document.getElementById('adminStuff').innerHTML = /*HTML*/`
+    adminStuff.innerHTML = /*HTML*/`
         <form id="userRegistrationForm" onsubmit="registerNewUser(event)">
             <h3>Registrer ny bruker</h3>
             <label for="nameOfUser">Navn:</label>
@@ -47,8 +49,8 @@ function showUserList(){
         <button id="deleteButton" onclick="deleteUser(${i})">Slett</button></li>`
     }
     fullList+= `</ol>`
-    document.getElementById('adminStuff').innerHTML = fullList
-    document.getElementById('adminStuff').innerHTML += `<div id="popup">
+    adminStuff.innerHTML = fullList
+    adminStuff.innerHTML += `<div id="popup">
     <h1>Rediger bruker</h1>
     <label for="newName">Navn</label>
     <input type="text" id="newName" name="newName" oninput="model.vie>
@@ -97,14 +99,18 @@ function newMeeting(){
 
 // VOTE START
 
+function clearConfirmationMessage() {
+    document.getElementById('voteCreatedMessage').textContent = '';
+}
+
 function votePage() {
-    document.getElementById('adminStuff').innerHTML = /*HTML*/`
+    adminStuff.innerHTML = /*HTML*/`
         <form id="votePageForm">
             <h3>Ny avstemning</h3>
             <label for="startDate">Startdato:</label>
-            <input type="date" id="startDate" name="start" oninput="model.viewState.votePage.startDate = this.value" required>
+            <input type="date" id="startDate" class="vote-date-input" name="start" oninput="model.viewState.votePage.startDate = this.value" required>
             <label for="endDate">Sluttdato:</label>
-            <input type="date" id="endDate" name="end" oninput="model.viewState.votePage.endDate = this.value" required>
+            <input type="date" id="endDate" class="vote-date-input" name="end" oninput="model.viewState.votePage.endDate = this.value" required>
             <button type="submit">Opprett</button>
             <p id="voteCreatedMessage"></p>
         </form>
@@ -112,10 +118,16 @@ function votePage() {
 
     document.getElementById('votePageForm').addEventListener('submit', (event) => {
     
-    event.preventDefault(); 
-    
-    startVote();
-});
+        event.preventDefault(); 
+        
+        startVote();
+    });
+
+    const dateInputs = document.querySelectorAll('.vote-date-input');
+
+    dateInputs.forEach( (inputElement) => {
+        inputElement.addEventListener('input', clearConfirmationMessage);
+    });
 }
 
 
