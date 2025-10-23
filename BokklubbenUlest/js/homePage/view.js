@@ -2,10 +2,12 @@ homePage()
 function homePage(){
     document.getElementById("app").innerHTML =`
     ${drawMeetingBanner()}
-
     
-    
+    <div id="bookVoting">
+        <div id="bookListContainer"></div>
+    </div>
     `
+    
 }
 
 
@@ -65,7 +67,7 @@ function vote(bookId, value) {
 
 
 // MEETING BANNER
-// document.getElementById("app").innerHTML=
+//!! må endre 'meeting-attendees' senere !!
 function drawMeetingBanner(){
 html=`
 <div id="meetingBanner">

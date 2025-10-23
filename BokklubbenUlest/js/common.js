@@ -35,7 +35,7 @@ let html = /*HTML*/`
                 <li onclick="model.app.currentPage='adminPage'; adminPage();">Admin</li>
                 <li onclick="
                 model.app.currentUser !== null ?
-                model.app.currentPage='userProfile'
+                generateYourProfile(model.app.currentUser)
                 : toggleLogIn()">
                 Profil</li>
                 <li onclick="model.app.currentPage='adminPage'">Legg til bok</li>
