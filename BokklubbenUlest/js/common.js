@@ -32,13 +32,12 @@ let html = /*HTML*/`
             <i onclick="toggleMenu()" class="fa-solid fa-xmark"></i>
             <ul>
                 
-                <li onclick="model.app.currentPage='adminPage'">Admin</li>
+                <li onclick="model.app.currentPage='adminPage'; adminPage();">Admin</li>
                 <li onclick="
-                model.app.currentUser!== null?
+                model.app.currentUser !== null ?
                 model.app.currentPage='userProfile'
-                : toggleMenu()
-                toggleLogIn()
-                ">Profil</li>
+                : toggleLogIn()">
+                Profil</li>
                 <li onclick="model.app.currentPage='adminPage'">Legg til bok</li>
                 
             </ul>

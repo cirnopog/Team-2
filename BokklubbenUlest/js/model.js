@@ -33,7 +33,7 @@ const model = {
             endDate: "",
         },
         meetingPage: {
-            date:  "",
+            date:  null,
         },
         
         // Er favoritt en input, og skal den inn i viewState?
