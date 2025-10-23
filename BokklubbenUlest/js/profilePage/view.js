@@ -46,8 +46,6 @@ function generateYourProfile(usr){
     `
 }
 
-generateOtherUserProfile(model.data.users[0])
-
 function chooseAvatar(){
     const avatarPopup = document.getElementById("avatarPopup")
     avatarPopup.style.visibility="visible"
