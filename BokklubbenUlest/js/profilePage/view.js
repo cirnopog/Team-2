@@ -32,12 +32,12 @@ function generateYourProfile(usr){
     }
     favorites+=`</ul>`
     for(i in model.data.avatars){
-        allAvatars = `<img src="img/${model.data.avatars[i]}" alt="${model.data.avatars[i]}" height="15%" width="15%">`
+        allAvatars += `<img src="img/${model.data.avatars[i]}" alt="${model.data.avatars[i]}" height="25%" width="25%" onclick="avatarChosen('${model.data.avatars[i]}')">`
     }
     app.innerHTML=`
     <h1>${usr.name}</h1>
     <img src="img/${usr.avatar}" alt="${usr.avatar}" height="20%" width="20%" onclick="chooseAvatar()">
-    <div id="avatarPopup" onclick="avatarChosen()">
+    <div id="avatarPopup">
     <h1>Endre avatar</h1>
     ${allAvatars}
     </div>
@@ -46,13 +46,17 @@ function generateYourProfile(usr){
     `
 }
 
+generateYourProfile(model.data.users[0])
+
 function chooseAvatar(){
     const avatarPopup = document.getElementById("avatarPopup")
     avatarPopup.style.visibility="visible"
     
 }
 
-function avatarChosen(){
+function avatarChosen(newAvatar){
     const avatarPopup = document.getElementById("avatarPopup")
+    model.data.users[0].avatar=newAvatar
     avatarPopup.style.visibility="hidden"
+    generateYourProfile(model.data.users[0])
 }
