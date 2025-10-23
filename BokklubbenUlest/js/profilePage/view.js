@@ -3,8 +3,8 @@ function generateOtherUserProfile(usr){
     app.innerHTML=`
     <h1>${usr.name}</h1>
     <img src="img/${usr.avatar}" alt="${usr.avatar}" 20%" width="20%">
-    ${allReadBooks}
-    ${favoriteBooks}
+    ${allReadBooks()}
+    ${favoriteBooks()}
     `
 }
 
@@ -25,7 +25,7 @@ function generateYourProfile(){
 function createAvatarList(){
     var allAvatars = ""
     for(i in model.data.avatars){
-        allAvatars += `<img src="img/${model.data.avatars[i]}" alt="${model.data.avatars[i]}" height="25%" width="25%" onclick="avatarChosen('${model.data.avatars[i]}')">`
+        allAvatars += `<img src="img/${model.data.avatars[i]}" class="avtImg" alt="${model.data.avatars[i]}" height="25%" width="25%" onclick="avatarChosen('${model.data.avatars[i]}')">`
     }
     return allAvatars
 
