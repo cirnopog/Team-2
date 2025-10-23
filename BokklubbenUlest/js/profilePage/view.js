@@ -1,4 +1,4 @@
-function generateOtherUserProfile(){
+function generateOtherUserProfile(usr){
     let favorites = `<ul id="favs">`
     let readBooks = `<ul id="readbooks">`
     for(i in model.data.users[0].addedBooks){
@@ -18,7 +18,7 @@ function generateOtherUserProfile(){
     `
 }
 
-function generateYourProfile(){
+function generateYourProfile(usr){
     let favorites = `<ul id="favs">`
     let readBooks = `<ul id="readbooks">`
     for(i in model.data.users[0].addedBooks){
