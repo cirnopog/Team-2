@@ -168,7 +168,7 @@ font-size: 16px;
   
 }
 
-/* ========= Lists(admin og booklist) ======== */
+/* ========= brukerrRdigering ======== */
 /*Husk at siden må bli centered på en eller annen måte uten å centere andre sider*/
 .lists {
   display: inline-block;
@@ -221,4 +221,22 @@ font-size: 16px;
 #newPassword{
   width: 90%;
 }
+
+#avatarPopup{
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  left: 30%;
+  right: 30%;
+  flex-direction: column;
+  margin: 25px auto;
+  background-color: bisque;
+  border:bisque solid 0.05rem;
+  width: 40%;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  color:#B36A38;
+}
+
+
 
