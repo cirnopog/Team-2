@@ -103,7 +103,7 @@ function startVote() {
 
     document.getElementById('votePageForm').reset();
 
-    document.getElementById('voteCreatedMessage').innerHTML = 'Ny avstemning er opprettet på forsiden!';
+    document.getElementById('voteCreatedMessage').textContent = 'Ny avstemning er opprettet på forsiden!';
 }
 
 
