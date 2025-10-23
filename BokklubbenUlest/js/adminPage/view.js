@@ -8,7 +8,7 @@ function adminPage() {
         <div id="adminNavigation">
             <button type="button" onclick="userRegistrationPage()">Ny bruker</button>
             <button type="button" onclick="showUserList()">Brukerliste</button>
-            <button type="button" onclick="">Opprett avstemning</button>
+            <button type="button" onclick="votePage()">Opprett avstemning</button>
             <button type="button" onclick="newMeeting()">Avtal møte</button>
         </div>
     `;
@@ -95,7 +95,19 @@ function newMeeting(){
 
 // VOTE START
 
-
+function votePage() {
+    document.getElementById('adminStuff').innerHTML = /*HTML*/`
+        <form id="votePageForm" onsubmit="startVote()">
+            <h3>Ny avstemning</h3>
+            <label for="startDate">Startdato:</label>
+            <input type="date" id="startDate" name="start" oninput="model.viewState.votePage.startDate = this.value" required>
+            <label for="endDate">Sluttdato:</label>
+            <input type="date" id="endDate" name="end" oninput="model.viewState.votePage.endDate = this.value" required>
+            <button type="submit">Opprett</button>
+            <p id="voteCreatedMessage"></p>
+        </form>
+    `;
+}
 
 
 
