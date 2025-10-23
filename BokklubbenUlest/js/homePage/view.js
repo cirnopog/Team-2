@@ -1,3 +1,16 @@
+homePage()
+function homePage(){
+    document.getElementById("app").innerHTML =`
+    ${drawMeetingBanner()}
+
+    
+    
+    `
+}
+
+
+
+
 // Bøker i avstemning
 function renderBooksInVoting() {
     var bookList = document.getElementById("bookListContainer"); 
@@ -52,7 +65,7 @@ function vote(bookId, value) {
 
 
 // MEETING BANNER
-document.getElementById("app").innerHTML=drawMeetingBanner()
+// document.getElementById("app").innerHTML=
 function drawMeetingBanner(){
 html=`
 <div id="meetingBanner">
@@ -69,6 +82,7 @@ html=`
     <p class="meeting-attendees">
         <i class="fa-solid fa-thumbs-up"></i>
         Kommer: 2 
+        &nbsp;
         <i class="fa-solid fa-thumbs-down"></i>
         Kommer ikke: 0
     </p>
