@@ -97,7 +97,7 @@ function newMeeting(){
 
 function votePage() {
     document.getElementById('adminStuff').innerHTML = /*HTML*/`
-        <form id="votePageForm" onsubmit="startVote()">
+        <form id="votePageForm">
             <h3>Ny avstemning</h3>
             <label for="startDate">Startdato:</label>
             <input type="date" id="startDate" name="start" oninput="model.viewState.votePage.startDate = this.value" required>
@@ -107,6 +107,13 @@ function votePage() {
             <p id="voteCreatedMessage"></p>
         </form>
     `;
+
+    document.getElementById('votePageForm').addEventListener('submit', (event) => {
+    
+    event.preventDefault(); 
+    
+    startVote();
+});
 }
 
 

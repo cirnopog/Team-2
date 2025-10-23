@@ -89,6 +89,8 @@ const model = {
             isFavorite: false
 
         },
-        bookList: []
+        bookList: [],
+
+        currentVote: [],
     }
 }
