@@ -17,10 +17,10 @@ function adminPage() {
     userRegistrationPage();
 }
 
-const adminStuff = document.getElementById('adminStuff');
+
 
 function userRegistrationPage() {
-    adminStuff.innerHTML = /*HTML*/`
+    document.getElementById('adminStuff').innerHTML = /*HTML*/`
         <form id="userRegistrationForm" onsubmit="registerNewUser(event)">
             <h3>Registrer ny bruker</h3>
             <label for="nameOfUser">Navn:</label>
@@ -49,6 +49,8 @@ function showUserList(){
         <button id="deleteButton" onclick="deleteUser(${i})">Slett</button></li>`
     }
     fullList+= `</ol>`
+
+    let adminStuff = document.getElementById('adminStuff')
     adminStuff.innerHTML = fullList
     adminStuff.innerHTML += `<div id="popup">
     <h1>Rediger bruker</h1>
@@ -104,7 +106,7 @@ function clearConfirmationMessage() {
 }
 
 function votePage() {
-    adminStuff.innerHTML = /*HTML*/`
+    document.getElementById('adminStuff').innerHTML = /*HTML*/`
         <form id="votePageForm">
             <h3>Ny avstemning</h3>
             <label for="startDate">Startdato:</label>
