@@ -20,8 +20,7 @@ function adminPage() {
 
 
 function userRegistrationPage() {
-    const adminStuff = document.getElementById('adminStuff');
-    adminStuff.innerHTML = /*HTML*/`
+    
     document.getElementById('adminStuff').innerHTML = /*HTML*/`
         <form id="userRegistrationForm" onsubmit="registerNewUser(event)">
             <h3>Registrer ny bruker</h3>
