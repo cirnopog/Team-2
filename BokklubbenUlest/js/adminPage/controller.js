@@ -65,7 +65,6 @@ function editUser(usrNr){
 }
 function deleteUser(usrNr){
     model.data.users.splice(usrNr,1)
-    console.log(model.data.users)
     showUserList()
 }
 
