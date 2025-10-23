@@ -28,7 +28,7 @@
 
 }
 #meetingBanner > .meeting-attendees{
-    margin-top: 0.6rem;
+    margin-top: 0.7rem;
     color: var(--background-color);
     font-family: var(--regular-text);
     font-size: 14px;
@@ -36,7 +36,24 @@
 }
 #meetingBanner > .btn-container{
     display: flex;
-    flex-direction: row;
-
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 1.6rem;
 }
+#meetingBanner > .btn-container > button{
+    background-color: var(--brown-lighter);
+    border-radius:1rem;
+    border: var(--brown-color) 1.5px solid;
+    color: var(--background-color);
+    padding: 8px 18px;
+   
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+  #meetingBanner > .btn-container > button:hover{
+        background-color: var(--contrast-accent);
+        transition: 0.3s;
+    }
 /*=================================================*/

@@ -1,6 +1,6 @@
 // REGISTRATION
 
-adminPage()
+// adminPage()
 
 function adminPage() {
     document.getElementById('app').innerHTML = /*HTML*/`
