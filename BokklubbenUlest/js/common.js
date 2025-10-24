@@ -84,3 +84,19 @@ function checkSavedLogin(){
         model.app.currentUser = JSON.parse(model.app.savedUser)
     }
 }
+
+function voteDaysLeft() {
+
+    currentVote = model.data.currentVote;
+
+    if (currentVote.length === 0) {
+        return 'Ingen aktiv avstemning';
+    }
+    
+    let pollEndDate = new Date(currentVote[0].endDate);
+    let today = new Date();
+    let differenceInMilliseconds = pollEndDate - today;
+    const millisecondsPerDay = 1000 * 60 * 60 * 24;
+    let daysLeft = Math.floor(differenceInMilliseconds / millisecondsPerDay);
+    return `${daysLeft} dager igjen`;
+}
