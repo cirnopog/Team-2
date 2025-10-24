@@ -1,8 +1,8 @@
 function generateOtherUserProfile(usr){
     const app = document.getElementById("app")
     app.innerHTML=`
-    <h1>${usr.name}</h1>
-    <img src="img/${usr.avatar}" alt="${usr.avatar}" 20%" width="20%">
+    <h1 id="profileHeader">${usr.name}</h1>
+    <img src="img/${usr.avatar}" id="profileAvatar" alt="${usr.avatar}" 20%" width="20%">
     ${allReadBooksOtherAccount(usr)}
     ${favoriteBooksOtherAccount(usr)}
     `
@@ -10,9 +10,9 @@ function generateOtherUserProfile(usr){
 
 function generateYourProfile(){
     app.innerHTML=`
-    <h1>${model.app.currentUser.name}</h1>
-    <img src="img/${model.app.currentUser.avatar}" alt="${model.app.currentUser.avatar}" height="20%" width="20%" onclick="chooseAvatar()">
-    <p>Klikk for å endre avatar</p>
+    <h1 id="profileHeader">${model.app.currentUser.name}</h1>
+    <img src="img/${model.app.currentUser.avatar}" id="profileAvatar" alt="${model.app.currentUser.avatar}" height="20%" width="20%" onclick="chooseAvatar()">
+    <p id="undertext">Klikk på bildet for å endre avatar</p>
     <div id="avatarPopup">
     <h1>Endre avatar</h1>
     ${createAvatarList()}
@@ -35,6 +35,7 @@ function createAvatarList(){
 
 function favoriteBooks(){
     let favorites = `
+    <div id="favoriteDiv">
     <h2>Favoritter</h2>
     <table id="favs">
     <thead>
@@ -49,12 +50,14 @@ function favoriteBooks(){
         </tr>
         </tbody>`
     }
-    favorites+=`</table>`
+    favorites+=`</table>
+    </div>`
     return favorites
 }
 
 function allReadBooks(){
     let readBooks = `
+    <div id="allReadDiv">
     <h2>Leste Bøker</h2>
     <table id="readbooks">
     <thead>
@@ -69,13 +72,15 @@ function allReadBooks(){
         </tr>
         </tbody>`
     }
-    readBooks+=`</table>`
+    readBooks+=`</table>
+    </div>`
     return readBooks
 }
 
 
 function favoriteBooksOtherAccount(usr){
     let favorites = `
+    <div id="favoriteDiv">
     <h2>Favoritter</h2>
     <table id="favs">
     <thead>
@@ -90,12 +95,14 @@ function favoriteBooksOtherAccount(usr){
         </tr>
         </tbody>`
     }
-    favorites+=`</table>`
+    favorites+=`</table>
+    </div>`
     return favorites
 }
 
 function allReadBooksOtherAccount(usr){
     let readBooks = `
+    <div id="allReadDiv">
     <h2>Leste Bøker</h2>
     <table id="readbooks">
     <thead>
@@ -110,6 +117,7 @@ function allReadBooksOtherAccount(usr){
         </tr>
         </tbody>`
     }
-    readBooks+=`</table>`
+    readBooks+=`</table>
+    </div>`
     return readBooks
 }

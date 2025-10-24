@@ -1,0 +1,47 @@
+#readbooks{
+  border: black 0.05rem solid
+}
+
+#favs{
+  border: black 0.05rem solid;
+}
+
+.tablePart{
+  border: black 0.05rem solid;
+}
+#undertext{
+    color: brown;
+    font-size: 0.75rem;
+    text-align: center;
+}
+#profileHeader{
+    font-size: 2.75rem;
+    text-align: center;
+}
+#allReadDiv{
+    float: left;
+    border: black solid 0.05rem;
+    width: 50%;
+}
+
+#favoriteDiv{
+    float: left;
+    border: black solid 0.05rem;
+    width: 50%;
+}
+#profileAvatar{
+    display: flex;
+    flex-direction: column;
+    margin: 25px auto;
+}
+#logoutButton{
+    display: flex;
+    flex-direction: column;
+    margin: 25px auto;
+    width: 10rem;
+    height: 3rem;
+    color: brown;
+    font-size: 2rem;
+    background-color: blanchedalmond;
+    border: 0px;
+}
