@@ -38,7 +38,7 @@ let html = /*HTML*/`
                 generateYourProfile(model.app.currentUser)
                 : toggleLogIn()">
                 Profil</li>
-                <li onclick="model.app.currentPage='adminPage'">Legg til bok</li>
+                <li onclick="model.app.currentPage='adminPage'; newBookPage()">Legg til bok</li>
                 
             </ul>
         </div>
@@ -77,6 +77,11 @@ function validateLogin(){
     }else{
        document.getElementById("loginErrorMessage").classList.remove("hidden");
         
+    }
+}
+function updateCurrentUser(){
+    if(model.app.currentUser) {
+        localStorage.setItem('currentUser', JSON.stringify(model.app.currentUser));
     }
 }
 function checkSavedLogin(){

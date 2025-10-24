@@ -1,0 +1,70 @@
+.new-book > h2{
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    padding: 1rem;
+    color: var(--brown-color);
+
+}
+.new-book > .container{
+    background-color: burlywood;
+    width: 70%;
+    margin: 4rem auto;
+    border-radius: 2rem;
+    padding: 4rem 6rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: 20px
+}
+.new-book > .container > div{
+    display: flex;
+    flex-direction: column;
+}
+.new-book label{
+    font-weight: 600;
+    font-family: var(--regular-text);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.description-field{
+    grid-column: 3;
+    grid-row: 1 / 4;
+}
+.description-field textarea{
+    flex: 1;
+}
+.checkbox-field{
+    /* grid-column: 1 /3; */
+    flex-direction: row !important;
+    /* align-items: center; */
+
+    gap: 10px;
+}
+.checkbox-field input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--contrast-accent);
+}
+
+.new-book input[type="text"],
+.new-book textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 17px;
+}
+.new-book button {
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    border: solid 1.5px var(--brown-color);
+    cursor: pointer;
+    transition: ease-in .2s;
+}
+.new-book button:hover{
+    background-color: var(--contrast-accent);
+}
+

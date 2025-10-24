@@ -1,6 +1,8 @@
-homePage()
+
+// homePage()
 function homePage(){
     document.getElementById("app").innerHTML =`
+
     ${drawMeetingBanner()}
     
     <div id="bookVoting">
@@ -45,7 +47,7 @@ function renderBooksInVoting() {
    
     for (var i = 0; i < books.length; i++) {
         var book = books[i];
-        console.log(book)
+        
         
         if (book.votes === "") book.votes = 0;
         book.votes = Number(book.votes);
