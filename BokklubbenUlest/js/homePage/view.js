@@ -20,6 +20,7 @@ function homePage(){
     updateVoteStatus();
 }
 
+// Viser hvor mange dager det er igjen av avstemning
 function updateVoteStatus() {
     const daysResult = voteDaysLeft();
 
