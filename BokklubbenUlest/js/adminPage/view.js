@@ -88,10 +88,12 @@ function showEditPage(usrNr){
 
 
 function newMeeting(){
-    let html = /*HTML*/`
+    document.getElementById('adminStuff').innerHTML = /*HTML*/`
+    <form id="votePageForm">
     <h4>Dato for nytt møte</h4>
-    <input onchange="model.viewstate.meetingPage.date = this.value">
-    <button onclick="setNewMeetingDate()">Start</button>
+    <input type="date" value="2025-11-03" onchange="model.viewstate.meetingPage.date = this.value">
+    <button onclick="setNewMeetingDate()">Opprett</button>
+    </form>
     `
     return html;
 }
