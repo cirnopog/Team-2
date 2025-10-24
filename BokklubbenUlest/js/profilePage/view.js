@@ -12,6 +12,7 @@ function generateYourProfile(){
     app.innerHTML=`
     <h1>${model.app.currentUser.name}</h1>
     <img src="img/${model.app.currentUser.avatar}" alt="${model.app.currentUser.avatar}" height="20%" width="20%" onclick="chooseAvatar()">
+    <p>Klikk for å endre avatar</p>
     <div id="avatarPopup">
     <h1>Endre avatar</h1>
     ${createAvatarList()}
