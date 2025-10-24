@@ -17,6 +17,8 @@ function homePage(){
 
    if(model.app.votingActive){
         renderBooksInVoting()
+     }else{
+        drawWinnerBook()
      }
 
     updateVoteStatus();
@@ -39,10 +41,10 @@ function renderBooksInVoting() {
     bookList.innerHTML = ""; 
 
     var books = model.data.booksInVoting;
-    console.log(books)
+   
     for (var i = 0; i < books.length; i++) {
         var book = books[i];
-
+        console.log(book)
         
         if (book.votes === "") book.votes = 0;
         book.votes = Number(book.votes);
@@ -71,7 +73,9 @@ function renderBooksInVoting() {
 
 function drawWinnerBook(){
     document.getElementById("bookListContainer").innerHTML=`
-    
+    <div>
+    <img src="img/${model.data.drawWinnerBook.img}"
+    </div>
     
     
     `;

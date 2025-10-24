@@ -3,7 +3,7 @@ const model = {
         currentPage: "homePage",
         currentUser: null,
         savedUser: localStorage.getItem('currentUser'),
-        votingActive: false,
+        votingActive: true,
     },
     viewState: {
         homePage: {
@@ -81,6 +81,7 @@ const model = {
         //     description: "",
         //     link: "",
         // },
+        
         // evt egen for user info?
         users: [
             {
