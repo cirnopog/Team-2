@@ -104,8 +104,22 @@ function startVote() {
     document.getElementById('votePageForm').reset();
 
     document.getElementById('voteCreatedMessage').textContent = 'Ny avstemning er opprettet på forsiden!';
+
+    voteDaysLeft();
 }
 
+function voteDaysLeft() {
 
+    currentVote = model.data.currentVote;
 
-
+    if (currentVote.length === 0) {
+        return 'X dager igjen';
+    }
+    
+    let pollEndDate = new Date(currentVote[0].endDate);
+    let today = new Date();
+    let differenceInMilliseconds = pollEndDate - today;
+    const millisecondsPerDay = 1000 * 60 * 60 * 24;
+    let daysLeft = Math.floor(differenceInMilliseconds / millisecondsPerDay);
+    return daysLeft;
+}
