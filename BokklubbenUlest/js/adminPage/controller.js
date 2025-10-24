@@ -1,5 +1,6 @@
 // REGISTRATION
 
+// Håndterer feilmelding for passord-input i brukerregistrering
 document.addEventListener('DOMContentLoaded', (event) => {
     const form = document.getElementById('userRegistrationForm');
     const errorElement = document.getElementById('password-error');
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
+// Når du trykker på registrer-knappen for ny bruker
 function registerNewUser(event) {
     event.preventDefault();
 
@@ -47,7 +49,7 @@ function registerNewUser(event) {
 
 
 // USER LIST
-//bare for å tenke hvordan en kan gjøre endringer i brukere
+// Bare for å tenke hvordan en kan gjøre endringer i brukere
 function removeEditPage(){
     const popup = document.getElementById("popup")
     popup.style.visibility="hidden"
@@ -91,7 +93,7 @@ function setNewMeetingDate(){
 
 
 // VOTE START
-
+// Når du trykker på opprett-knapp i avstemning
 function startVote() {
 
     let newVote = {

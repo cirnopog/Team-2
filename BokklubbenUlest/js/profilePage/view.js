@@ -1,24 +1,32 @@
 function generateOtherUserProfile(usr){
     const app = document.getElementById("app")
     app.innerHTML=`
+    <div id="profileLeftSide">
+    <img src="img/${usr.avatar}" id="profileAvatar" alt="${usr.avatar}" 50%" width="50%">
+    </div>
     <h1 id="profileHeader">${usr.name}</h1>
-    <img src="img/${usr.avatar}" id="profileAvatar" alt="${usr.avatar}" 20%" width="20%">
+    <div id="profileRightSide">
     ${allReadBooksOtherAccount(usr)}
     ${favoriteBooksOtherAccount(usr)}
+    </div>
     `
 }
 
 function generateYourProfile(){
     app.innerHTML=`
-    <h1 id="profileHeader">${model.app.currentUser.name}</h1>
-    <img src="img/${model.app.currentUser.avatar}" id="profileAvatar" alt="${model.app.currentUser.avatar}" height="20%" width="20%" onclick="chooseAvatar()">
+    <div id="profileLeftSide">
+    <img src="img/${model.app.currentUser.avatar}" id="profileAvatar" alt="${model.app.currentUser.avatar}" height="50%" width="50%" onclick="chooseAvatar()">
     <p id="undertext">Klikk på bildet for å endre avatar</p>
+    </div>
     <div id="avatarPopup">
     <h1>Endre avatar</h1>
     ${createAvatarList()}
     </div>
+    <div id="profileRightSide">
+    <h1 id="profileHeader">${model.app.currentUser.name}</h1>
     ${allReadBooks()}
     ${favoriteBooks()}
+    </div>
     <button onclick="logout()" id="logoutButton">Logg ut</button>
     `
 }
@@ -35,7 +43,6 @@ function createAvatarList(){
 
 function favoriteBooks(){
     let favorites = `
-    <div id="favoriteDiv">
     <h2>Favoritter</h2>
     <table id="favs">
     <thead>
@@ -50,14 +57,12 @@ function favoriteBooks(){
         </tr>
         </tbody>`
     }
-    favorites+=`</table>
-    </div>`
+    favorites+=`</table>`
     return favorites
 }
 
 function allReadBooks(){
     let readBooks = `
-    <div id="allReadDiv">
     <h2>Leste Bøker</h2>
     <table id="readbooks">
     <thead>
@@ -72,8 +77,7 @@ function allReadBooks(){
         </tr>
         </tbody>`
     }
-    readBooks+=`</table>
-    </div>`
+    readBooks+=`</table>`
     return readBooks
 }
 

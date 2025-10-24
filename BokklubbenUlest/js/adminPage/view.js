@@ -2,6 +2,7 @@
 
 // adminPage()
 
+// Viser admin-pagen med navigasjon
 function adminPage() {
     document.getElementById('app').innerHTML = /*HTML*/`
         <h1 class="adminHeading">Administrasjon</h1>
@@ -18,7 +19,7 @@ function adminPage() {
 }
 
 
-
+// Viser page for registrering av ny bruker
 function userRegistrationPage() {
     
     document.getElementById('adminStuff').innerHTML = /*HTML*/`
@@ -104,10 +105,12 @@ function newMeeting(){
 
 // VOTE START
 
+// Fjerner bekreftelse ved ny input i avstemningsskjema
 function clearConfirmationMessage() {
     document.getElementById('voteCreatedMessage').textContent = '';
 }
 
+// Viser page for å opprette avstemning
 function votePage() {
     document.getElementById('adminStuff').innerHTML = /*HTML*/`
         <form id="votePageForm">

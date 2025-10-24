@@ -24,12 +24,12 @@
     width: 50%;
 }
 
-#favoriteDiv{
+#profileLeftSide{
     float: left;
-    border: black solid 0.05rem;
+    text-align: center;
     width: 50%;
 }
-#profileAvatar{
+#profileRightSide{
     display: flex;
     flex-direction: column;
     margin: 25px auto;
