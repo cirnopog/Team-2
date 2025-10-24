@@ -3,8 +3,8 @@ function generateOtherUserProfile(usr){
     app.innerHTML=`
     <h1>${usr.name}</h1>
     <img src="img/${usr.avatar}" alt="${usr.avatar}" 20%" width="20%">
-    ${allReadBooks()}
-    ${favoriteBooks()}
+    ${allReadBooksOtherAccount(usr)}
+    ${favoriteBooksOtherAccount(usr)}
     `
 }
 
@@ -52,7 +52,6 @@ function favoriteBooks(){
 }
 
 function allReadBooks(){
-    console.log(model.app.currentUser.addedBooks)
     let readBooks = `
     <h2>Leste Bøker</h2>
     <table id="readbooks">
@@ -65,6 +64,47 @@ function allReadBooks(){
         readBooks+=`<tbody class="tablePart">
         <tr>
         <th>${model.app.currentUser.addedBooks[i]}</th>
+        </tr>
+        </tbody>`
+    }
+    readBooks+=`</table>`
+    return readBooks
+}
+
+
+function favoriteBooksOtherAccount(usr){
+    let favorites = `
+    <h2>Favoritter</h2>
+    <table id="favs">
+    <thead>
+    <tr>
+    <th>Bok navn</th>
+    </tr>
+    </thead>`
+    for(i in usr.favorites){
+        favorites+=`<tbody id="tablePart">
+        <tr>
+        <th>${usr.favorites[i]}</th>
+        </tr>
+        </tbody>`
+    }
+    favorites+=`</table>`
+    return favorites
+}
+
+function allReadBooksOtherAccount(usr){
+    let readBooks = `
+    <h2>Leste Bøker</h2>
+    <table id="readbooks">
+    <thead>
+    <tr>
+    <th>Bok navn</th>
+    </tr>
+    </thead>`
+    for(i in usr.addedBooks){
+        readBooks+=`<tbody class="tablePart">
+        <tr>
+        <th>${usr.addedBooks[i]}</th>
         </tr>
         </tbody>`
     }
