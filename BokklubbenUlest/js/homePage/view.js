@@ -10,12 +10,14 @@ function homePage(){
         </div>
 
         <div id="bookListContainer">
-        
         </div>
       
     </div>
     `
-    renderBooksInVoting();
+
+   if(model.app.votingActive){
+        renderBooksInVoting()
+     }
 
     updateVoteStatus();
 }
@@ -23,7 +25,6 @@ function homePage(){
 // Viser hvor mange dager det er igjen av avstemning
 function updateVoteStatus() {
     const daysResult = voteDaysLeft();
-
     const statusElement = document.getElementById('voteStatus');
 
     if (statusElement) {
@@ -69,18 +70,14 @@ function renderBooksInVoting() {
     }
 }
 
-
-// stemme funksjon
-function vote(bookId, value) {
-    var books = model.data.booksInVoting;
-    for (var i = 0; i < books.length; i++) {
-        if (books[i].id === bookId) {
-            books[i].votes = Number(books[i].votes) + value;
-            document.getElementById("votes" + bookId).textContent = books[i].votes;
-            break;
-        }
-    }
+function drawWinnerBook(){
+    document.getElementById("bookListContainer").innerHTML=`
+    
+    
+    
+    `;
 }
+
 
 
 

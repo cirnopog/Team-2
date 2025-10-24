@@ -2,7 +2,8 @@ const model = {
     app: {
         currentPage: "homePage",
         currentUser: null,
-        savedUser: localStorage.getItem('currentUser')
+        savedUser: localStorage.getItem('currentUser'),
+        votingActive: false,
     },
     viewState: {
         homePage: {
@@ -72,13 +73,14 @@ const model = {
             },
 
         ],
-        winnerBook: {
-            img: "",
-            title: "",
-            author: "",
-            description: "",
-            link: "",
-        },
+        winnerBook: null,
+        //  {
+        //     img: "",
+        //     title: "",
+        //     author: "",
+        //     description: "",
+        //     link: "",
+        // },
         // evt egen for user info?
         users: [
             {
