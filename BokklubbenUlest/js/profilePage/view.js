@@ -41,7 +41,7 @@ function favoriteBooks(){
     </tr>
     </thead>`
     for(i in model.app.currentUser.favorites){
-        favorites+=`<tbody>
+        favorites+=`<tbody id="tablePart">
         <tr>
         <th>${model.app.currentUser.favorites[i]}</th>
         </tr>
@@ -62,7 +62,7 @@ function allReadBooks(){
     </tr>
     </thead>`
     for(i in model.app.currentUser.addedBooks){
-        readBooks+=`<tbody>
+        readBooks+=`<tbody class="tablePart">
         <tr>
         <th>${model.app.currentUser.addedBooks[i]}</th>
         </tr>
