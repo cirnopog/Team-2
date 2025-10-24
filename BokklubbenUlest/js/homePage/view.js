@@ -5,11 +5,8 @@ function homePage(){
     
     <div id="bookVoting">
         <div class="container">
-            <h2>Bok avstemning</h1>
-            <h3>
-            <i class="fa-solid fa-hourglass-half"></i>
-            ... dager igjen
-            </h3>
+            <h2>Bok avstemning</h2>
+            <h3 id="voteStatus"></h3>
         </div>
 
         <div id="bookListContainer">
@@ -18,12 +15,20 @@ function homePage(){
       
     </div>
     `
-    renderBooksInVoting()
+    renderBooksInVoting();
 
-    
+    updateVoteStatus();
 }
 
+function updateVoteStatus() {
+    const daysResult = voteDaysLeft();
 
+    const statusElement = document.getElementById('voteStatus');
+
+    if (statusElement) {
+        statusElement.textContent = daysResult;
+    }
+}
 
 
 // Bøker i avstemning
