@@ -70,6 +70,9 @@ function renderBooksInVoting() {
         `;
         bookList.appendChild(div);
     }
+    bookList.innerHTML += `
+        <button onclick="" class="add-book-btn">+</button>
+    `;
 }
 
 function drawWinnerBook(){

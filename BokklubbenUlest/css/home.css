@@ -89,6 +89,7 @@
     padding: 1rem;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     font-family: var(--regular-text);
     color: var(--brown-color);
 }
@@ -111,24 +112,39 @@
     line-height: 130%;
 }
 #bookListContainer > div > .container > .btn-container > button{
-    font-size: 14px;
+    font-size: 16px;
     background-color: var(--contrast-accent);
     color: white;
     padding: 5px;
     border-radius: 20%;
     border: none;
-    border: var(--brown-color)solid  2px;
     cursor: pointer;
     box-shadow:0 3px 6px rgba(0, 0, 0, .2) ;
     transition:  transform 0.2s ease-in-out;
     
     
 }
-#bookListContainer > div > .container > .btn-container > button:hover{
+#bookListContainer > div > .container > .btn-container > button:hover,
+.add-book-btn:hover
+{
     background-color: var( --accent-color);
     transform: scale(1.05);
 }
 #bookListContainer > div > .container > .btn-container > span{
     font-size: 20px;
 }
+
+.add-book-btn{
+    background-color: var(--contrast-accent);
+    height: fit-content;
+    padding: 0 12px;
+    border-radius: 50%;
+    font-size: 3rem;
+    color: var(--background-color);
+    border: none;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .2));
+    cursor: pointer;
+    transition:  transform 0.2s ease-in-out;
+}
+
 /*=================================================*/
