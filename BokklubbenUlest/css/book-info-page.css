@@ -1,0 +1,30 @@
+.bookInfoHeading {
+    margin: 25px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.bookInfoContainer {
+    display: flex;
+    margin: auto;
+    padding: 25px;
+    width: 500px;
+    height: 500px;
+    border: 1px solid grey;
+    border-radius: 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.leftColumn {
+    width: 50%;
+    height: 100%;
+}
+
+.rightColumn {
+    width: 50%;
+    height: 100%;
+}
