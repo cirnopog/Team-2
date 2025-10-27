@@ -77,6 +77,8 @@ function renderBooksInVoting() {
     `;
 }
 
+
+
 function drawWinnerBook(){
     document.getElementById("bookListContainer").innerHTML=`
     <div>
