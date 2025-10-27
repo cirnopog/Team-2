@@ -9,6 +9,9 @@ function addBook(){
     }
     model.data.bookList.push(newBook);
     model.app.currentUser.addedBooks.push(newBook);
+    if(model.viewState.newBook.addToVoting){
+        model.data.booksInVoting.push(newBook);
+    }
     updateCurrentUser();
     saveData();
 }
