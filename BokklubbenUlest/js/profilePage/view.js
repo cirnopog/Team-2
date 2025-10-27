@@ -29,6 +29,7 @@ function generateYourProfile(){
     </div>
     <button onclick="logOut()" id="logoutButton">Logg ut</button>
     `
+    console.log(model.app.currentUser)
 }
 
 
