@@ -1,4 +1,4 @@
-
+loadData()
 // homePage()
 function homePage(){
     document.getElementById("app").innerHTML =`
