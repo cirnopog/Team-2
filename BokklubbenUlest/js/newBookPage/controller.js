@@ -8,7 +8,9 @@ function addBook(){
         votes: 0,
     }
     model.data.bookList.push(newBook);
-    
+    model.app.currentUser.addedBooks.push(newBook);
+    updateCurrentUser();
+    saveData();
 }
 function handleImageUpload(e){
     const file = e.target.files[0];

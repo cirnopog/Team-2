@@ -71,6 +71,7 @@ function validateLogin(){
     if(user){
         model.app.currentUser = user;
         localStorage.setItem('currentUser', JSON.stringify(user));
+        updateCurrentUser()
         generateYourProfile()
         createHeader()
         
@@ -78,10 +79,16 @@ function validateLogin(){
        document.getElementById("loginErrorMessage").classList.remove("hidden");
         
     }
+    
 }
 function updateCurrentUser(){
     if(model.app.currentUser) {
         localStorage.setItem('currentUser', JSON.stringify(model.app.currentUser));
+
+        const userIndex = model.data.users.findIndex(u => u.name === model.app.currentUser.name);
+        if(userIndex !== -1) {
+            model.data.users[userIndex] = model.app.currentUser;
+        }
     }
 }
 function checkSavedLogin(){
@@ -107,4 +114,18 @@ function voteDaysLeft() {
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
     let daysLeft = Math.floor(differenceInMilliseconds / millisecondsPerDay);
     return `${daysLeft} dager igjen`;
+}
+
+
+// lagrer endringer i modellen som huskes på page load
+// husk å kall saveData alle steder hvor modellen endres! 
+function saveData(){
+    localStorage.setItem('appData', JSON.stringify(model.data));
+
+}
+function loadData(){
+    const savedData = localStorage.getItem('appData');
+    if(savedData){
+        model.data = JSON.parse(savedData);
+    }
 }
