@@ -111,16 +111,16 @@ const model = {
         },
         bookList: [
             {
-                id:"",
-                img: "dune.webp",
-                author: "Frank Herbert",
-                title: "Dune",
-                purchaseLink: "https://www.norli.no/boker/boker-pa-andre-sprak/engelske-boker/dune",
+                id:"1",
+                img: "lake-of-darkness.webp",
+                author: "Adam Roberts",
+                title: "Lake of Darkness",
+                purchaseLink: "https://www.norli.no/boker/skjonnlitteratur/fantasy-og-scifi/lake-of-darkness",
                 votes: 0,
                 
             },
             {
-                id:"",
+                id:"2",
                 img: "dune.webp",
                 author: "Frank Herbert",
                 title: "Dune",

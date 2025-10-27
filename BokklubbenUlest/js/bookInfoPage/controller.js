@@ -1,11 +1,9 @@
 
 // Når du klikker på en bok
-function selectBook(bookId) {
-    console.log("Klikket bok-ID:", bookId);
+function selectBook(index) {
 
-    const selectedBook = model.data.booksInVoting.find(book => Number(book.id) === Number(bookId));
-
-    console.log("Funnet bok-objekt:", selectedBook);
+    const bookIndex = Number(index);
+    const selectedBook = model.data.bookList[bookIndex];
 
     model.data.bookInfo = selectedBook;
 
@@ -13,7 +11,6 @@ function selectBook(bookId) {
         model.data.bookInfo = selectedBook;
         bookInfoPage();
     } else {
-        console.error("Bok-ID ikke funnet:", bookId);
+        console.error("Bok-indeks ikke funnet:", bookIndex);
     }
-
 }
