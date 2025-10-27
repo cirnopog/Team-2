@@ -1,4 +1,5 @@
 function addBook(){
+    console.log("TEST")
     const newBook = {
         title: model.viewState.bookRegistrationPage.title,
         author: model.viewState.bookRegistrationPage.author,
