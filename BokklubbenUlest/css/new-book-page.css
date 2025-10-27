@@ -1,14 +1,14 @@
 .new-book > h2 {
   font-family: var(--heading-font);
   font-size: 3rem;
-  padding: 1rem;
+  padding:4rem 0 0 15rem;
   color: var(--brown-color);
 }
 .new-book > .container {
   background-color: burlywood;
   border: 5px double var(--brown-lighter);
   width: 70%;
-  margin: 4rem auto;
+  margin: 3rem auto;
   border-radius: 2rem;
   padding: 5rem 6rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
