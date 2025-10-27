@@ -88,8 +88,8 @@ const model = {
                 name: "Geir",
                 password: "Book_Worm88",
                 avatar: "moose.png",
-                addedBooks: [""],
-                favorites: [""],
+                addedBooks: [],
+                favorites: [],
                 isAdmin: true
             }
 

@@ -51,11 +51,13 @@ function favoriteBooks(){
     </tr>
     </thead>`
     for(i in model.app.currentUser.favorites){
+        if(model.app.currentUser.favorites[i].title!==undefined){
         favorites+=`<tbody id="tablePart">
         <tr>
-        <th>${model.app.currentUser.favorites[i]}</th>
+        <th>${model.app.currentUser.favorites[i].title}</th>
         </tr>
         </tbody>`
+        }
     }
     favorites+=`</table>`
     return favorites
@@ -71,11 +73,13 @@ function allReadBooks(){
     </tr>
     </thead>`
     for(i in model.app.currentUser.addedBooks){
+        if(model.app.currentUser.addedBooks[i].title!==undefined){
         readBooks+=`<tbody class="tablePart">
         <tr>
-        <th>${model.app.currentUser.addedBooks[i]}</th>
+        <th>${model.app.currentUser.addedBooks[i].title}</th>
         </tr>
-        </tbody>`
+        </tbody>`     
+        }
     }
     readBooks+=`</table>`
     return readBooks
@@ -93,11 +97,13 @@ function favoriteBooksOtherAccount(usr){
     </tr>
     </thead>`
     for(i in usr.favorites){
+        if(model.app.currentUser.favorites[i].title!==undefined){
         favorites+=`<tbody id="tablePart">
         <tr>
-        <th>${usr.favorites[i]}</th>
+        <th>${usr.favorites[i].title}</th>
         </tr>
         </tbody>`
+        }
     }
     favorites+=`</table>
     </div>`
@@ -115,11 +121,13 @@ function allReadBooksOtherAccount(usr){
     </tr>
     </thead>`
     for(i in usr.addedBooks){
+        if(model.app.currentUser.addedBooks[i].title!==undefined){
         readBooks+=`<tbody class="tablePart">
         <tr>
-        <th>${usr.addedBooks[i]}</th>
+        <th>${usr.addedBooks[i].title}</th>
         </tr>
         </tbody>`
+        }
     }
     readBooks+=`</table>
     </div>`
