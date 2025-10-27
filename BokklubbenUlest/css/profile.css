@@ -44,5 +44,15 @@
     color: brown;
     font-size: 2rem;
     background-color: blanchedalmond;
-    border: 0px;
+    border: 1px brown solid;
+    border-radius: 0.5rem;
+}
+
+.removeButton{
+  width: 15rem;
+  height: 4rem; 
+  border: 1px brown solid;
+  border-radius: 0.5rem;
+  background-color: blanchedalmond;
+  color: brown;
 }

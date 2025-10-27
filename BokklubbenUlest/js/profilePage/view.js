@@ -29,7 +29,7 @@ function generateYourProfile(){
     </div>
     <button onclick="logOut()" id="logoutButton">Logg ut</button>
     `
-    console.log(model.app.currentUser)
+        console.log(model.app.currentUser)
 }
 
 
@@ -56,6 +56,7 @@ function favoriteBooks(){
         favorites+=`<tbody>
         <tr>
         <th class="tablePart">${model.app.currentUser.favorites[i].title}</th>
+        <th class="tablePart"><button class="removeButton" onclick="">Klikk for å fjerne</button></th>
         </tr>
         </tbody>`
         }
@@ -78,6 +79,7 @@ function allReadBooks(){
         readBooks+=`<tbody>
         <tr>
         <th class="tablePart">${model.app.currentUser.addedBooks[i].title}</th>
+        <th class="tablePart"><button class="removeButton" onclick="">Klikk for å fjerne</button></th>
         </tr>
         </tbody>`     
         }
@@ -102,6 +104,7 @@ function favoriteBooksOtherAccount(usr){
         favorites+=`<tbody>
         <tr>
         <th class="tablePart">${usr.favorites[i].title}</th>
+        <th class="tablePart"><button class="removeButton" onclick="">Klikk for å fjerne</button></th>
         </tr>
         </tbody>`
         }
@@ -126,6 +129,7 @@ function allReadBooksOtherAccount(usr){
         readBooks+=`<tbody>
         <tr>
         <th class="tablePart">${usr.addedBooks[i].title}</th>
+        <th class="tablePart"><button class="removeButton" onclick="">Klikk for å fjerne</button></th>
         </tr>
         </tbody>`
         }

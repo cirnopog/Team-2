@@ -3,11 +3,6 @@
     text-align: center;
 }
 
-p {
-    font-size: 1.2rem;
-    font-weight: normal;
-}
-
 .bookInfoContainer {
     display: flex;
     margin: auto;
@@ -20,6 +15,9 @@ p {
 }
 
 .leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     width: 50%;
     height: 100%;
 }
@@ -27,4 +25,17 @@ p {
 .rightColumn {
     width: 50%;
     height: 100%;
+}
+
+.bookInfoContainer p {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.bookInfoContainer a {
+    font-size: 1.3rem;
+}
+
+#giRating-button {
+    padding: 5px;
 }
