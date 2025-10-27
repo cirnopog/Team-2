@@ -1,16 +1,17 @@
 function addBook(){
     console.log("TEST")
     const newBook = {
+        id: model.data.bookList.length,
         title: model.viewState.bookRegistrationPage.title,
         author: model.viewState.bookRegistrationPage.author,
         description: model.viewState.bookRegistrationPage.description,
         purchaseLink: model.viewState.bookRegistrationPage.purchaseLink,
-        coverImg: model.viewState.bookRegistrationPage.coverImg,
+        img: model.viewState.bookRegistrationPage.coverImg,
         votes: 0,
     }
     model.data.bookList.push(newBook);
     model.app.currentUser.addedBooks.push(newBook);
-    if(model.viewState.newBook.addToVoting){
+    if(model.viewState.bookRegistrationPage.addToVoting){
         model.data.booksInVoting.push(newBook);
     }
     updateCurrentUser();

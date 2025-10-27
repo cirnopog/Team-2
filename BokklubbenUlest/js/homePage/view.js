@@ -56,7 +56,7 @@ function renderBooksInVoting() {
         div.id = "book" + book.id;
         div.innerHTML = `
         ${book.img ?
-        `<img src="img/${book.img}" alt="${book.title}" onclick="selectBook('${book.id}')" style="width:220px; ">`: ""}
+        `<img src="img/${book.img}" alt="${book.title}" onclick="selectBook(${i})" style="width:220px; ">`: ""}
         <div class="container">
             <h3>${book.title}</h3>
             <div class="btn-container">
@@ -76,6 +76,8 @@ function renderBooksInVoting() {
         <button onclick="" class="add-book-btn">+</button>
     `;
 }
+
+
 
 function drawWinnerBook(){
     document.getElementById("bookListContainer").innerHTML=`
