@@ -18,6 +18,7 @@ function avatarChosen(newAvatar){
     const avatarPopup = document.getElementById("avatarPopup")
     model.app.currentUser.avatar=newAvatar
     avatarPopup.style.visibility="hidden"
+    updateCurrentUser()
     generateYourProfile()
     createHeader()
     
