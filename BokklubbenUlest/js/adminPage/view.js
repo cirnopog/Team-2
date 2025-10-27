@@ -57,7 +57,7 @@ function showUserList(){
     adminStuff.innerHTML += `<div id="popup">
     <h1>Rediger bruker</h1>
     <label for="newName">Navn</label>
-    <input type="text" id="newName" name="newName" oninput="model.vie>
+    <input type="text" id="newName" name="newName">
     <label for="newPassword">Passord</label>
     <input type="password" id="newPassword" name="newPassword">
     <button type="submit" onclick="editUser()" id="completeEditButton">Rediger</button>
