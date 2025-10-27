@@ -54,8 +54,7 @@ function newBookPage(){
             <label>Legg til i avstemning</label>
             <input 
                 type="checkbox" 
-                value="true" 
-                onchange="model.viewState.newBook.addToVoting = this.checked"
+                onchange="model.viewState.bookRegistrationPage.addToVoting = this.checked"
             >
             </div>
 
