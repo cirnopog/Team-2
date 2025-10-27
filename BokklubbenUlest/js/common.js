@@ -92,6 +92,7 @@ function checkSavedLogin(){
 
 // Finner ut hvor mange dager det er igjen av avstemning
 // Brukes av updateVoteStatus() i /homePage/view.js
+// og starteVote() i /adminPage/controller.js
 function voteDaysLeft() {
 
     currentVote = model.data.currentVote;
