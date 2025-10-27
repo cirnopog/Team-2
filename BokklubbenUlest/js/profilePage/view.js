@@ -79,7 +79,7 @@ function allReadBooks(){
         readBooks+=`<tbody>
         <tr>
         <th class="tablePart">${model.app.currentUser.addedBooks[i].title}</th>
-        <th class="tablePart"><button class="removeButton" onclick="">Klikk for å fjerne</button></th>
+        <th class="tablePart"><button class="removeButton" onclick="deleteAddedBook(${i})">Klikk for å fjerne</button></th>
         </tr>
         </tbody>`     
         }
