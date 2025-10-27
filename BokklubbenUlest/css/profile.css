@@ -7,6 +7,7 @@
 }
 
 .tablePart{
+  padding: 0.65rem;
   border: black 0.05rem solid;
 }
 #undertext{
