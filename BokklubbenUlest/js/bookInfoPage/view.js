@@ -11,10 +11,12 @@ function bookInfoPage() {
                 <p>Vurdering: ${model.data.bookInfo.ratings}</p>
                 <p>Beskrivelse: ${model.data.bookInfo.description}</p>
                 <p>Lagt til av: ${model.data.users.name}</p>
-                <a href="">Kjøp boken</a>
+                <a href="">Kjøp boken!</a>
             </div>
             <div class="rightColumn">
                 <img src="${model.data.bookInfo.coverImg}" alt="Bokcover">
+                <br>
+                <button id="giRating-button" type="submit">Gi rating</button>
             </div>
         </div>
     `;
