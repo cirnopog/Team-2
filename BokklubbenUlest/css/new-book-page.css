@@ -6,11 +6,12 @@
 }
 .new-book > .container {
   background-color: burlywood;
+  border: 5px double var(--brown-lighter);
   width: 70%;
   margin: 4rem auto;
   border-radius: 2rem;
   padding: 5rem 6rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   gap: 20px;
@@ -68,4 +69,6 @@
 }
 .new-book input[type="file"]::file-selector-button {
   font-size: 18px;
+  width: 100%;
+  padding: 8px;
 }

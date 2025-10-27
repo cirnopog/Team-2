@@ -22,3 +22,10 @@ function avatarChosen(newAvatar){
     createHeader()
     
 }
+
+function logOut(){
+    model.app.currentUser = null;
+    localStorage.removeItem('currentUser');
+    createHeader();
+    homePage();
+}

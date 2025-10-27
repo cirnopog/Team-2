@@ -1,3 +1,25 @@
-function addBookToUser(){
+function addBook(){
+    const newBook = {
+        title: model.viewState.bookRegistrationPage.title,
+        author: model.viewState.bookRegistrationPage.author,
+        description: model.viewState.bookRegistrationPage.description,
+        purchaseLink: model.viewState.bookRegistrationPage.purchaseLink,
+        coverImg: model.viewState.bookRegistrationPage.coverImg,
+        votes: 0,
+    }
+    model.data.bookList.push(newBook);
     
 }
+function handleImageUpload(e){
+    const file = e.target.files[0];
+
+    if(file){
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+            model.viewState.bookRegistrationPage.coverImg = e.target.result;
+            console.log('image saved to model');
+        };
+        reader.readAsDataURL(file);
+    }
+}   

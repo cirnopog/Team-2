@@ -27,7 +27,7 @@ function generateYourProfile(){
     ${allReadBooks()}
     ${favoriteBooks()}
     </div>
-    <button onclick="logout()" id="logoutButton">Logg ut</button>
+    <button onclick="logOut()" id="logoutButton">Logg ut</button>
     `
 }
 

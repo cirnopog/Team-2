@@ -25,7 +25,7 @@ const model = {
             title: "",
             author: "",
             description: "",
-            link: "",
+            purchaseLink: "",
             coverImg: "",
             addToVoting: false,
         },
