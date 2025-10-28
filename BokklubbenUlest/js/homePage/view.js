@@ -1,5 +1,5 @@
 loadData()
-// homePage()
+homePage()
 function homePage(){
     document.getElementById("app").innerHTML =`
 
@@ -66,6 +66,9 @@ function renderBooksInVoting() {
                 <span id="votes${book.id}">${book.votes}</span>
                 <button onclick="vote(${book.id},-1)">
                     <i class="fa-solid fa-thumbs-down"></i>
+                </button>
+                <button onclick="deleteBook(model.data.booksInVoting, ${i})">
+                x
                 </button>
             </div>
         </div>
