@@ -13,7 +13,6 @@ function bookInfoPage() {
                         <i id="heart-icon" class="fa-solid fa-heart" style="color: #4A3728;" onclick="addToFavourites()"></i>
                     </div>
                 </div>
-
                 <div class="left-main-area">
                     <p>Forfatter: ${model.data.bookInfo.author}</p>
                     <P>Utgivelsesår: ${model.data.bookInfo.releaseDate}</p>
