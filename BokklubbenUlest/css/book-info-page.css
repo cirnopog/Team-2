@@ -1,41 +1,95 @@
+/* 1. Overskrift */
 .bookInfoHeading {
-    margin: 25px;
-    text-align: center;
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    padding:4rem 0 0 15rem;
+    color: var(--brown-color);
 }
 
+/* 2. Hele flex-boksen (parent) */
 .bookInfoContainer {
     display: flex;
-    margin: auto;
-    padding: 25px;
-    width: 500px;
-    height: 500px;
-    border: 1px solid grey;
-    border-radius: 30px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    width: 70%;
+    height: 650px;
+    margin: 3rem auto;
+    padding: 5rem 6rem;
+    background-color: burlywood;
+    border: 5px double var(--brown-lighter);
+    border-radius: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-.leftColumn {
+/* 3. Venstre kolonne */
+.left-column {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    width: 50%;
-    height: 100%;
+    flex: 0 0 50%;
+    border-right: 2px solid var(--brown-lighter);
+    box-sizing: border-box;
 }
 
-.rightColumn {
-    width: 50%;
-    height: 100%;
+/* 4. Headers og footers */
+.left-header, .left-footer {
+    display: flex;
+    flex: 0 0 auto;
+    height: 75px;
+    line-height: 50px;
 }
 
+.left-footer {
+    border-bottom: none;
+}
+
+.right-footer {
+  flex: 0 0 auto;
+  height: 75px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 5. Header og footer children */
+.header-split-left, .header-split-right,
+.footer-split-left, .footer-split-right {
+    flex-grow: 1;
+}
+
+/* 6. Bokinfo venstre side */
+.left-main-area {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/* 7. Den høyre siden */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.right-main-area {
+  flex-grow: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 8. Diverse */
 .bookInfoContainer p {
-    font-size: 1.2rem;
-    font-weight: normal;
+    font-weight: 600;
+    font-family: var(--regular-text);
+    font-size: 17px;
 }
 
 .bookInfoContainer a {
-    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: var(--regular-text);
+    font-size: 17px;
 }
 
 #giRating-button {
-    padding: 5px;
+    font-size: 18px;
+    width: fit-content;
+    padding: 8px;
 }
