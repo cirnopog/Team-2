@@ -34,7 +34,7 @@ function registerNewUser(event) {
     }
 
     model.data.users.push(newUser);
-
+    saveData();
     document.getElementById('userRegistrationForm').reset();
 
     errorElement.style.color = 'green';

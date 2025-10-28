@@ -53,9 +53,9 @@ function showUserList(){
         let itemName = model.data.users[i].name
         fullList+= /*HTML*/`<tbody>
         <tr>
-        <th>${itemName}</th>
-        <th><button id="editButton" onclick="showEditPage(${i})">Endre</button></th>
-        <th><button id="deleteButton" onclick="deleteUser(${i})">Slett</button></th>
+        <th class="partOfList">${itemName}</th>
+        <th class="partOfList"><button id="editButton" onclick="showEditPage(${i})">Endre</button></th>
+        <th class="partOfList"><button id="deleteButton" onclick="deleteUser(${i})">Slett</button></th>
         </tr>
         </tbody>`
     }
