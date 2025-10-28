@@ -44,7 +44,9 @@ function userRegistrationPage() {
 
 // USER LIST
 function showUserList(){
-    let fullList = `<table class="lists">
+    let fullList = `
+    <div id="centerArea">
+    <table class="lists">
     <thead>
     <tr>
     <th>Bruker</th>
@@ -59,7 +61,8 @@ function showUserList(){
         </tr>
         </tbody>`
     }
-    fullList+= `</table>`
+    fullList+= `</table>
+    </div>`
 
     let adminStuff = document.getElementById('adminStuff')
     adminStuff.innerHTML = fullList
