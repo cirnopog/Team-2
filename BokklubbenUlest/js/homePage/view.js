@@ -91,11 +91,8 @@ function renderBooksInVoting() {
                         oninput="filterBooks(this.value)"
                         onfocus="showBookDropdown()"
                     >
-                    <div 
-                        id="bookDropdown"
-                        class="dropdown hidden"
-                    >
-                    </div>
+                    <div id="bookDropdown" class="dropdown hidden"></div>
+                    <button id="addSelectedBook" onclick="addSelectedBook()">+</button>
                 </div>
             </div>
         </div>
@@ -132,7 +129,7 @@ html=`
 
     <div class="meeting-info-container">
         <p>${
-            model.data.meetingdate!==null?
+            model.data.meetingdate?
             `${model.data.meetingdate}`
             : 
             `Mer info kommer snart!`
