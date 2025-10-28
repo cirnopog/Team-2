@@ -22,7 +22,14 @@ function addToFavourites() {
 
 // Kjøpe bok
 function buyBook() {
-    const amazonUrl = 'https://www.amazon.com';
-    
-    window.open(amazonUrl, '_blank');
+    const newTab = window.open('about:blank', '_blank'); 
+    const bookLink = model.data.bookInfo.purchaseLink; 
+    if (newTab) {
+        newTab.location.href = bookLink;
+    }
+}
+
+// Gi stjerne
+function giveStar(clickedStar) {
+    clickedStar.style.color = 'yellow';
 }

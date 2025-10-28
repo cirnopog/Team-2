@@ -44,7 +44,6 @@ function filterBooks(searchInput){
         model.viewState.homePage.chooseBook.chosenBook = book;
         document.getElementById('bookSearch').value = book.title;
         document.getElementById('bookDropdown').classList.add('hidden');
-        homePage();
     }
 
     document.addEventListener('click', function(e) {
@@ -52,3 +51,11 @@ function filterBooks(searchInput){
             document.getElementById('bookDropdown')?.classList.add('hidden');
         }
     });
+
+    function addSelectedBook(){
+        const chosenBook = model.viewState.homePage.chooseBook.chosenBook;
+        if(chosenBook){
+            model.data.booksInVoting.push(chosenBook);
+            renderBooksInVoting();
+        }
+    }
