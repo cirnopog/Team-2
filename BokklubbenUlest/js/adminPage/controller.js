@@ -58,10 +58,12 @@ function editUser(usrNr){
     const error = document.getElementById("registration-error")
     const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{10,}$");
     let usr = model.data.users[usrNr]
-    if(!strongPasswordRegex.test(usr.password)){
+    if(!strongPasswordRegex.test(model.viewState.profileEditing.password)){
         error.textContent="Passordet må inneholde min. 10 tegn og inkludere: en stor bokstav, en liten bokstav, et tall, og et symbol!"
         return
     }
+    usr.name=model.viewState.profileEditing.name
+    usr.password=model.viewState.profileEditing.password
     saveData();
     showUserList()
     removeEditPage()

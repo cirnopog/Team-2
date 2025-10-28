@@ -36,6 +36,10 @@ const model = {
         meetingPage: {
             date:  null,
         },
+        profileEditing:{
+            name:"",
+            password:""
+        }
         
         // Er favoritt en input, og skal den inn i viewState?
     },

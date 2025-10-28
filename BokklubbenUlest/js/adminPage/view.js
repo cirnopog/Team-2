@@ -79,8 +79,8 @@ function showEditPage(usrNr){
     let newName = document.getElementById("newName")
     let newPassword = document.getElementById("newPassword")
     let completeEditButton = document.getElementById("completeEditButton")
-    newName.outerHTML=`<input type="text" id="newName" name="newName" oninput="model.data.users[${usrNr}].name = this.value">`
-    newPassword.outerHTML=`<input type="password" id="newPassword" name="newPassword" oninput="model.data.users[${usrNr}].password = this.value">`
+    newName.outerHTML=`<input type="text" id="newName" name="newName" oninput="model.viewState.profileEditing.name = this.value">`
+    newPassword.outerHTML=`<input type="password" id="newPassword" name="newPassword" oninput="model.viewState.profileEditing.password = this.value">`
     completeEditButton.outerHTML=`<button type="submit" onclick="editUser(${usrNr})" id="completeEditButton">Rediger</button>`
     popup.style.visibility="visible"
 }
