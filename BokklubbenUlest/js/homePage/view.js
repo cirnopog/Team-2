@@ -1,5 +1,5 @@
 loadData()
-// homePage()
+homePage()
 function homePage(){
     document.getElementById("app").innerHTML =`
 
@@ -67,13 +67,35 @@ function renderBooksInVoting() {
                 <button onclick="vote(${book.id},-1)">
                     <i class="fa-solid fa-thumbs-down"></i>
                 </button>
+                <button onclick="deleteBook(model.data.booksInVoting, ${i})">
+                x
+                </button>
             </div>
         </div>
         `;
         bookList.appendChild(div);
     }
-    bookList.innerHTML += `
-        <button onclick="" class="add-book-btn">+</button>
+    bookList.innerHTML += /*HTML*/`
+        <button onclick="showAddToVoting()" class="add-book-btn">+</button>
+        <div id="addBookToVoting" class="hidden">
+            <h4>Legg til bok i avstemningen</h4>
+
+            <div class="add-to-vote-container">
+                <button onclick="newBookPage()">+ Ny bok</button>
+
+                <div class="searchable-select">
+                    <input
+                        type="text"
+                        id="bookSearch"
+                        placeholder="Søk etter bok..."
+                        oninput="filterBooks(this.value)"
+                        onfocus="showBookDropdown()"
+                    >
+                    <div id="bookDropdown" class="dropdown hidden"></div>
+                    <button id="addSelectedBook" onclick="addSelectedBook()">+</button>
+                </div>
+            </div>
+        </div>
     `;
 }
 
@@ -82,14 +104,18 @@ function renderBooksInVoting() {
 function drawWinnerBook(){
     document.getElementById("bookListContainer").innerHTML=`
     <div>
-    <img src="img/${model.data.drawWinnerBook.img}"
+    <img src="img/${model.data.drawWinnerBook.img}">
     </div>
     
     
     `;
 }
 
+function showAddToVoting(){
+    document.getElementById("addBookToVoting").classList.toggle("hidden")
+    
 
+}
 
 
 
@@ -103,8 +129,8 @@ html=`
 
     <div class="meeting-info-container">
         <p>${
-            model.viewState.meetingPage.date!==null?
-            `${model.viewState.meetingPage.date}`
+            model.data.meetingdate?
+            `${model.data.meetingdate}`
             : 
             `Mer info kommer snart!`
         }</p>

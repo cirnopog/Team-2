@@ -129,3 +129,26 @@ function loadData(){
         model.data = JSON.parse(savedData);
     }
 }
+
+function deleteBook(list, bookNum){
+    let book=list[bookNum]
+    for(i in model.data.booksInVoting){
+        if(model.data.booksInVoting[i].title==book.title){
+            model.data.booksInVoting.splice(i , 1)
+        }
+    }
+    // for(i in model.data.bookList){
+    //     if(model.data.bookList[i].title==book.title){
+    //         model.data.bookList.splice(i,1)
+    //     }
+    // }
+    list.splice(bookNum, 1);
+    updateCurrentUser();
+    saveData();
+    if(list===model.app.currentUser.addedBooks ||
+        list===model.app.currentUser.favorites){
+            generateYourProfile();
+        }else{
+          homePage()  
+        }
+}
