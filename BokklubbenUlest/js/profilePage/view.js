@@ -19,7 +19,7 @@ function generateYourProfile(){
     <p id="undertext">Klikk på bildet for å endre avatar</p>
     </div>
     <div id="avatarPopup">
-    <h1>Endre avatar</h1>
+    <h1 id="popupHeader">Endre avatar</h1>
     ${createAvatarList()}
     </div>
     <div id="profileRightSide">
