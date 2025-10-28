@@ -44,13 +44,22 @@ function userRegistrationPage() {
 
 // USER LIST
 function showUserList(){
-    let fullList = `<ol class="lists">`
+    let fullList = `<table class="lists">
+    <thead>
+    <tr>
+    <th>Bruker</th>
+    </tr>`
     for(i in model.data.users){
         let itemName = model.data.users[i].name
-        fullList+= /*HTML*/`<li>${itemName}<button id="editButton" onclick="showEditPage(${i})">Endre</button> 
-        <button id="deleteButton" onclick="deleteUser(${i})">Slett</button></li>`
+        fullList+= /*HTML*/`<tbody>
+        <tr>
+        <th>${itemName}</th>
+        <th><button id="editButton" onclick="showEditPage(${i})">Endre</button></th>
+        <th><button id="deleteButton" onclick="deleteUser(${i})">Slett</button></th>
+        </tr>
+        </tbody>`
     }
-    fullList+= `</ol>`
+    fullList+= `</table>`
 
     let adminStuff = document.getElementById('adminStuff')
     adminStuff.innerHTML = fullList
