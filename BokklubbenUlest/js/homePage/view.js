@@ -77,7 +77,7 @@ function renderBooksInVoting() {
     }
     bookList.innerHTML += /*HTML*/`
         <button onclick="showAddToVoting()" class="add-book-btn">+</button>
-        <div id="addBookToVoting">
+        <div id="addBookToVoting" class="hidden">
             <h4>Legg til bok i avstemningen</h4>
 
             <div class="add-to-vote-container">
@@ -107,7 +107,7 @@ function renderBooksInVoting() {
 function drawWinnerBook(){
     document.getElementById("bookListContainer").innerHTML=`
     <div>
-    <img src="img/${model.data.drawWinnerBook.img}"
+    <img src="img/${model.data.drawWinnerBook.img}">
     </div>
     
     
@@ -115,6 +115,8 @@ function drawWinnerBook(){
 }
 
 function showAddToVoting(){
+    document.getElementById("addBookToVoting").classList.toggle("hidden")
+    
 
 }
 

@@ -42,7 +42,7 @@ function bookInfoPage() {
     `;
 }
 
-bookInfoPage()
+// bookInfoPage()
 
 /*
 
