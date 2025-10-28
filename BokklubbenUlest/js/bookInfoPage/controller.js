@@ -19,3 +19,10 @@ function selectBook(index) {
 function addToFavourites() {
     document.getElementById('heart-icon').style.color = 'red';
 }
+
+// Kjøpe bok
+function buyBook() {
+    const amazonUrl = 'https://www.amazon.com';
+    
+    window.open(amazonUrl, '_blank');
+}

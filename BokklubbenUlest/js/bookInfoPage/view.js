@@ -26,7 +26,7 @@ function bookInfoPage() {
                         <p>Lagt til av: ${model.data.users.name}</p>
                     </div>
                     <div class="footer-split-right">
-                        <a href="">Kjøp boken!</a>
+                        <button id="buyBook-button" onclick="buyBook()">Kjøp bok</button>
                     </div>
                 </div>
             </div>

@@ -97,3 +97,19 @@
 #heart-icon:hover {
     cursor: pointer;
 }
+
+#buyBook-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    border: solid 1.5px var(--brown-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+}
+
+#buyBook-button:hover {
+    background-color: var(--contrast-accent);
+}
