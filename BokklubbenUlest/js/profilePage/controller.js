@@ -31,12 +31,9 @@ function logOut(){
     homePage();
 }
 
-function deleteAddedBook(book){
-    model.app.currentUser.addedBooks.splice(book, 1);
+function deleteBook(list, book){
+    list.splice(book, 1);
     updateCurrentUser();
     saveData();
     generateYourProfile()
-}
-function removeFavorite(){
-    
 }
