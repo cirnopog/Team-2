@@ -29,7 +29,7 @@ function userRegistrationPage() {
             <input type="text" id="nameOfUser" name="name" oninput="model.viewState.userRegistrationPage.name = this.value" required>
             <label for="userPassword">Passord:</label>
             <p>Minimum 10 tegn og minst en stor bokstav, en liten bokstav, et symbol og et tall.</p>
-            <input type="text" id="userPassword" name="password" oninput="model.viewState.userRegistrationPage.password = this.value" required minlength="10">
+            <input type="password" id="userPassword" name="password" oninput="model.viewState.userRegistrationPage.password = this.value" required minlength="10">
             <button type="submit">Registrer</button>
             <p id="password-error"></p>
         </form>
@@ -44,13 +44,22 @@ function userRegistrationPage() {
 
 // USER LIST
 function showUserList(){
-    let fullList = `<ol class="lists">`
+    let fullList = `<table class="lists">
+    <thead>
+    <tr>
+    <th>Bruker</th>
+    </tr>`
     for(i in model.data.users){
         let itemName = model.data.users[i].name
-        fullList+= /*HTML*/`<li>${itemName}<button id="editButton" onclick="showEditPage(${i})">Endre</button> 
-        <button id="deleteButton" onclick="deleteUser(${i})">Slett</button></li>`
+        fullList+= /*HTML*/`<tbody>
+        <tr>
+        <th class="partOfList">${itemName}</th>
+        <th class="partOfList"><button id="editButton" onclick="showEditPage(${i})">Endre</button></th>
+        <th class="partOfList"><button id="deleteButton" onclick="deleteUser(${i})">Slett</button></th>
+        </tr>
+        </tbody>`
     }
-    fullList+= `</ol>`
+    fullList+= `</table>`
 
     let adminStuff = document.getElementById('adminStuff')
     adminStuff.innerHTML = fullList

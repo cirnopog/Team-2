@@ -34,7 +34,7 @@ function registerNewUser(event) {
     }
 
     model.data.users.push(newUser);
-
+    saveData();
     document.getElementById('userRegistrationForm').reset();
 
     errorElement.style.color = 'green';
@@ -62,6 +62,7 @@ function editUser(usrNr){
         error.textContent="Passordet må inneholde min. 10 tegn og inkludere: en stor bokstav, en liten bokstav, et tall, og et symbol!"
         return
     }
+    saveData();
     showUserList()
     removeEditPage()
 }

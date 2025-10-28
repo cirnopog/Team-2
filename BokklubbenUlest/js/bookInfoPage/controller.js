@@ -14,3 +14,15 @@ function selectBook(index) {
         console.error("Bok-indeks ikke funnet:", bookIndex);
     }
 }
+
+// Favoritt-bok
+function addToFavourites() {
+    document.getElementById('heart-icon').style.color = 'red';
+}
+
+// Kjøpe bok
+function buyBook() {
+    const amazonUrl = 'https://www.amazon.com';
+    
+    window.open(amazonUrl, '_blank');
+}

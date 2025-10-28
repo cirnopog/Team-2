@@ -115,8 +115,12 @@ const model = {
                 img: "lake-of-darkness.webp",
                 author: "Adam Roberts",
                 title: "Lake of Darkness",
+                releaseDate: "",
+                ratings: [],
+                description: "",
+                addedByUser: "",
                 purchaseLink: "https://www.norli.no/boker/skjonnlitteratur/fantasy-og-scifi/lake-of-darkness",
-                votes: 0,
+                isFavorite: false
                 
             },
             {
@@ -124,8 +128,12 @@ const model = {
                 img: "dune.webp",
                 author: "Frank Herbert",
                 title: "Dune",
+                releaseDate: "",
+                ratings: [],
+                description: "",
+                addedByUser: "",
                 purchaseLink: "https://www.norli.no/boker/boker-pa-andre-sprak/engelske-boker/dune",
-                votes: 0,
+                isFavorite: false
                 
             },
         ],
