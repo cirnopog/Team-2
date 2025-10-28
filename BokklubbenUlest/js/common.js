@@ -129,3 +129,16 @@ function loadData(){
         model.data = JSON.parse(savedData);
     }
 }
+
+function deleteBook(list, book){
+    list.splice(book, 1);
+    updateCurrentUser();
+    saveData();
+    if(list===model.app.currentUser.addedBooks ||
+        list===model.app.currentUser.favorites){
+            generateYourProfile();
+        }else{
+          homePage()  
+        }
+        
+}

@@ -1,4 +1,4 @@
-newBookPage()
+// newBookPage()
 function newBookPage(){
     document.getElementById("app").innerHTML =/*HTML*/`
 
