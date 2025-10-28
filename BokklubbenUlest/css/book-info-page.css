@@ -93,3 +93,7 @@
     width: fit-content;
     padding: 8px;
 }
+
+#heart-icon:hover {
+    cursor: pointer;
+}

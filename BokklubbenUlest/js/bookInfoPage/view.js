@@ -10,7 +10,7 @@ function bookInfoPage() {
                         <h6>${model.data.bookInfo.title}</h6>
                     </div>
                     <div class="header-split-right">
-                        <p>Favoritt?</p>
+                        <i id="heart-icon" class="fa-solid fa-heart" style="color: #4A3728;" onclick="addToFavourites()"></i>
                     </div>
                 </div>
 
