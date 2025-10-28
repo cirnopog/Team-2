@@ -50,6 +50,8 @@ function filterBooks(searchInput){
         if (!e.target.closest('.searchable-select')) {
             document.getElementById('bookDropdown')?.classList.add('hidden');
         }
+        
+
     });
 
     function addSelectedBook(){

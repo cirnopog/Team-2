@@ -176,6 +176,7 @@
     padding: 8px;
     border-radius: 4px;
     border: solid 1px var(--brown-color);
+    
 }
 .dropdown{
     position: absolute;

@@ -59,7 +59,7 @@ const model = {
         booksInVoting: [
             {
                 id: 1,
-                img: "lake-of-darkness.webp",
+                img: "img/lake-of-darkness.webp",
                 author: "Adam Roberts",
                 title: "Lake of Darkness",
                 purchaseLink: "https://www.norli.no/boker/skjonnlitteratur/fantasy-og-scifi/lake-of-darkness",
@@ -68,7 +68,7 @@ const model = {
             },
             {
                 id: 2,
-                img: "dune.webp",
+                img: "img/dune.webp",
                 author: "Frank Herbert",
                 title: "Dune",
                 purchaseLink: "https://www.norli.no/boker/boker-pa-andre-sprak/engelske-boker/dune",

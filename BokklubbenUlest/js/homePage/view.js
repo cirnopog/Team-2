@@ -56,7 +56,7 @@ function renderBooksInVoting() {
         div.id = "book" + book.id;
         div.innerHTML = `
         ${book.img ?
-        `<img src="img/${book.img}" alt="${book.title}" onclick="selectBook(${i})" style="width:220px; ">`: ""}
+        `<img src="${book.img}" alt="${book.title}" onclick="selectBook(${i})" style="width:220px; ">`: ""}
         <div class="container">
             <h3>${book.title}</h3>
             <div class="btn-container">
@@ -73,6 +73,7 @@ function renderBooksInVoting() {
             </div>
         </div>
         `;
+        console.log(book.img)
         bookList.appendChild(div);
     }
     bookList.innerHTML += /*HTML*/`
@@ -90,6 +91,7 @@ function renderBooksInVoting() {
                         placeholder="Søk etter bok..."
                         oninput="filterBooks(this.value)"
                         onfocus="showBookDropdown()"
+                        autocomplete="off"
                     >
                     <div id="bookDropdown" class="dropdown hidden"></div>
                     <button id="addSelectedBook" onclick="addSelectedBook()">+</button>
@@ -137,10 +139,10 @@ html=`
     </div>
     <p class="meeting-attendees">
         <i class="fa-solid fa-thumbs-up"></i>
-        Kommer: 2 
+        Kommer: ${model.data.meetingAttendees.coming} 
         &nbsp;
         <i class="fa-solid fa-thumbs-down"></i>
-        Kommer ikke: 0
+        Kommer ikke: ${model.data.meetingAttendees.notComing} 
     </p>
 
     <div class="btn-container">

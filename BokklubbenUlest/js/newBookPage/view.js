@@ -31,11 +31,11 @@ function newBookPage(){
             </div>
 
             <div>
-            <label>Cover bilde</label>
+            <label>Cover bilde URL</label>
             <input 
-                type="file"
-                accept="image/*"
-                onchange="handleImageUpload(event)"
+                type="text"
+                
+                onchange="model.viewState.bookRegistrationPage.coverImg = this.value"
             >
             </div>
 

@@ -137,11 +137,11 @@ function deleteBook(list, bookNum){
             model.data.booksInVoting.splice(i , 1)
         }
     }
-    // for(i in model.data.bookList){
-    //     if(model.data.bookList[i].title==book.title){
-    //         model.data.bookList.splice(i,1)
-    //     }
-    // }
+    for(i in model.data.bookList){
+        if(model.data.bookList[i].title==book.title){
+            model.data.bookList.splice(i,1)
+        }
+    }
     list.splice(bookNum, 1);
     updateCurrentUser();
     saveData();
