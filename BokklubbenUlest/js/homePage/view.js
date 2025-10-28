@@ -75,8 +75,30 @@ function renderBooksInVoting() {
         `;
         bookList.appendChild(div);
     }
-    bookList.innerHTML += `
-        <button onclick="" class="add-book-btn">+</button>
+    bookList.innerHTML += /*HTML*/`
+        <button onclick="showAddToVoting()" class="add-book-btn">+</button>
+        <div id="addBookToVoting">
+            <h4>Legg til bok i avstemningen</h4>
+
+            <div class="add-to-vote-container">
+                <button onclick="newBookPage()">+ Ny bok</button>
+
+                <div class="searchable-select">
+                    <input
+                        type="text"
+                        id="bookSearch"
+                        placeholder="Søk etter bok..."
+                        oninput="filterBooks(this.value)"
+                        onfocus="showBookDropdown()"
+                    >
+                    <div 
+                        id="bookDropdown"
+                        class="dropdown hidden"
+                    >
+                    </div>
+                </div>
+            </div>
+        </div>
     `;
 }
 
@@ -92,7 +114,9 @@ function drawWinnerBook(){
     `;
 }
 
+function showAddToVoting(){
 
+}
 
 
 
