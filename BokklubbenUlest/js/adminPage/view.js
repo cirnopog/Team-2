@@ -79,8 +79,8 @@ function showEditPage(usrNr){
     let newName = document.getElementById("newName")
     let newPassword = document.getElementById("newPassword")
     let completeEditButton = document.getElementById("completeEditButton")
-    newName.outerHTML=`<input type="text" id="newName" name="newName" oninput="model.data.users[${usrNr}].name = this.value">`
-    newPassword.outerHTML=`<input type="password" id="newPassword" name="newPassword" oninput="model.data.users[${usrNr}].password = this.value">`
+    newName.outerHTML=`<input type="text" id="newName" name="newName" oninput="model.viewState.profileEditing.name = this.value">`
+    newPassword.outerHTML=`<input type="password" id="newPassword" name="newPassword" oninput="model.viewState.profileEditing.password = this.value">`
     completeEditButton.outerHTML=`<button type="submit" onclick="editUser(${usrNr})" id="completeEditButton">Rediger</button>`
     popup.style.visibility="visible"
 }
@@ -101,7 +101,7 @@ function newMeeting(){
     document.getElementById('adminStuff').innerHTML = /*HTML*/`
     <form id="votePageForm">
     <h4>Dato for nytt møte</h4>
-    <input type="date" value="2025-11-03" onchange="model.viewstate.meetingPage.date = this.value">
+    <input id="meetingInput" type="date" value="2025-11-03" onchange="model.viewState.meetingPage.date = this.value">
     <button onclick="setNewMeetingDate()">Opprett</button>
     </form>
     `

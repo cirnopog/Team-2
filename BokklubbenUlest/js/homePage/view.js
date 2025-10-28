@@ -132,8 +132,8 @@ html=`
 
     <div class="meeting-info-container">
         <p>${
-            model.viewState.meetingPage.date!==null?
-            `${model.viewState.meetingPage.date}`
+            model.data.meetingdate!==null?
+            `${model.data.meetingdate}`
             : 
             `Mer info kommer snart!`
         }</p>
