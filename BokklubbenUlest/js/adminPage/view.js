@@ -29,7 +29,7 @@ function userRegistrationPage() {
             <input type="text" id="nameOfUser" name="name" oninput="model.viewState.userRegistrationPage.name = this.value" required>
             <label for="userPassword">Passord:</label>
             <p>Minimum 10 tegn og minst en stor bokstav, en liten bokstav, et symbol og et tall.</p>
-            <input type="text" id="userPassword" name="password" oninput="model.viewState.userRegistrationPage.password = this.value" required minlength="10">
+            <input type="password" id="userPassword" name="password" oninput="model.viewState.userRegistrationPage.password = this.value" required minlength="10">
             <button type="submit">Registrer</button>
             <p id="password-error"></p>
         </form>
