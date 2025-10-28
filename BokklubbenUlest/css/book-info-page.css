@@ -10,7 +10,7 @@
 .bookInfoContainer {
     display: flex;
     width: 70%;
-    height: 650px;
+    height: 800px;
     margin: 3rem auto;
     padding: 5rem 6rem;
     background-color: burlywood;
@@ -94,7 +94,7 @@
     padding: 8px;
 }
 
-#heart-icon:hover {
+#heart-icon {
     cursor: pointer;
 }
 
@@ -112,4 +112,15 @@
 
 #buyBook-button:hover {
     background-color: var(--contrast-accent);
+}
+
+.book-description-field {
+    margin-top: 5px;
+    width: 90%;
+    height: 125px;
+    font-weight: normal !important;
+}
+
+.fa-solid, .fa-star, .fa-sm {
+    cursor: pointer;
 }

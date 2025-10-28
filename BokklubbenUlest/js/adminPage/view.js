@@ -44,7 +44,9 @@ function userRegistrationPage() {
 
 // USER LIST
 function showUserList(){
-    let fullList = `<table class="lists">
+    let fullList = `
+    <div id="centerArea">
+    <table class="lists">
     <thead>
     <tr>
     <th>Bruker</th>
@@ -59,7 +61,8 @@ function showUserList(){
         </tr>
         </tbody>`
     }
-    fullList+= `</table>`
+    fullList+= `</table>
+    </div>`
 
     let adminStuff = document.getElementById('adminStuff')
     adminStuff.innerHTML = fullList
@@ -70,6 +73,7 @@ function showUserList(){
     <label for="newPassword">Passord</label>
     <input type="password" id="newPassword" name="newPassword">
     <button type="submit" onclick="editUser()" id="completeEditButton">Rediger</button>
+    <button id="stopEditingButton">Avbryt</button>
     <p id="registration-error"></p>
     </div>`
 

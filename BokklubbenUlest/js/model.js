@@ -119,9 +119,9 @@ const model = {
                 img: "lake-of-darkness.webp",
                 author: "Adam Roberts",
                 title: "Lake of Darkness",
-                releaseDate: "",
+                releaseDate: "2024",
                 ratings: [],
-                description: "",
+                description: "Lake of Darkness er en filosofisk space opera der et utopisk, post-mangel samfunn blir rystet. Handlingen starter ved et svart hull (QV Tel) hvor en kaptein plutselig begår brutale drap på mannskapet sitt, drevet av en tilsynelatende stemme fra mørket. Romanen utforsker dype spørsmål om ondskapens natur, black hole-fysikk og hvordan en naiv, høyteknologisk sivilisasjon takler ren ondskap.",
                 addedByUser: "",
                 purchaseLink: "https://www.norli.no/boker/skjonnlitteratur/fantasy-og-scifi/lake-of-darkness",
                 isFavorite: false
@@ -132,9 +132,9 @@ const model = {
                 img: "dune.webp",
                 author: "Frank Herbert",
                 title: "Dune",
-                releaseDate: "",
+                releaseDate: "1965",
                 ratings: [],
-                description: "",
+                description: "Dune er et episk science fiction-verk satt til en fjern fremtid hvor intergalaktiske føydale hus kjemper om kontroll over den ørkenplaneten Arrakis. Denne planeten er den eneste kilden til krydderet (melange), det mest verdifulle stoffet i universet, som er avgjørende for reiser i verdensrommet, livsforlengelse og synske evner. Boken følger den unge Paul Atreides, hvis familie får kontroll over Arrakis, og hans kamp for overlevelse, makt og skjebnen til planetens innfødte ørkenfolk, Fremen. Den utforsker dype temaer som politikk, religion, økologi og evolusjon.",
                 addedByUser: "",
                 purchaseLink: "https://www.norli.no/boker/boker-pa-andre-sprak/engelske-boker/dune",
                 isFavorite: false
