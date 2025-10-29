@@ -64,7 +64,9 @@ const model = {
                 title: "Lake of Darkness",
                 purchaseLink: "https://www.norli.no/boker/skjonnlitteratur/fantasy-og-scifi/lake-of-darkness",
                 votes: 0,
-                
+                usersWhoHaveVoted:[
+            
+                ]
             },
             {
                 id: 2,
@@ -73,6 +75,9 @@ const model = {
                 title: "Dune",
                 purchaseLink: "https://www.norli.no/boker/boker-pa-andre-sprak/engelske-boker/dune",
                 votes: 0,
+                usersWhoHaveVoted:[
+            
+                ]
                 
             },
 
