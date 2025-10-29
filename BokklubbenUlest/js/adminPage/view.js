@@ -45,6 +45,8 @@ function userRegistrationPage() {
 // USER LIST
 function showUserList(){
     let fullList = `
+    <br>
+    <br>
     <div id="centerArea">
     <table class="lists">
     <thead>
@@ -73,7 +75,7 @@ function showUserList(){
     <label for="newPassword">Passord</label>
     <input type="password" id="newPassword" name="newPassword">
     <button type="submit" onclick="editUser()" id="completeEditButton">Rediger</button>
-    <button id="stopEditingButton">Avbryt</button>
+    <button id="stopEditingButton" onclick="removeEditPage()">Avbryt</button>
     <p id="registration-error"></p>
     </div>`
 
@@ -88,6 +90,7 @@ function showEditPage(usrNr){
     completeEditButton.outerHTML=`<button type="submit" onclick="editUser(${usrNr})" id="completeEditButton">Rediger</button>`
     popup.style.visibility="visible"
 }
+
 
 
 

@@ -13,6 +13,24 @@ function vote(bookId, value) {
     }
     renderBooksInVoting()
     
+
+}
+
+function accountIsComing(){
+    model.data.meetingAttendees.coming+=1
+    model.app.currentUser.decidedMeeting = true
+    console.log("coming")
+    updateCurrentUser()
+    saveData()
+    homePage()
+}
+function accountIsNotComing(){
+    model.data.meetingAttendees.notComing+=1
+    model.app.currentUser.decidedMeeting = true
+    console.log("not coming")
+    updateCurrentUser()
+    saveData()
+    homePage()
 }
 
 // SELECT BOOK FOR VOTING
