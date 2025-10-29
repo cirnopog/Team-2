@@ -137,7 +137,7 @@ const model = {
         bookList: [
             {
                 id:1,
-                img: "lake-of-darkness.webp",
+                img: "img/lake-of-darkness.webp",
                 author: "Adam Roberts",
                 title: "Lake of Darkness",
                 releaseDate: "2024",
@@ -150,7 +150,7 @@ const model = {
             },
             {
                 id:1,
-                img: "dune.webp",
+                img: "img/dune.webp",
                 author: "Frank Herbert",
                 title: "Dune",
                 releaseDate: "1965",
