@@ -7,10 +7,10 @@ function bookInfoPage() {
             <div class="left-column">
                 <div class="left-header">
                     <div class="header-split-left">
-                        <h6>${model.data.bookInfo.title}</h6>
+                        <h4>${model.data.bookInfo.title}</h4>
                     </div>
                     <div class="header-split-right">
-                        <i id="heart-icon" class="fa-solid fa-heart" style="color: #4A3728;" onclick="addToFavourites()"></i>
+                        <i id="heart-icon" class="fa-solid fa-heart" style="color: ${model.data.bookInfo.isFavorite ? 'red' : '#4A3728'};" onclick="addToFavorites()"></i>
                     </div>
                 </div>
                 <div class="left-main-area">
@@ -20,7 +20,6 @@ function bookInfoPage() {
                     <p>Beskrivelse:</p>
                     <p class="book-description-field">${model.data.bookInfo.description}</p>
                 </div>
-
                 <div class="left-footer">
                     <div class="footer-split-left">
                         <p>Lagt til av: ${model.data.bookInfo.addedByUser}</p>

@@ -115,7 +115,7 @@
 }
 
 .book-description-field {
-    margin-top: 5px;
+    
     width: 90%;
     height: 125px;
     font-weight: normal !important;
@@ -123,4 +123,8 @@
 
 .fa-solid, .fa-star, .fa-sm {
     cursor: pointer;
+}
+
+.left-main-area p {
+    margin-bottom: 10px;
 }

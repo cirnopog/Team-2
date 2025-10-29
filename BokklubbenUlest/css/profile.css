@@ -56,3 +56,9 @@
   background-color: blanchedalmond;
   color: brown;
 }
+
+#profileAvatar{
+    border-radius: 50%;
+    object-fit:cover;
+    cursor: pointer;
+}

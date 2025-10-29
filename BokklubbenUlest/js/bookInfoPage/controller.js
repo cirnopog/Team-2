@@ -16,8 +16,39 @@ function selectBook(index) {
 }
 
 // Favoritt-bok
-function addToFavourites() {
-    document.getElementById('heart-icon').style.color = 'red';
+function addToFavorites() {
+    const currentBook = model.data.bookInfo;
+    const bookTitle = currentBook.title;
+
+    if (currentBook.isFavorite === true) {
+        currentBook.isFavorite = false;
+        const favoriteIndex = model.app.currentUser.favorites.findIndex(
+            favoriteBook => favoriteBook.title === bookTitle
+        );
+        
+        if (favoriteIndex !== -1) {
+            model.app.currentUser.favorites.splice(favoriteIndex, 1);
+        }
+
+        document.getElementById('heart-icon').style.color = '#4A3728';
+
+    } else {
+        currentBook.isFavorite = true;
+        model.app.currentUser.favorites.push(currentBook);
+        document.getElementById('heart-icon').style.color = 'red';
+    }
+
+    // Synkronisere og lagre forandringer
+    const masterBookIndex = model.data.bookList.findIndex(
+        viewedBook => viewedBook.title === bookTitle
+    );
+    
+    if (masterBookIndex !== -1) {
+        model.data.bookList[masterBookIndex].isFavorite = currentBook.isFavorite;
+    }
+
+    updateCurrentUser();
+    saveData();
 }
 
 // Kjøpe bok

@@ -73,6 +73,7 @@
     font-size: 2.5rem;
     font-family: var(--heading-font);
     color: var(--brown-color);
+    padding: 0 0 1rem 1rem;
 }
 #bookVoting > .container> h3{
     font-size: 1.4rem;
@@ -95,6 +96,11 @@
 }
 #bookListContainer > div >img{
     filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .4));
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;;
+}
+#bookListContainer > div >img:hover{
+    transform: scale(1.01);
 }
 #bookListContainer > div >.container{
     display: flex;
@@ -132,6 +138,7 @@
 }
 #bookListContainer > div > .container > .btn-container > span{
     font-size: 20px;
+    position: relative;
 }
 
 .add-book-btn{
@@ -146,7 +153,13 @@
     cursor: pointer;
     transition:  transform 0.2s ease-in-out;
 }
-
+.dlt-btn{
+    background-color: var(--alert)!important;
+    position: absolute;
+    margin-left: 10px;
+    padding: 3px 8px !important;
+    align-self: center;
+}
 /* add book to voting */
 #addBookToVoting{
     position: absolute;
