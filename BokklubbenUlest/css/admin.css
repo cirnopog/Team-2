@@ -98,6 +98,7 @@
     border-radius: 30px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     font-family: var(--regular-text);
+    color: var(--brown-color);
 }
 
 #votePageForm > input {
@@ -105,16 +106,27 @@
     font-size: 1.1rem;
     font-family: var(--regular-text);
 }
-
+#votePageForm > label{
+    font-weight: 600;
+}
 #votePageForm > button {
     width: fit-content;
-    padding: 5px;
+    padding: 6px 9px;
     letter-spacing: 1px;
     font-size: 1.0rem;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    box-shadow:  0 2px 6px rgba(0, 0, 0, 0.2);
+    transition:  transform 0.2s ease-in-out;
+    margin-top: 9px;
 }
 
 #votePageForm > button:hover {
     cursor: pointer;
+    transform: scale(1.01);
+    background-color: var(--contrast-accent);
 }
 
 #voteCreatedMessage {
