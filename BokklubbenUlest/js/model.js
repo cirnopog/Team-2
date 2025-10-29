@@ -94,7 +94,8 @@ const model = {
                 avatar: "moose.png",
                 addedBooks: [],
                 favorites: [],
-                isAdmin: true
+                isAdmin: true,
+                decidedMeeting: false
             }
 
             

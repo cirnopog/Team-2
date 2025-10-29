@@ -125,6 +125,18 @@ function showAddToVoting(){
 // MEETING BANNER
 //!! må endre 'meeting-attendees' senere !!
 function drawMeetingBanner(){
+moreHtml = ""
+if(!model.app.currentUser.decidedMeeting){
+    moreHtml = `    
+    <div class="btn-container">
+        <button onclick="accountIsComing()">Kommer</button>
+        <button onclick="accountIsNotComing()">Kommer ikke</button>
+    </div>
+</div>`
+}
+else{
+    moreHtml= "</div>"
+}
 html=`
 <div id="meetingBanner">
     <h2>Neste møte er</h2>
@@ -144,13 +156,7 @@ html=`
         <i class="fa-solid fa-thumbs-down"></i>
         Kommer ikke: ${model.data.meetingAttendees.notComing} 
     </p>
-
-    <div class="btn-container">
-        <button>Kommer</button>
-        <button>Kommer ikke</button>
-    </div>
-</div>
-`
+` + moreHtml
 return html;
 }
 
