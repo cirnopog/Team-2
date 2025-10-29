@@ -1,6 +1,7 @@
 // REGISTRATION
 
-// adminPage()
+adminPage()
+showUserList()
 
 // Viser admin-pagen med navigasjon
 function adminPage() {
@@ -47,18 +48,28 @@ function showUserList(){
     let fullList = `
     <div id="centerArea">
     <table class="lists">
-    <thead>
+    
     <tr>
-    <th>Bruker</th>
+    <th>Brukere</th>
     </tr>`
     for(i in model.data.users){
         let itemName = model.data.users[i].name
-        fullList+= /*HTML*/`<tbody>
-        <tr>
-        <th class="partOfList">${itemName}</th>
-        <th class="partOfList"><button id="editButton" onclick="showEditPage(${i})">Endre</button></th>
-        <th class="partOfList"><button id="deleteButton" onclick="deleteUser(${i})">Slett</button></th>
-        </tr>
+        fullList+= /*HTML*/`
+        <tbody>
+            <tr>
+                <td class="partOfList">${itemName}
+
+                <div class="btn-container">
+                <button id="editButton" onclick="showEditPage(${i})">
+                    <i class="fa-solid fa-pencil"></i>
+                </button>
+                <button id="deleteButton" onclick="deleteUser(${i})">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                </div>
+                </td>
+                
+            </tr>
         </tbody>`
     }
     fullList+= `</table>

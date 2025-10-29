@@ -168,71 +168,6 @@ font-size: 16px;
   
 }
 
-/* ========= brukerrRdigering ======== */
-/*Husk at siden må bli centered på en eller annen måte uten å centere andre sider*/
-.lists {
-  display: inline-block;
-  margin-left: 3rem;
-  border:black solid 0.05rem;
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
-  color: #4A3728;
-}
-.partOfList{
-  border: black solid 0.05rem;
-  border-radius: 0.05rem;
-}
-#editButton {
-  background-color: darkblue;
-  font-size: 1.25rem;
-  color: white;
-  border: 0px;
-  width: 4rem;
-}
-#deleteButton {
-  background-color: darkred;
-  font-size: 1.25rem;
-  color: white;
-  border: 0px;
-  width: 4rem;
-}
-#popup{
-  visibility: hidden;
-  position: absolute;
-  display: flex;
-  left: 30%;
-  right: 30%;
-  flex-direction: column;
-  margin: 25px auto;
-  background-color: #F7F3E8;
-  border: black solid 0.05rem;
-  width: 40%;
-  font-size: 1.25rem;
-  border-radius: 0.5rem;
-  color:#B36A38;
-}
-#completeEditButton{
-  background-color:#B36A38;
-  font-size: 1.25rem;
-  color: white;
-  border:#F7F3E8 solid 0.5rem;
-  border-radius: 0.15rem;
-  width: 8rem;
-}
-#stopEditingButton{
-  background-color:darkred;
-  font-size: 1.25rem;
-  color: white;
-  border:#F7F3E8 solid 0.5rem;
-  border-radius: 0.15rem;
-  width: 8rem;
-}
-#newName{
-  width: 90%;
-}
-#newPassword{
-  width: 90%;
-}
 
 #avatarPopup{
   visibility: hidden;
@@ -248,7 +183,12 @@ font-size: 16px;
   border-radius: 0.5rem;
   color:#B36A38;
 }
-
+#avatarPopup img{
+    width: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
 #popupHeader{
   text-align: center;
 }
@@ -256,7 +196,4 @@ font-size: 16px;
 .avtImg{
   height:33%; 
   width:33%
-}
-#centerArea{
-  text-align: center;
 }

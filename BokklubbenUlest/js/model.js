@@ -94,8 +94,24 @@ const model = {
                 avatar: "moose.png",
                 addedBooks: [],
                 favorites: [],
-                isAdmin: true
-            }
+                isAdmin: true,
+            },
+            {
+                name: "Ole",
+                password: "Passord888",
+                avatar: "moose.png",
+                addedBooks: [],
+                favorites: [],
+                isAdmin: false,
+            },
+            {
+                name: "Per",
+                password: "Passord888",
+                avatar: "moose.png",
+                addedBooks: [],
+                favorites: [],
+                isAdmin: false,
+            },
 
             
         ],
