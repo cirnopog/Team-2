@@ -1,11 +1,12 @@
 function addBook(){
     const newBook = {
-        id: model.data.bookList.length,
+        id: model.data.bookList.length+1,
         title: model.viewState.bookRegistrationPage.title,
         author: model.viewState.bookRegistrationPage.author,
         description: model.viewState.bookRegistrationPage.description,
         purchaseLink: model.viewState.bookRegistrationPage.purchaseLink,
         img: model.viewState.bookRegistrationPage.coverImg,
+        usersWhoHaveVoted:[],
         votes: 0,
     }
     model.data.bookList.push(newBook);
