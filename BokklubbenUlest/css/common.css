@@ -169,31 +169,4 @@ font-size: 16px;
 }
 
 
-#avatarPopup{
-  visibility: hidden;
-  position: absolute;
-  display: inline-block;
-  left: 20%;
-  right: 10%;
-  margin: 25px auto;
-  background-color: #F7F3E8;
-  border:black solid 0.05rem;
-  width: 65%;
-  font-size: 1.25rem;
-  border-radius: 0.5rem;
-  color:#B36A38;
-}
-#avatarPopup img{
-    width: 230px;
-    border-radius: 50%;
-    object-fit: cover;
-    cursor: pointer;
-}
-#popupHeader{
-  text-align: center;
-}
 
-.avtImg{
-  height:33%; 
-  width:33%
-}

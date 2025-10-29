@@ -1,10 +1,13 @@
+generateYourProfile()
+
 function generateOtherUserProfile(usr){
     const app = document.getElementById("app")
     app.innerHTML=`
     <div id="profileLeftSide">
     <img src="img/${usr.avatar}" id="profileAvatar" alt="${usr.avatar}" 50%" width="50%">
     </div>
-    <h1 id="profileHeader">${usr.name}</h1>
+
+    <h2 id="profileHeader">${usr.name}</h2>
     <div id="profileRightSide">
     ${allReadBooksOtherAccount(usr)}
     ${favoriteBooksOtherAccount(usr)}
@@ -17,17 +20,20 @@ function generateYourProfile(){
     <div id="profileLeftSide">
     <img src="img/${model.app.currentUser.avatar}" id="profileAvatar" alt="${model.app.currentUser.avatar}" height="50%" width="50%" onclick="chooseAvatar()">
     <p id="undertext">Klikk på bildet for å endre avatar</p>
+    <button onclick="logOut()" id="logoutButton">Logg ut</button>
     </div>
+
     <div id="avatarPopup">
-    <h1 id="popupHeader">Endre avatar</h1>
+    <h2 id="popupHeader">Endre avatar</h2>
     ${createAvatarList()}
     </div>
+
     <div id="profileRightSide">
-    <h1 id="profileHeader">${model.app.currentUser.name}</h1>
+    <h2 id="profileHeader">${model.app.currentUser.name}</h2>
     ${allReadBooks()}
     ${favoriteBooks()}
     </div>
-    <button onclick="logOut()" id="logoutButton">Logg ut</button>
+    
     `
         console.log(model.app.currentUser)
 }
@@ -41,16 +47,45 @@ function createAvatarList(){
     return allAvatars
 
 }
-
+function allReadBooks(){
+    let readBooks = `
+    <table id="readbooks" class="profile-table">
+    <thead>
+        <tr>
+            <th>Leste Bøker</th>
+        </tr>
+    </thead>
+    `
+    for(i in model.app.currentUser.addedBooks){
+        if(model.app.currentUser.addedBooks[i].title!==undefined){
+        readBooks+=`<tbody>
+        <tr>
+            <td class="tablePart">${model.app.currentUser.addedBooks[i].title}</th>
+            <td class="tablePart"><button class="removeButton" onclick="deleteBook(model.app.currentUser.addedBooks,${i})">Klikk for å fjerne</button></th>
+        </tr>
+        </tbody>`     
+        }
+    }
+    if(model.app.currentUser.favorites.length === 0){
+        readBooks+=`
+        <tr>
+            <td>Ingen bøker lagt til</td>
+        </tr>
+        `;
+    }
+    readBooks+=`</table>
+                `
+    return readBooks
+}
 function favoriteBooks(){
     let favorites = `
-    <h2>Favoritter</h2>
-    <table id="favs">
+    <table id="favs" class="profile-table">
     <thead>
-    <tr>
-    <th>Bok navn</th>
-    </tr>
-    </thead>`
+        <tr>
+            <th>Favoritter</th>
+        </tr>
+    </thead>
+    `
     for(i in model.app.currentUser.favorites){
         if(model.app.currentUser.favorites[i].title!==undefined){
         favorites+=`<tbody>
@@ -61,31 +96,15 @@ function favoriteBooks(){
         </tbody>`
         }
     }
+    if(model.app.currentUser.favorites.length === 0){
+        favorites+=`
+        <tr>
+        <td>Ingen favoritter enda</td>
+        </tr>
+        `;
+    }
     favorites+=`</table>`
     return favorites
-}
-
-function allReadBooks(){
-    let readBooks = `
-    <h2>Leste Bøker</h2>
-    <table id="readbooks">
-    <thead>
-    <tr>
-    <th>Bok navn</th>
-    </tr>
-    </thead>`
-    for(i in model.app.currentUser.addedBooks){
-        if(model.app.currentUser.addedBooks[i].title!==undefined){
-        readBooks+=`<tbody>
-        <tr>
-        <th class="tablePart">${model.app.currentUser.addedBooks[i].title}</th>
-        <th class="tablePart"><button class="removeButton" onclick="deleteBook(model.app.currentUser.addedBooks,${i})">Klikk for å fjerne</button></th>
-        </tr>
-        </tbody>`     
-        }
-    }
-    readBooks+=`</table>`
-    return readBooks
 }
 
 

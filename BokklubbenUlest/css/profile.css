@@ -1,9 +1,26 @@
-#readbooks{
-  border: black 0.05rem solid
+.profile-table{
+  border: var(--accent-color) 2px solid;
+  width:90%;
+  border-spacing: 0px;
+  border-radius: 1rem;
+  
 }
-
+.profile-table th{
+  text-align: start;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  font-size: 2rem;
+  font-family: var(--heading-font);
+  border-radius: 8px 8px 0px 0px;
+  padding: 1rem;
+}
+.profile-table td{
+  padding: 1rem;
+  font-family: var(--regular-text);
+  font-size: 18px;
+}
 #favs{
-  border: black 0.05rem solid;
+  margin-top: 2rem;
 }
 
 .tablePart{
@@ -17,7 +34,11 @@
 }
 #profileHeader{
     font-size: 2.75rem;
-    text-align: center;
+    /* text-align: center; */
+    margin-bottom: 1rem;
+    font-family: var(--heading-font);
+    color: var(--brown-color);
+
 }
 #allReadDiv{
     float: left;
@@ -34,7 +55,11 @@
     display: flex;
     flex-direction: column;
     margin: 25px auto;
+    
 }
+#profileRightSide{
+
+} 
 #logoutButton{
     display: flex;
     flex-direction: column;
@@ -61,4 +86,34 @@
     border-radius: 50%;
     object-fit:cover;
     cursor: pointer;
+}
+
+/* AVATAR POPUP */
+#avatarPopup{
+  visibility: hidden;
+  position: absolute;
+  display: inline-block;
+  left: 20%;
+  right: 10%;
+  margin: 25px auto;
+  background-color: #F7F3E8;
+  border:black solid 0.05rem;
+  width: 65%;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  color:#B36A38;
+}
+#avatarPopup img{
+    width: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+#popupHeader{
+  text-align: center;
+}
+
+.avtImg{
+  height:33%; 
+  width:33%
 }
