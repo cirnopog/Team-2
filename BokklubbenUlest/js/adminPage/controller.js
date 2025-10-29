@@ -122,6 +122,7 @@ function startVote() {
 
     voteDaysLeft();
     updateVoteStatus();
+    saveData()
 }
 
 
