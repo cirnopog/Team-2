@@ -120,12 +120,10 @@ function favoriteBooks(){
 
 function favoriteBooksOtherAccount(usr){
     let favorites = `
-    <div id="favoriteDiv">
-    <h2>Favoritter</h2>
-    <table id="favs">
+    <table id="favs" class="profile-table">
     <thead>
     <tr>
-    <th>Bok navn</th>
+    <th>Favoritter</th>
     </tr>
     </thead>`
     for(i in usr.favorites){
@@ -137,19 +135,23 @@ function favoriteBooksOtherAccount(usr){
         </tbody>`
         }
     }
-    favorites+=`</table>
-    </div>`
+    if(model.app.currentUser.favorites.length === 0){
+        favorites+=`
+        <tr>
+        <td>Ingen favoritter enda</td>
+        </tr>
+        `;
+    }
+    favorites+=`</table>`
     return favorites
 }
 
 function allReadBooksOtherAccount(usr){
     let readBooks = `
-    <div id="allReadDiv">
-    <h2>Leste Bøker</h2>
-    <table id="readbooks">
+    <table id="readbooks" class="profile-table">
     <thead>
     <tr>
-    <th>Bok navn</th>
+    <th>Leste Bøker</th>
     </tr>
     </thead>`
     for(i in usr.addedBooks){
@@ -161,8 +163,14 @@ function allReadBooksOtherAccount(usr){
         </tbody>`
         }
     }
-    readBooks+=`</table>
-    </div>`
+    if(model.app.currentUser.addedBooks.length === 0){
+        readBooks+=`
+        <tr>
+            <td>Ingen bøker lagt til</td>
+        </tr>
+        `;
+    }
+    readBooks+=`</table>`
     return readBooks
 }
 
