@@ -1,8 +1,8 @@
 // REGISTRATION
 
-adminPage()
-showUserList()
-showEditPage()
+// adminPage()
+// showUserList()
+// showEditPage()
 
 
 // Viser admin-pagen med navigasjon
