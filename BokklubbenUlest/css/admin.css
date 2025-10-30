@@ -188,32 +188,62 @@
     visibility: hidden;
     position: absolute;
     display: flex;
+    flex-direction: column;
     left: 30%;
     right: 30%;
-    flex-direction: column;
+    top: 30%;
+    padding: 2rem 4.5rem;
     margin: 25px auto;
     background-color: #F7F3E8;
+    color: var(--brown-color);
     border: black solid 0.05rem;
-    width: 40%;
+    border-radius: 2rem;
     font-size: 1.25rem;
-    border-radius: 0.5rem;
-    color:#B36A38;
+    font-family: var(--regular-text);
+    width: fit-content;
+    box-shadow:  2px 3px 9px rgba(0, 0, 0, 0.4);
+  }
+  #popup input{
+    padding: 8px;
+    width: 100%;
+    font-size: 17px;
+  }
+  #popup label{
+    font-weight: 600;
+    margin-top: 1.5rem;
+    line-height: 
+    160%;
+  }
+  #popup .btn-container{
+    margin-top: 1.5rem;
   }
   #completeEditButton{
     background-color:#B36A38;
     font-size: 1.25rem;
     color: white;
     border:#F7F3E8 solid 0.5rem;
-    border-radius: 0.15rem;
+    border-radius: 1rem;
     width: 8rem;
+    padding: 5px 0;
+    cursor: pointer;
+    
+  }
+  #completeEditButton:hover{
+    background-color: var(--contrast-accent);
   }
   #stopEditingButton{
     background-color:darkred;
     font-size: 1.25rem;
     color: white;
     border:#F7F3E8 solid 0.5rem;
-    border-radius: 0.15rem;
+    border-radius: 1rem;
     width: 8rem;
+    padding: 5px 0;
+    cursor: pointer;
+    
+  }
+  #stopEditingButton:hover{
+    background-color: var(--alert);
   }
   #newName{
     width: 90%;

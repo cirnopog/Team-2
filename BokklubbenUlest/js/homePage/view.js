@@ -1,5 +1,5 @@
 loadData()
-// homePage()
+homePage()
 
 function homePage(){
     document.getElementById("app").innerHTML =`
