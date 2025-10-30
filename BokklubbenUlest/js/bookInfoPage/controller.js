@@ -47,7 +47,7 @@ function addToFavorites() {
         document.getElementById('heart-icon').style.color = 'red';
     }
 
-    // Synkronisere og lagre forandringer
+    // Synkroniserer og lagrer forandringer
     const masterBookIndex = model.data.bookList.findIndex(
         viewedBook => viewedBook.title === bookTitle
     );
@@ -71,6 +71,7 @@ function buyBook() {
 
 // Gi stjerne, rate bok
 function rateBook(ratingValue) {
+    // Sett inn denne koden i addToFavorites også!
     if (!model.app.currentUser) {
         console.warn("User must be logged in to rate a book.");
         return;
@@ -104,10 +105,10 @@ function rateBook(ratingValue) {
         });
     }
 
-    console.log(model.data.bookInfo.ratings)
+    // console.log(model.data.bookInfo.ratings);
 
+    // Synkroniserer og lagrer forandringer
     const bookTitle = model.data.bookInfo.title;
-
     const masterBookIndex = model.data.bookList.findIndex(
         ratedBook => ratedBook.title === bookTitle
     );

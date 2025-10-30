@@ -47,5 +47,3 @@ function bookInfoPage() {
         </div>
     `;
 }
-
-bookInfoPage()
