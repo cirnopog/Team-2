@@ -31,6 +31,10 @@ function registerNewUser(event) {
     let newUser = {
         name: model.viewState.userRegistrationPage.name,
         password: model.viewState.userRegistrationPage.password,
+        avatar: "moose.png",
+        addedBooks: [],
+        favorites: [],
+        isAdmin: false,
     }
 
     model.data.users.push(newUser);
