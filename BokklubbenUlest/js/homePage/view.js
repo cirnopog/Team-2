@@ -139,7 +139,7 @@ function showAddToVoting(){
 //!! må endre 'meeting-attendees' senere !!
 function drawMeetingBanner(){
 moreHtml = ""
-if(!model.app.currentUser.decidedMeeting){
+if(model.app.currentUser.decidedMeeting){
     moreHtml = `    
     <div class="btn-container">
         <button onclick="accountIsComing()">Kommer</button>

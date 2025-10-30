@@ -32,7 +32,7 @@ function vote(bookId, value) {
 
 function accountIsComing(){
     model.data.meetingAttendees.coming+=1
-    model.app.currentUser.decidedMeeting = true
+    model.app.currentUser.decidedMeeting = false
     console.log("coming")
     updateCurrentUser()
     saveData()
@@ -40,7 +40,7 @@ function accountIsComing(){
 }
 function accountIsNotComing(){
     model.data.meetingAttendees.notComing+=1
-    model.app.currentUser.decidedMeeting = true
+    model.app.currentUser.decidedMeeting = false
     console.log("not coming")
     updateCurrentUser()
     saveData()

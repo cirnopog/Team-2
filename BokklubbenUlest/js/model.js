@@ -105,6 +105,7 @@ const model = {
                 addedBooks: [],
                 favorites: [],
                 isAdmin: true,
+                decidedMeeting: false
 
             },
             {
@@ -114,6 +115,7 @@ const model = {
                 addedBooks: [],
                 favorites: [],
                 isAdmin: false,
+                decidedMeeting: false
             },
             {
                 name: "Per",
@@ -122,11 +124,9 @@ const model = {
                 addedBooks: [],
                 favorites: [],
                 isAdmin: false,
-            }, 
-            ],
                 decidedMeeting: false
-            ,
-
+            }, 
+        ],
 
             
        

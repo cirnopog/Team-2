@@ -87,10 +87,9 @@ function deleteUser(usrNr){
 // NEW MEETING
 
 function setNewMeetingDate(){
-
     model.data.meetingdate = model.viewState.meetingPage.date
     for(i in model.data.users){
-        model.data.users[i].decidedMeeting=false
+        model.data.users[i].decidedMeeting=true
         if(model.app.currentUser.name==model.data.users[i].name){
             model.app.currentUser=model.data.users[i]
         }
