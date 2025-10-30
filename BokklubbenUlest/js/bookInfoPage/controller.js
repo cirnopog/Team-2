@@ -35,6 +35,15 @@ function addToFavorites() {
     } else {
         currentBook.isFavorite = true;
         model.app.currentUser.favorites.push(currentBook);
+        var isInBooks = false
+        for(i in model.app.currentUser.addedBooks){
+            if(model.app.currentUser.addedBooks[i].title==currentBook.title){
+                isInBooks=true
+            }
+        }
+        if(!isInBooks){
+            model.app.currentUser.addedBooks.push(currentBook)
+        }
         document.getElementById('heart-icon').style.color = 'red';
     }
 

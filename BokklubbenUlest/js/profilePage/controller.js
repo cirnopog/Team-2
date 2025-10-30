@@ -3,9 +3,9 @@ function findProfile(usrId){
     for(i in model.data.users){
         if(model.data.users[i].name==usrId){
             user=model.data.users[i]
+            generateProfile(user)
         }
     }
-    generateOtherUserProfile(user)
 }
 
 function chooseAvatar(){
@@ -19,7 +19,7 @@ function avatarChosen(newAvatar){
     model.app.currentUser.avatar=newAvatar
     avatarPopup.style.visibility="hidden"
     updateCurrentUser()
-    generateYourProfile()
+    generateProfile(model.app.currentUser)
     createHeader()
     
 }

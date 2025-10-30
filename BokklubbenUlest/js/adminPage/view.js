@@ -1,6 +1,8 @@
 // REGISTRATION
 
 // adminPage()
+// showUserList()
+// showEditPage()
 
 
 // Viser admin-pagen med navigasjon
@@ -79,15 +81,20 @@ function showUserList(){
 
     let adminStuff = document.getElementById('adminStuff')
     adminStuff.innerHTML = fullList
-    adminStuff.innerHTML += `<div id="popup">
-    <h1>Rediger bruker</h1>
-    <label for="newName">Navn</label>
-    <input type="text" id="newName" name="newName">
-    <label for="newPassword">Passord</label>
-    <input type="password" id="newPassword" name="newPassword">
-    <button type="submit" onclick="editUser()" id="completeEditButton">Rediger</button>
-    <button id="stopEditingButton" onclick="removeEditPage()">Avbryt</button>
-    <p id="registration-error"></p>
+    adminStuff.innerHTML += `
+    <div id="popup">
+        <h1>Rediger bruker</h1>
+        <label for="newName">Navn</label>
+        <input type="text" id="newName" name="newName">
+
+        <label for="newPassword">Passord</label>
+        <input type="password" id="newPassword" name="newPassword">
+
+        <div class="btn-container">
+            <button type="submit" onclick="editUser()" id="completeEditButton">Rediger</button>
+            <button id="stopEditingButton" onclick="removeEditPage()">Avbryt</button>
+        </div>
+        <p id="registration-error"></p>
     </div>`
 
 }
@@ -119,7 +126,7 @@ function newMeeting(){
     document.getElementById('adminStuff').innerHTML = /*HTML*/`
     <form id="votePageForm">
     <h4>Dato for nytt møte</h4>
-    <input id="meetingInput" type="date" value="2025-11-03" onchange="model.viewState.meetingPage.date = this.value">
+    <input id="meetingInput" type="date" onchange="model.viewState.meetingPage.date = this.value">
     <button onclick="setNewMeetingDate()">Opprett</button>
     </form>
     `

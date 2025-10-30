@@ -3,7 +3,7 @@ const model = {
         currentPage: "homePage",
         currentUser: null,
         savedUser: localStorage.getItem('currentUser'),
-        votingActive: true,
+        votingActive: false,
     },
     viewState: {
         homePage: {
@@ -82,14 +82,19 @@ const model = {
             },
 
         ],
-        winnerBook: null,
-        //  {
-        //     img: "",
-        //     title: "",
-        //     author: "",
-        //     description: "",
-        //     link: "",
-        // },
+        winnerBook: 
+        // null,
+            {
+                id: 2,
+                img: "img/dune.webp",
+                author: "Frank Herbert",
+                title: "Dune",
+                purchaseLink: "https://www.norli.no/boker/boker-pa-andre-sprak/engelske-boker/dune",
+                votes: 0,
+                usersWhoHaveVoted:[
+            
+                ]
+            },
         
         // evt egen for user info?
         users: [
@@ -100,6 +105,7 @@ const model = {
                 addedBooks: [],
                 favorites: [],
                 isAdmin: true,
+                decidedMeeting: false
 
             },
             {
@@ -109,6 +115,7 @@ const model = {
                 addedBooks: [],
                 favorites: [],
                 isAdmin: false,
+                decidedMeeting: false
             },
             {
                 name: "Per",
@@ -117,11 +124,9 @@ const model = {
                 addedBooks: [],
                 favorites: [],
                 isAdmin: false,
-            }, 
-            ],
                 decidedMeeting: false
-            ,
-
+            }, 
+        ],
 
             
        

@@ -31,6 +31,10 @@ function registerNewUser(event) {
     let newUser = {
         name: model.viewState.userRegistrationPage.name,
         password: model.viewState.userRegistrationPage.password,
+        avatar: "moose.png",
+        addedBooks: [],
+        favorites: [],
+        isAdmin: false,
     }
 
     model.data.users.push(newUser);
@@ -83,10 +87,9 @@ function deleteUser(usrNr){
 // NEW MEETING
 
 function setNewMeetingDate(){
-
     model.data.meetingdate = model.viewState.meetingPage.date
     for(i in model.data.users){
-        model.data.users[i].decidedMeeting=false
+        model.data.users[i].decidedMeeting=true
         if(model.app.currentUser.name==model.data.users[i].name){
             model.app.currentUser=model.data.users[i]
         }
