@@ -7,7 +7,9 @@ function addBook(){
         purchaseLink: model.viewState.bookRegistrationPage.purchaseLink,
         img: model.viewState.bookRegistrationPage.coverImg,
         usersWhoHaveVoted:[],
+        ratings: [],
         votes: 0,
+        isFavorite: false
     }
     model.data.bookList.push(newBook);
     model.app.currentUser.addedBooks.push(newBook);
@@ -15,7 +17,7 @@ function addBook(){
         model.data.booksInVoting.push(newBook);
     }
     updateCurrentUser();
-    saveData();
+    saveData(); 
 }
 // function handleImageUpload(e){
 //     const file = e.target.files[0];
