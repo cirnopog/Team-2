@@ -103,11 +103,23 @@ function renderBooksInVoting() {
 }
 
 
-
+// dere kan gjøre denne ferdig hvis dere vil
+// bruk flex til å få bok info på høyre side av bok bildet
 function drawWinnerBook(){
     document.getElementById("bookListContainer").innerHTML=`
     <div>
-    <img src="img/${model.data.drawWinnerBook.img}">
+        <h3>${model.data.winnerBook.title} vant bok valget!</h3> 
+
+        <div class="winner-container">
+            <img src="${model.data.winnerBook.img}" width="200">
+
+            <div class="winner-info">
+                <p>Forfatter:</p>
+                <p>Stemmer:</p>
+                <p>Bok beskrivelse her</p>
+            </div>
+        </div>
+        <button>Kjøp boken</button>
     </div>
     
     

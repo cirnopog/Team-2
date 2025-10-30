@@ -36,8 +36,8 @@ header > div{
     align-items: center;
 }
 header > div >.avatar{
-    width: 63px;
-    height: 63px;
+    width: 57px;
+    height: 57px;
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
