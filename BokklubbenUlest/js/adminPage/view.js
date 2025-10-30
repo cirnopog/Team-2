@@ -119,7 +119,7 @@ function newMeeting(){
     document.getElementById('adminStuff').innerHTML = /*HTML*/`
     <form id="votePageForm">
     <h4>Dato for nytt møte</h4>
-    <input id="meetingInput" type="date" value="2025-11-03" onchange="model.viewState.meetingPage.date = this.value">
+    <input id="meetingInput" type="date" onchange="model.viewState.meetingPage.date = this.value">
     <button onclick="setNewMeetingDate()">Opprett</button>
     </form>
     `
