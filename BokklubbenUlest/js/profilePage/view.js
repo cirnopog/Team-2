@@ -60,13 +60,18 @@ function allReadBooks(){
         if(model.app.currentUser.addedBooks[i].title!==undefined){
         readBooks+=`<tbody>
         <tr>
-            <td class="tablePart">${model.app.currentUser.addedBooks[i].title}</th>
-            <td class="tablePart"><button class="removeButton" onclick="deleteBook(model.app.currentUser.addedBooks,${i})">Klikk for å fjerne</button></th>
+            <td class="tablePart">
+                ${model.app.currentUser.addedBooks[i].title}
+                <button class="removeButton" onclick="deleteBook(model.app.currentUser.addedBooks,${i})">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </td>
+            
         </tr>
         </tbody>`     
         }
     }
-    if(model.app.currentUser.favorites.length === 0){
+    if(model.app.currentUser.addedBooks.length === 0){
         readBooks+=`
         <tr>
             <td>Ingen bøker lagt til</td>
@@ -90,8 +95,13 @@ function favoriteBooks(){
         if(model.app.currentUser.favorites[i].title!==undefined){
         favorites+=`<tbody>
         <tr>
-        <th class="tablePart">${model.app.currentUser.favorites[i].title}</th>
-        <th class="tablePart"><button class="removeButton" onclick="">Klikk for å fjerne</button></th>
+        <td class="tablePart">
+            ${model.app.currentUser.favorites[i].title} 
+            <button class="removeButton" onclick="">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </td>
+         
         </tr>
         </tbody>`
         }

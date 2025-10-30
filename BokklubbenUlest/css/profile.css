@@ -20,12 +20,14 @@
   font-size: 18px;
 }
 #favs{
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .tablePart{
   padding: 0.65rem;
-  border: black 0.05rem solid;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
 }
 #undertext{
     color: brown;
@@ -74,12 +76,13 @@
 }
 
 .removeButton{
-  width: 15rem;
-  height: 4rem; 
+  padding: 0.5rem; 
   border: 1px brown solid;
   border-radius: 0.5rem;
-  background-color: blanchedalmond;
-  color: brown;
+  /* background-color: blanchedalmond; */
+  background-color: var(--alert);
+  color: white;
+  cursor: pointer;
 }
 
 #profileAvatar{
