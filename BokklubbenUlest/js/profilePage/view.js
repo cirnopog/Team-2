@@ -97,7 +97,7 @@ function favoriteBooks(){
         <tr>
         <td class="tablePart">
             ${model.app.currentUser.favorites[i].title} 
-            <button class="removeButton" onclick="">
+            <button class="removeButton" onclick="deleteBook(model.app.currentUser.favorites,${i})">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </td>
