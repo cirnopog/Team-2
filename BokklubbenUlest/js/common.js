@@ -6,7 +6,7 @@ let html = /*HTML*/`
     <div>
         <i onclick="toggleMenu()" class="fa-solid fa-bars"></i>
         ${model.app.currentUser !== null?
-        `<img onclick="model.app.currentPage='userProfile'; generateYourProfile(model.app.currentUser)" src="img/${model.app.currentUser.avatar}" alt="Profile" class="avatar">`
+        `<img onclick="model.app.currentPage='userProfile'; generateProfile(model.app.currentUser)" src="img/${model.app.currentUser.avatar}" alt="Profile" class="avatar">`
         :
         `<button onclick="toggleLogIn()">Logg inn</button>`   
         }
@@ -35,7 +35,7 @@ let html = /*HTML*/`
                 <li onclick="model.app.currentPage='adminPage'; adminPage();">Admin</li>
                 <li onclick="
                 model.app.currentUser !== null ?
-                generateYourProfile(model.app.currentUser)
+                generateProfile(model.app.currentUser)
                 : toggleLogIn()">
                 Profil</li>
                 <li onclick="model.app.currentPage='adminPage'; newBookPage()">Legg til bok</li>
@@ -72,7 +72,7 @@ function validateLogin(){
         model.app.currentUser = user;
         localStorage.setItem('currentUser', JSON.stringify(user));
         updateCurrentUser()
-        generateYourProfile()
+        generateProfile(model.app.currentUser)
         createHeader()
         
     }else{
@@ -147,7 +147,7 @@ function deleteBook(list, bookNum){
     saveData();
     if(list===model.app.currentUser.addedBooks ||
         list===model.app.currentUser.favorites){
-            generateYourProfile();
+            generateProfile(model.app.currentUser);
         }else{
           homePage()  
         }
