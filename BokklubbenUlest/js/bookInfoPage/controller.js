@@ -60,7 +60,49 @@ function buyBook() {
     }
 }
 
-// Gi stjerne
-function giveStar(clickedStar) {
-    clickedStar.style.color = 'yellow';
+// Gi stjerne, rate bok
+function rateBook(ratingValue) {
+    if (!model.app.currentUser) {
+        console.warn("User must be logged in to rate a book.");
+        // Optionally, call a function to show the login UI here
+        return;
+    }
+
+    // 1. Get all star elements
+    const starContainer = document.querySelector('.star-rating');
+    const allStars = starContainer.querySelectorAll('.fa-star'); // Use the shared class
+
+    // 2. Loop through the stars
+    for (let i = 0; i < allStars.length; i++) {
+        const star = allStars[i];
+        
+        // The core comparison is here:
+        if (i < ratingValue) {
+            // If the zero-indexed position (i) is less than the one-indexed value (ratingValue),
+            // it means this star is part of the rating.
+            star.style.color = 'yellow';
+        } else {
+            // Otherwise, reset the color.
+            star.style.color = '#4A3728'; 
+        }
+    }
+    const currentBookRatings = model.data.bookInfo.ratings;
+    const currentUserName = model.app.currentUser.name;
+
+    const userRatingIndex = currentBookRatings.findIndex(
+        rating => rating.userName === currentUserName
+    );
+
+    if (userRatingIndex !== -1) {
+        currentBookRatings[userRatingIndex].value = ratingValue; 
+    } else {
+        currentBookRatings.push({
+            userName: currentUserName,
+            value: ratingValue
+        });
+    }
+
+    console.log(model.data.bookInfo.ratings)
+
+
 }

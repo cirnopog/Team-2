@@ -35,12 +35,12 @@ function bookInfoPage() {
                 </div>
                 <div class="right-footer">
                     <div class="star-rating">
-                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="giveStar(this)"></i>
-                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="giveStar(this)"></i>
-                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="giveStar(this)"></i>
-                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="giveStar(this)"></i>
-                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="giveStar(this)"></i>
-                        <button id="giRating-button" type="submit">Gi rating</button>
+                        <p id="bookRating">Gi rating:</p>
+                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="rateBook(1)"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="rateBook(2)"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="rateBook(3)"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="rateBook(4)"></i>
+                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="rateBook(5)"></i>
                     </div>
                 </div>
             </div>
