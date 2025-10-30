@@ -133,7 +133,6 @@ function favoriteBooksOtherAccount(usr){
         favorites+=`<tbody>
         <tr>
         <th class="tablePart">${usr.favorites[i].title}</th>
-        <th class="tablePart"><button class="removeButton" onclick="">Klikk for å fjerne</button></th>
         </tr>
         </tbody>`
         }
@@ -158,7 +157,6 @@ function allReadBooksOtherAccount(usr){
         readBooks+=`<tbody>
         <tr>
         <th class="tablePart">${usr.addedBooks[i].title}</th>
-        <th class="tablePart"><button class="removeButton" onclick="">Klikk for å fjerne</button></th>
         </tr>
         </tbody>`
         }
