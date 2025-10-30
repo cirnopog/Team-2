@@ -1,4 +1,4 @@
-generateYourProfile()
+// generateYourProfile()
 
 function generateOtherUserProfile(usr){
     const app = document.getElementById("app")
