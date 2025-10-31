@@ -153,7 +153,7 @@ const model = {
                 releaseDate: "2024",
                 ratings: [],
                 description: "Lake of Darkness er en filosofisk space opera der et utopisk, post-mangel samfunn blir rystet. Handlingen starter ved et svart hull (QV Tel) hvor en kaptein plutselig begår brutale drap på mannskapet sitt, drevet av en tilsynelatende stemme fra mørket. Romanen utforsker dype spørsmål om ondskapens natur, black hole-fysikk og hvordan en naiv, høyteknologisk sivilisasjon takler ren ondskap.",
-                addedByUser: "Geir",
+                addedByUser: "Ole",
                 purchaseLink: "https://www.norli.no/boker/skjonnlitteratur/fantasy-og-scifi/lake-of-darkness",
                 isFavorite: false
                 
