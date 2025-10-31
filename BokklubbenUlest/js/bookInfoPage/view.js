@@ -46,6 +46,7 @@ function bookInfoPage() {
     `;
 }
 
+// For å vise bruker-rating
 function getUserRating() {
     const currentUserName = model.app.currentUser ? model.app.currentUser.name : null;
 
@@ -62,6 +63,7 @@ function getUserRating() {
     return currentUserRatingValue;
 }
 
+// Lager stjernene i ratingen
 function createStarHtml(ratingValue) {
     let html = '';
     const totalStars = 5;
