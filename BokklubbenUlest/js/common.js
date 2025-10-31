@@ -107,12 +107,15 @@ function voteDaysLeft() {
     if (currentVote.length === 0) {
         return 'Ingen aktiv avstemning';
     }
-    
     let pollEndDate = new Date(currentVote[0].endDate);
     let today = new Date();
     let differenceInMilliseconds = pollEndDate - today;
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
     let daysLeft = Math.floor(differenceInMilliseconds / millisecondsPerDay);
+    if(daysLeft<=0){
+        currentVote.splice(0,1)
+        return voteDaysLeft()
+    }
     return `${daysLeft} dager igjen`;
 }
 
