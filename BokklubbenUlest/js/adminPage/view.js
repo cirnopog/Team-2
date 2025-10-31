@@ -156,7 +156,7 @@ function votePage() {
             <button type="submit">Opprett</button>
             <p id="voteCreatedMessage"></p>
         </form>
-        <button onclick="cancelMeeting()">Stopp nåværene Møte</button>
+        <button id="resetButton" onclick="cancelMeeting()">Stopp nåværene Møte</button>
     `;
 
     document.getElementById('votePageForm').addEventListener('submit', (event) => {
