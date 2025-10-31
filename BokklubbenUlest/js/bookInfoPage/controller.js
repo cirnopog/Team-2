@@ -17,6 +17,8 @@ function selectBook(index) {
 
 // Favoritt-bok
 function addToFavorites() {
+    checkLogIn();
+
     const currentBook = model.data.bookInfo;
     const bookTitle = currentBook.title;
 
@@ -46,16 +48,7 @@ function addToFavorites() {
         }
         document.getElementById('heart-icon').style.color = 'red';
     }
-
-    // Synkroniserer og lagrer forandringer
-    const masterBookIndex = model.data.bookList.findIndex(
-        viewedBook => viewedBook.title === bookTitle
-    );
-    
-    if (masterBookIndex !== -1) {
-        model.data.bookList[masterBookIndex].isFavorite = currentBook.isFavorite;
-    }
-
+    syncAndStore('favorite');
     updateCurrentUser();
     saveData();
 }
@@ -89,10 +82,7 @@ function rateBook(ratingValue) {
 
 // For å kunne un-rate
 function updateBookRatingInModel(ratingValue) {
-    if (!model.app.currentUser) {
-        console.warn("Bruker må være innlogget for å gi rating!");
-        return;
-    }
+    checkLogIn();
 
     const currentBookRatings = model.data.bookInfo.ratings;
     const currentUserName = model.app.currentUser.name;
@@ -123,17 +113,7 @@ function updateBookRatingInModel(ratingValue) {
             value: newRatingValue
         });
     }
-
-    // Synkroniserer og lagrer forandringer
-    const bookTitle = model.data.bookInfo.title;
-    const masterBookIndex = model.data.bookList.findIndex(
-        ratedBook => ratedBook.title === bookTitle
-    );
-
-    if (masterBookIndex !== -1) {
-        model.data.bookList[masterBookIndex].ratings = model.data.bookInfo.ratings;
-    }
-
+    syncAndStore('rating')
     updateCurrentUser();
     saveData();
 
@@ -142,14 +122,48 @@ function updateBookRatingInModel(ratingValue) {
 
 // For å komme til bruker-profil fra bokinfo-siden
 function linkToProfile() {
-const username = model.data.bookInfo.addedByUser;
+    checkLogIn();
+    const username = model.data.bookInfo.addedByUser;
     const userObject = findUserByUsername(username); 
 
     if (userObject) {
         model.app.currentPage = 'userProfile';
         generateProfile(userObject);
-        updateView();
     } else {
         console.error("Brukeren '" + username + "' som la til boken ble ikke funnet.");
+    }
+}
+
+// Sjekker at bruker er innlogget
+// Hvis ikke sier den fra i konsollen
+// Hindrer krasj når man ikke er logget inn
+function checkLogIn() {
+    if (!model.app.currentUser) {
+        console.warn("Du må være innlogget for å bruke funksjonen!");
+        return;
+    }
+}
+
+// Synkroniserer og lagrer forandringer
+function syncAndStore(actionType) {
+    if (actionType === 'favorite') {
+        const currentBook = model.data.bookInfo;
+        const bookTitle = currentBook.title;
+        const masterBookIndex = model.data.bookList.findIndex(
+        viewedBook => viewedBook.title === bookTitle
+        );
+    
+        if (masterBookIndex !== -1) {
+            model.data.bookList[masterBookIndex].isFavorite = currentBook.isFavorite;
+        }
+    } else if (actionType === 'rating') {
+        const bookTitle = model.data.bookInfo.title;
+        const masterBookIndex = model.data.bookList.findIndex(
+        ratedBook => ratedBook.title === bookTitle
+        );
+
+        if (masterBookIndex !== -1) {
+            model.data.bookList[masterBookIndex].ratings = model.data.bookInfo.ratings;
+        }
     }
 }

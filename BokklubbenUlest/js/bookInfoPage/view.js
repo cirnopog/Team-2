@@ -9,6 +9,7 @@ function bookInfoPage() {
 
     const addedUserAvatar = addedUserObject ? addedUserObject.avatar : 'default-avatar.png';
 
+    // Bokinfo-sidens html
     document.getElementById('app').innerHTML = /*HTML*/`
         <h1 class="bookInfoHeading">Om boken<h1>
         <div class="bookInfoContainer">
