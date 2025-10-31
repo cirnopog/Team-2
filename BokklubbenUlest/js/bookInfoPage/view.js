@@ -1,6 +1,8 @@
 
 // Viser bok-info-siden
 function bookInfoPage() {
+    const currentUserRatingValue = getUserRating();
+
     document.getElementById('app').innerHTML = /*HTML*/`
         <h1 class="bookInfoHeading">Om boken<h1>
         <div class="bookInfoContainer">
@@ -31,19 +33,55 @@ function bookInfoPage() {
             </div>
             <div class="right-content">
                 <div class="right-main-area">
-                    <img src="${model.data.bookInfo.img}" alt="Bokcover">
+                    <img src="${model.data.bookInfo.img}" alt="Bokcover" width="300px">
                 </div>
                 <div class="right-footer">
                     <div class="star-rating">
                         <p id="bookRating">Gi rating:</p>
-                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="rateBook(1)"></i>
-                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="rateBook(2)"></i>
-                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="rateBook(3)"></i>
-                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="rateBook(4)"></i>
-                        <i class="fa-solid fa-star fa-sm" style="color: #4A3728;" onclick="rateBook(5)"></i>
+                        ${createStarHtml(currentUserRatingValue)}
                     </div>
                 </div>
             </div>
         </div>
     `;
 }
+
+// For å vise bruker-rating
+function getUserRating() {
+    const currentUserName = model.app.currentUser ? model.app.currentUser.name : null;
+
+    if (!currentUserName) {
+        return 0;
+    }
+
+    const userRatingObject = model.data.bookInfo.ratings.find(
+        rating => rating.userName === currentUserName
+    );
+
+    const currentUserRatingValue = userRatingObject ? userRatingObject.value : 0; 
+    
+    return currentUserRatingValue;
+}
+
+// Lager stjernene i ratingen
+function createStarHtml(ratingValue) {
+    let html = '';
+    const totalStars = 5;
+    const defaultColor = '#4A3728';
+    const activeColor = 'yellow';
+
+    for (let i = 1; i <= totalStars; i++) {
+        
+        const color = i <= ratingValue ? activeColor : defaultColor;
+
+        html += /*HTML*/`
+            <i 
+                class="fa-solid fa-star fa-sm" 
+                style="color: ${color};" 
+                onclick="rateBook(${i})"
+            ></i>
+        `;
+    }
+    return html;
+}
+
