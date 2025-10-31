@@ -103,9 +103,10 @@ function checkSavedLogin(){
 function voteDaysLeft() {
 
     currentVote = model.data.currentVote;
-
     if (currentVote.length === 0) {
-        saveData()
+        if(model.data.winnerBook.title==undefined){
+            return 'Ingen aktiv avstemning';
+        }
         drawWinnerBook()
         return 'Ingen aktiv avstemning';
     }
@@ -123,6 +124,7 @@ function voteDaysLeft() {
         }
         model.data.winnerBook=currentWinner
         currentVote.splice(0,1)
+        saveData()
         return voteDaysLeft()
     }
     return `${daysLeft} dager igjen`;
