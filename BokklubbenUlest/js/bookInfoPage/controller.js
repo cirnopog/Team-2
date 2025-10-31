@@ -71,11 +71,7 @@ function buyBook() {
 
 // Gi stjerne, rate bok
 function rateBook(ratingValue) {
-    // Sett inn denne koden i addToFavorites også!
-    if (!model.app.currentUser) {
-        console.warn("User must be logged in to rate a book.");
-        return;
-    }
+    const finalRatingValue = updateBookRatingInModel(ratingValue);
 
     const starContainer = document.querySelector('.star-rating');
     const allStars = starContainer.querySelectorAll('.fa-star');
@@ -83,29 +79,50 @@ function rateBook(ratingValue) {
     for (let i = 0; i < allStars.length; i++) {
         const star = allStars[i];
         
-        if (i < ratingValue) {
+        if (i < finalRatingValue) {
             star.style.color = 'yellow';
         } else {
             star.style.color = '#4A3728'; 
         }
     }
+}
+
+// For å kunne un-rate
+function updateBookRatingInModel(ratingValue) {
+    if (!model.app.currentUser) {
+        console.warn("Bruker må være innlogget for å gi rating!");
+        return;
+    }
+
     const currentBookRatings = model.data.bookInfo.ratings;
     const currentUserName = model.app.currentUser.name;
 
     const userRatingIndex = currentBookRatings.findIndex(
         rating => rating.userName === currentUserName
     );
+    
+    const currentUserRatingValue = userRatingIndex !== -1 
+        ? currentBookRatings[userRatingIndex].value 
+        : 0; 
 
-    if (userRatingIndex !== -1) {
-        currentBookRatings[userRatingIndex].value = ratingValue; 
-    } else {
+    let newRatingValue = ratingValue;
+    
+    if (newRatingValue === currentUserRatingValue) {
+        newRatingValue = 0;
+    } 
+    
+    if (newRatingValue === 0 && userRatingIndex !== -1) {
+        currentBookRatings.splice(userRatingIndex, 1);
+
+    } else if (userRatingIndex !== -1) {
+        currentBookRatings[userRatingIndex].value = newRatingValue;
+
+    } else if (newRatingValue !== 0) {
         currentBookRatings.push({
             userName: currentUserName,
-            value: ratingValue
+            value: newRatingValue
         });
     }
-
-    // console.log(model.data.bookInfo.ratings);
 
     // Synkroniserer og lagrer forandringer
     const bookTitle = model.data.bookInfo.title;
@@ -119,4 +136,6 @@ function rateBook(ratingValue) {
 
     updateCurrentUser();
     saveData();
+
+    return newRatingValue;
 }
