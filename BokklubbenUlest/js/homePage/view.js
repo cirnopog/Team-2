@@ -147,12 +147,10 @@ moreHtml = ""
 if( model.app.currentUser &&
     model.app.currentUser.decidedMeeting){
     moreHtml = `
-<div>    
     <div class="btn-container">
         <button onclick="accountIsComing()">Kommer</button>
         <button onclick="accountIsNotComing()">Kommer ikke</button>
     </div>
-</div>
 `}
 
 
