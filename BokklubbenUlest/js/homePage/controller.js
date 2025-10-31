@@ -52,7 +52,8 @@ function filterBooks(searchInput){
     const dropdown = document.getElementById('bookDropdown');
     const filtered = model.data.bookList.filter(book =>
         book.title.toLowerCase().includes(searchInput.toLowerCase()) &&
-        book.author);
+        book.author &&
+        !model.data.booksInVoting.includes(book));
     
        
 
@@ -91,6 +92,7 @@ function filterBooks(searchInput){
         console.log(chosenBook)
         if(chosenBook){
             model.data.booksInVoting.push(chosenBook);
+            saveData()
             renderBooksInVoting();
         }
     }
