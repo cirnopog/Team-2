@@ -125,3 +125,7 @@
     display: inline-block;
     margin-right: 10px;
 }
+
+.bookCover {
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .4));
+}

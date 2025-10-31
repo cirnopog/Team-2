@@ -33,7 +33,7 @@ function bookInfoPage() {
             </div>
             <div class="right-content">
                 <div class="right-main-area">
-                    <img src="${model.data.bookInfo.img}" alt="Bokcover" width="300px">
+                    <img class="bookCover" src="${model.data.bookInfo.img}" alt="Bokcover" width="300px">
                 </div>
                 <div class="right-footer">
                     <div class="star-rating">
