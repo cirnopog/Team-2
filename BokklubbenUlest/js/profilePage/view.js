@@ -4,7 +4,7 @@ function generateProfile(usr){
     if(usr.name==model.app.currentUser.name){
         app.innerHTML=`
         <div id="profileLeftSide">
-        <img src="img/${model.app.currentUser.avatar}" id="profileAvatar" alt="${model.app.currentUser.avatar}" height="50%" width="50%" onclick="chooseAvatar()">
+        <img src="img/${usr.avatar}" id="profileAvatar" alt="${usr.avatar}" height="50%" width="50%" onclick="chooseAvatar()">
         <p id="undertext">Klikk på bildet for å endre avatar</p>
         <button onclick="logOut()" id="logoutButton">Logg ut</button>
         </div>
@@ -15,7 +15,7 @@ function generateProfile(usr){
         </div>
 
         <div id="profileRightSide">
-        <h2 id="profileHeader">${model.app.currentUser.name}</h2>
+        <h2 id="profileHeader">${usr.name}</h2>
         ${allReadBooksOfAccount(usr)}
         ${favoriteBooksOfAccount(usr)}
         </div>
@@ -26,11 +26,10 @@ function generateProfile(usr){
         const app = document.getElementById("app")
         app.innerHTML=`
         <div id="profileLeftSide">
-        <img src="img/${usr.avatar}" id="profileAvatar" alt="${usr.avatar}" 50%" width="50%">
+        <img src="img/${usr.avatar}" id="profileAvatar" alt="${usr.avatar}" height="50%" width="50%">
         </div>
-
-        <h2 id="profileHeader">${usr.name}</h2>
         <div id="profileRightSide">
+        <h2 id="profileHeader">${usr.name}</h2>
         ${allReadBooksOfAccount(usr)}
         ${favoriteBooksOfAccount(usr)}
         </div>
