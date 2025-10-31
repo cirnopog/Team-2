@@ -116,10 +116,7 @@ function startVote() {
         startDate: model.viewState.votePage.startDate,
         endDate: model.viewState.votePage.endDate,
     }
-
-    for(i in model.data.booksInVoting){
-        model.data.booksInVoting[i].votes=0
-    }
+    model.data.booksInVoting.splice(0,model.data.booksInVoting.length)
     model.data.currentVote.push(newVote);
 
     document.getElementById('votePageForm').reset();
