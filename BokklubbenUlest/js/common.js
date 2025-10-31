@@ -171,3 +171,11 @@ function deleteBook(list, bookNum){
 function findUserByUsername(username) {
     return model.data.users.find(user => user.name === username);
 }
+
+
+function cancelMeeting(){
+    const resetDate = new Date()
+    model.data.currentVote[0].startDate = resetDate
+    model.data.currentVote[0].endDate = resetDate
+    saveData()
+}
