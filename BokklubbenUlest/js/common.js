@@ -142,16 +142,6 @@ function deleteBook(list, bookNum){
             model.data.bookList.splice(i,1)
         }
     }
-    for(i in model.app.currentUser.favorites){
-        if(model.app.currentUser.favorites[i].title==book.title){
-            model.app.currentUser.favorites.splice(i,1)
-        }
-    }
-    for(i in model.app.currentUser.addedBooks){
-        if(model.app.currentUser.addedBooks[i].title==book.title){
-            model.app.currentUser.addedBooks.splice(i,1)
-        }
-    }
     list.splice(bookNum, 1);
     updateCurrentUser();
     saveData();
