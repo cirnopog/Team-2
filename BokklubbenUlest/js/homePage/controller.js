@@ -88,6 +88,7 @@ function filterBooks(searchInput){
 
     function addSelectedBook(){
         const chosenBook = model.viewState.homePage.chooseBook.chosenBook;
+        console.log(chosenBook)
         if(chosenBook){
             model.data.booksInVoting.push(chosenBook);
             renderBooksInVoting();
