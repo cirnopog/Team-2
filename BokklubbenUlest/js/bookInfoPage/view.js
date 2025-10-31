@@ -3,6 +3,12 @@
 function bookInfoPage() {
     const currentUserRatingValue = getUserRating();
 
+    // Added by user stuff
+    const addedByUser = model.data.bookInfo.addedByUser;
+    const addedUserObject = findUserByUsername(addedByUser);
+
+    const addedUserAvatar = addedUserObject ? addedUserObject.avatar : 'default-avatar.png';
+
     document.getElementById('app').innerHTML = /*HTML*/`
         <h1 class="bookInfoHeading">Om boken<h1>
         <div class="bookInfoContainer">
@@ -24,7 +30,11 @@ function bookInfoPage() {
                 </div>
                 <div class="left-footer">
                     <div class="footer-split-left">
-                        <p>Lagt til av: ${model.data.bookInfo.addedByUser}</p>
+                        <div class="user-profile-link" onclick="linkToProfile()">
+                            <p>Lagt til av:</p>
+                            <img src="img/${addedUserAvatar}" alt="${addedByUser}'s avatar" class="avatar-small">
+                            <p>${addedByUser}</p>
+                        </div>
                     </div>
                     <div class="footer-split-right">
                         <button id="buyBook-button" onclick="buyBook()">Kjøp bok</button>
@@ -84,4 +94,3 @@ function createStarHtml(ratingValue) {
     }
     return html;
 }
-
