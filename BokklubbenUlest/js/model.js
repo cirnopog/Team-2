@@ -3,7 +3,7 @@ const model = {
         currentPage: "homePage",
         currentUser: null,
         savedUser: localStorage.getItem('currentUser'),
-        votingActive: false,
+        votingActive: true,
     },
     viewState: {
         homePage: {

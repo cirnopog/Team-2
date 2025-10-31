@@ -218,5 +218,49 @@
     display: flex;
     justify-content: space-between;
 }
+/* WINNER BOOK STATE */
+#winnerBook{
+    margin-top: -3rem;
+}
+#winnerBook h3{
+    font-size: 25px;
+    line-height: 180%;
+}
+#winnerBook button{
+margin: 10px 1rem;
+padding: 7px 10px;
+background-color: var(--accent-color);
+color: white;
+border-radius: 1rem;
+border: none;
+font-size: 18px;
+filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .2));
+cursor: pointer;
+transition:  transform 0.2s ease-in-out;
+}
+#winnerBook button:hover{
+    background-color: var(--contrast-accent);
+    transform: scale(1.01);
+}
+.img-and-btn{
+    display: flex;
+    flex-direction: column;
+}
+.winner-container{
+    display: flex;
+    gap: 10px;
+    box-shadow:0 3px 6px rgba(0, 0, 0, .2) ;
+    padding: 1.5rem 2.5rem 0.5rem 2.5rem;
+    border-radius: 1rem;
+    border: 2px var(--accent-color) solid;
+
+}
+.winner-info{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
 
 /*=================================================*/
