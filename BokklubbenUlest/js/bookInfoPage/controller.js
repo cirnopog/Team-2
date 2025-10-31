@@ -139,3 +139,17 @@ function updateBookRatingInModel(ratingValue) {
 
     return newRatingValue;
 }
+
+// For å komme til bruker-profil fra bokinfo-siden
+function linkToProfile() {
+const username = model.data.bookInfo.addedByUser;
+    const userObject = findUserByUsername(username); 
+
+    if (userObject) {
+        model.app.currentPage = 'userProfile';
+        generateProfile(userObject);
+        updateView();
+    } else {
+        console.error("Brukeren '" + username + "' som la til boken ble ikke funnet.");
+    }
+}

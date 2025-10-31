@@ -155,3 +155,8 @@ function deleteBook(list, bookNum){
           homePage()  
         }
 }
+
+// For å finne bruker-avatar til bokinfo-siden
+function findUserByUsername(username) {
+    return model.data.users.find(user => user.name === username);
+}
