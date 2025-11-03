@@ -159,7 +159,7 @@ const model = {
                 
             },
             {
-                id:1,
+                id:2,
                 img: "img/dune.webp",
                 author: "Frank Herbert",
                 title: "Dune",
