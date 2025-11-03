@@ -110,8 +110,7 @@ function renderBooksInVoting() {
     `;
 }
 
-// dere kan gjøre denne ferdig hvis dere vil
-// bruk flex til å få bok info på høyre side av bok bildet
+
 function drawWinnerBook() {
   document.getElementById("bookListContainer").innerHTML = `
     <div id="winnerBook">
