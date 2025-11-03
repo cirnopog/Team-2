@@ -58,7 +58,7 @@ const model = {
         },
         booksInVoting: [
             {
-                id: 1,
+                id: 0,
                 img: "img/lake-of-darkness.webp",
                 author: "Adam Roberts",
                 title: "Lake of Darkness",
@@ -69,7 +69,7 @@ const model = {
                 ]
             },
             {
-                id: 2,
+                id: 1,
                 img: "img/dune.webp",
                 author: "Frank Herbert",
                 title: "Dune",
@@ -85,7 +85,7 @@ const model = {
         winnerBook: 
         // null,
             {
-                id: 2,
+                id: 1,
                 img: "img/dune.webp",
                 author: "Frank Herbert",
                 title: "Dune",
@@ -146,7 +146,7 @@ const model = {
         },
         bookList: [
             {
-                id:1,
+                id:0,
                 img: "img/lake-of-darkness.webp",
                 author: "Adam Roberts",
                 title: "Lake of Darkness",
@@ -159,7 +159,7 @@ const model = {
                 
             },
             {
-                id:2,
+                id:1,
                 img: "img/dune.webp",
                 author: "Frank Herbert",
                 title: "Dune",
@@ -174,5 +174,7 @@ const model = {
         ],
 
         currentVote: [],
+
+        currentBookId:2
     }
 }

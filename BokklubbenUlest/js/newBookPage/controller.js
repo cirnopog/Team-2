@@ -1,6 +1,6 @@
 function addBook(){
     const newBook = {
-        id: model.data.bookList.length+1,
+        id: model.data.currentBookId,
         title: model.viewState.bookRegistrationPage.title,
         author: model.viewState.bookRegistrationPage.author,
         description: model.viewState.bookRegistrationPage.description,
@@ -11,6 +11,7 @@ function addBook(){
         votes: 0,
         isFavorite: false
     }
+    model.data.currentBookId++
     model.data.bookList.push(newBook);
     model.app.currentUser.addedBooks.push(newBook);
     if(model.viewState.bookRegistrationPage.addToVoting){
