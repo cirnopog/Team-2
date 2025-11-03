@@ -7,10 +7,16 @@ function homePage() {
     ${drawMeetingBanner()}
     
     <div id="bookVoting">
-        <div class="container">
+    ${model.data.votingActive?
+    `
+    <div class="container">
             <h2>Bok avstemning</h2>
             <h3 id="voteStatus"></h3>
         </div>
+    `
+    :
+    ``}
+        
 
         <div id="bookListContainer">
         </div>

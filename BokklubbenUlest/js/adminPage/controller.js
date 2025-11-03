@@ -111,7 +111,8 @@ function setNewMeetingDate(){
 // VOTE START
 // Når du trykker på opprett-knapp i avstemning
 function startVote() {
-
+    model.data.winnerBook = null;
+    
     let newVote = {
         startDate: model.viewState.votePage.startDate,
         endDate: model.viewState.votePage.endDate,
