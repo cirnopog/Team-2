@@ -27,7 +27,8 @@ function homePage() {
 
   if (model.app.votingActive) {
     renderBooksInVoting();
-  } else {
+  }
+  if(model.data.winnerBook !==null) {
     drawWinnerBook();
   }
 

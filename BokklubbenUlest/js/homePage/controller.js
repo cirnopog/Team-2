@@ -27,14 +27,7 @@ function vote(bookId, value) {
   saveData();
   renderBooksInVoting();
 }
-// function accountIsComing(){
-//   model.data.meetingAttendees.coming+=1
-//   model.app.currentUser.decidedMeeting = false
-//   console.log("coming")
-//   updateCurrentUser()
-//   saveData()
-//   homePage()
-// }
+
 function accountIsComing() {
   model.data.meetingAttendees.coming += 1;
   model.data.meetingAttendees.comingList.push(model.app.currentUser.name);
