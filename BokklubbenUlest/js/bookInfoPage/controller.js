@@ -2,7 +2,7 @@
 // Når du klikker på en bok
 function selectBook(id) {
 
-    const selectedBook = model.data.bookList.find((book) => book.id=id)
+    const selectedBook = model.data.bookList.find((book) => book.id==id)
 
     model.data.bookInfo = selectedBook;
 
