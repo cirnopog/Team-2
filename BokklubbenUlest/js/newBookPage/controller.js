@@ -10,7 +10,7 @@ function addBook(){
         ratings: [],
         votes: 0,
         isFavorite: false,
-        addedByUser:model.app.currentUser
+        addedByUser:model.app.currentUser.name
     }
     model.data.currentBookId++
     model.data.bookList.push(newBook);
