@@ -63,7 +63,7 @@ function renderBooksInVoting() {
     div.innerHTML = `
         ${
           book.img
-            ? `<img src="${book.img}" alt="${book.title}" onclick="selectBook(${i})" style="width:220px; ">`
+            ? `<img src="${book.img}" alt="${book.title}" onclick="selectBook(${book.id})" style="width:220px; ">`
             : ""
         }
         <div class="container">

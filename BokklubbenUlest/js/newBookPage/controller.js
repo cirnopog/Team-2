@@ -1,6 +1,6 @@
 function addBook(){
     const newBook = {
-        id: model.data.currentBookId,
+        id: model.data.bookList.length,
         title: model.viewState.bookRegistrationPage.title,
         author: model.viewState.bookRegistrationPage.author,
         description: model.viewState.bookRegistrationPage.description,
