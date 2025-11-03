@@ -107,7 +107,6 @@ function voteDaysLeft() {
         if(model.data.winnerBook.title==undefined){
             return 'Ingen aktiv avstemning';
         }
-        findWinner()
         drawWinnerBook()
         return 'Ingen aktiv avstemning';
     }
@@ -116,14 +115,8 @@ function voteDaysLeft() {
     let differenceInMilliseconds = pollEndDate - today;
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
     let daysLeft = Math.floor(differenceInMilliseconds / millisecondsPerDay);
-    if(daysLeft<=0){
-        var currentWinner = {votes:-1}
-        for(i in model.data.booksInVoting){
-            if(currentWinner.votes<model.data.booksInVoting[i].votes){
-                currentWinner=model.data.booksInVoting[i]
-            }
-        }
-        model.data.winnerBook=currentWinner
+    if(daysLeft<=0||model.data.currentVote.length===0){
+        findWinner()
         currentVote.splice(0,1)
         saveData()
         return voteDaysLeft()
