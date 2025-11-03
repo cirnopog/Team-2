@@ -107,6 +107,7 @@ function voteDaysLeft() {
         if(model.data.winnerBook.title==undefined){
             return 'Ingen aktiv avstemning';
         }
+        findWinner()
         drawWinnerBook()
         return 'Ingen aktiv avstemning';
     }

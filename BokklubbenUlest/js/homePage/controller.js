@@ -1,4 +1,15 @@
 // stemme funksjon
+function findWinner(){
+    var highscore=0
+    for(i in model.data.booksInVoting){
+        if(model.data.booksInVoting[i].votes>highscore){
+            highscore=model.data.booksInVoting[i].votes
+            model.data.winnerBook=model.data.booksInVoting[i]
+        }
+    }
+    saveData()
+}
+
 function vote(bookId, value) {
   var books = model.data.booksInVoting;
   var bookPos = 0;
