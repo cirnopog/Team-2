@@ -149,6 +149,8 @@ const model = {
         purchaseLink:
           "https://www.norli.no/boker/skjonnlitteratur/fantasy-og-scifi/lake-of-darkness",
         isFavorite: false,
+        votes: 0,
+        usersWhoHaveVoted: [],
       },
       {
         id: 1,
@@ -163,6 +165,8 @@ const model = {
         purchaseLink:
           "https://www.norli.no/boker/boker-pa-andre-sprak/engelske-boker/dune",
         isFavorite: false,
+        votes: 0,
+        usersWhoHaveVoted: [],
       },
     ],
 
