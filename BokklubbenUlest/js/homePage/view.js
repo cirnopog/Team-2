@@ -131,7 +131,7 @@ function drawWinnerBook() {
             <div class="winner-info">
                 <p>Forfatter: ${model.data.winnerBook.author}</p>
                 <p>Stemmer: ${model.data.winnerBook.votes}</p>
-                <p>
+                <p class="book-description">
                 ${
                   model.data.winnerBook.description
                     ? model.data.winnerBook.description

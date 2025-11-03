@@ -93,6 +93,7 @@
     align-items: center;
     font-family: var(--regular-text);
     color: var(--brown-color);
+    min-height: 350px;
 }
 #bookListContainer > div >img{
     filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .4));
@@ -218,9 +219,10 @@
     display: flex;
     justify-content: space-between;
 }
+
 /* WINNER BOOK STATE */
 #winnerBook{
-    margin-top: -3rem;
+    margin-top: -2rem;
 }
 #winnerBook h3{
     font-size: 25px;
@@ -259,7 +261,13 @@ transition:  transform 0.2s ease-in-out;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 5px
+    gap: 5px;
+    max-width: 350px;
+}
+.winner-info .book-description{
+    font-size: 13px;
+    line-height: 160%;
+    padding: 10px 2px;
 }
 /* UNACTIVE VOTING STATE */
 .no-voting{

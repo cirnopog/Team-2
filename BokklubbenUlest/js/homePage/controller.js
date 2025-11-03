@@ -1,14 +1,4 @@
 // stemme funksjon
-function findWinner(){
-    var highscore=0
-    for(i in model.data.booksInVoting){
-        if(model.data.booksInVoting[i].votes>highscore){
-            highscore=model.data.booksInVoting[i].votes
-            model.data.winnerBook=model.data.booksInVoting[i]
-        }
-    }
-    saveData()
-}
 
 function vote(bookId, value) {
   var books = model.data.booksInVoting;
@@ -113,3 +103,17 @@ function addSelectedBook(){
 }
 
 // WINNER BOOK
+function findWinner(){
+  var highscore=0
+  if (model.data.booksInVoting.length === 0){
+    model.data.winnerBook = null;
+  }
+
+  for(let i = 0; i < model.data.booksInVoting.length; i++){
+      if(model.data.booksInVoting[i].votes>highscore){
+          highscore=model.data.booksInVoting[i].votes
+          model.data.winnerBook=model.data.booksInVoting[i]
+      }
+  }
+  saveData()
+}

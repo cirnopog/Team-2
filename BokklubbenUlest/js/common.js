@@ -169,6 +169,8 @@ function findUserByUsername(username) {
 
 
 function cancelMeeting(){
+    findWinner()
     model.data.currentVote=[]
+    model.data.votingActive=false;
     saveData()
 }
