@@ -78,19 +78,15 @@ function getUserRating() {
 function createStarHtml(ratingValue) {
     let html = '';
     const totalStars = 5;
-    const defaultColor = '#4A3728';
-    const activeColor = 'yellow';
 
     for (let i = 1; i <= totalStars; i++) {
-        
-        const color = i <= ratingValue ? activeColor : defaultColor;
+        const iconStyle = i <= ratingValue ? 'fa-solid' : 'fa-regular'; 
+        const colorClass = i <= ratingValue ? 'active-star' : ''; 
 
         html += /*HTML*/`
-            <i 
-                class="fa-solid fa-star fa-sm" 
-                style="color: ${color};" 
-                onclick="rateBook(${i})"
-            ></i>
+            <i class="fa-star ${iconStyle} ${colorClass}" 
+                onclick="rateBook(${i})">
+            </i>
         `;
     }
     return html;
