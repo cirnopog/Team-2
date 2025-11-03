@@ -25,13 +25,16 @@ function homePage() {
     .getElementById("btnNotComing")
     ?.addEventListener("click", accountIsNotComing);
 
-  if (model.app.votingActive) {
+  if (model.data.votingActive) {
     renderBooksInVoting();
   }
-//   if(model.data.winnerBook !==null) {
-//     drawWinnerBook();
-//   }
-
+  if(model.data.winnerBook !==null &&
+    !model.data.votingActive) {
+    drawWinnerBook();
+  }
+   if(!model.data.votingActive) {
+    noVotingView()
+  }
   updateVoteStatus();
 }
 
@@ -139,6 +142,15 @@ function drawWinnerBook() {
         </div>
     </div>
     `;
+}
+function noVotingView(){
+    document.getElementById("bookListContainer").innerHTML = `
+    <div class="no-voting">
+        <h2>Ingen aktiv bokavstemning</h2>
+        <p>Mer info kommer snart</p>
+    </div>
+    `;
+
 }
 
 function showAddToVoting() {

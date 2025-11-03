@@ -118,7 +118,7 @@ function startVote() {
     }
     model.data.booksInVoting.splice(0,model.data.booksInVoting.length)
     model.data.currentVote.push(newVote);
-
+    model.data.votingActive=true;
     document.getElementById('votePageForm').reset();
 
     document.getElementById('voteCreatedMessage').textContent = 'Ny avstemning er opprettet på forsiden!';

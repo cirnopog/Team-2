@@ -1,9 +1,7 @@
 const model = {
   app: {
-    currentPage: "homePage",
     currentUser: null,
     savedUser: localStorage.getItem("currentUser"),
-    votingActive: true,
   },
   viewState: {
     homePage: {
@@ -44,6 +42,7 @@ const model = {
     // Er favoritt en input, og skal den inn i viewState?
   },
   data: {
+    votingActive: false,
     avatars: [
       "austronaut.png",
       "bird.png",
