@@ -169,8 +169,6 @@ function findUserByUsername(username) {
 
 
 function cancelMeeting(){
-    const resetDate = new Date()
-    model.data.currentVote[0].startDate = resetDate
-    model.data.currentVote[0].endDate = resetDate
+    model.data.currentVote=[]
     saveData()
 }
