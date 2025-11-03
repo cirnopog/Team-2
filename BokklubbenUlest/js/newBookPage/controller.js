@@ -21,30 +21,3 @@ function addBook(){
     updateCurrentUser();
     saveData(); 
 }
-// function handleImageUpload(e){
-//     const file = e.target.files[0];
-//     if (!file) return;
-
-//         const reader = new FileReader();
-//         reader.onload = function(e){
-//             const img = new Image();
-//             img.onload = function() {
-//                 // Resize image to max 300px width
-//                 const canvas = document.createElement('canvas');
-//                 const maxWidth = 300;
-//                 const scale = maxWidth / img.width;
-//                 canvas.width = maxWidth;
-//                 canvas.height = img.height * scale;
-                
-//                 const ctx = canvas.getContext('2d');
-//                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                
-//                 // Convert to compressed Base64
-//                 const compressedBase64 = canvas.toDataURL('image/jpeg', 0.7);
-//                 model.viewState.bookRegistrationPage.coverImg = compressedBase64;
-//             };
-//             img.src = e.target.result;
-            
-//         };
-//         reader.readAsDataURL(file);
-//     }

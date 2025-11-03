@@ -27,7 +27,7 @@ function vote(bookId, value) {
   saveData();
   renderBooksInVoting();
 }
-
+// MEETING BANNER ATTENDEES
 function accountIsComing() {
   model.data.meetingAttendees.coming += 1;
   model.data.meetingAttendees.comingList.push(model.app.currentUser.name);
@@ -90,7 +90,6 @@ document.addEventListener("click", function (e) {
   }
 });
 
-
 function addSelectedBook(){
     const chosenBook = model.viewState.homePage.chooseBook.chosenBook;
     chosenBook.votes=0
@@ -101,3 +100,5 @@ function addSelectedBook(){
         renderBooksInVoting();
      }
 }
+
+// WINNER BOOK
