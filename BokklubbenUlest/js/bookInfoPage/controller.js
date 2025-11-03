@@ -167,3 +167,19 @@ function syncAndStore(actionType) {
         }
     }
 }
+
+// Kalkulerer gjennomsnitts-vurdering av bok
+function calculateAverageRating(ratings) {
+    if (ratings.length === 0) {
+        return 'Ikke vurdert';
+    }
+
+    const totalSum = ratings.reduce( (totalSum, ratingObject) => {
+        return totalSum + ratingObject.value; 
+    }, 0);
+
+    const average = totalSum / ratings.length;
+    const roundedAverage = average.toFixed(1); 
+    
+    return `${roundedAverage}/5`;
+}
