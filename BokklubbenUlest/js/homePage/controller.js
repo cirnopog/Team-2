@@ -90,6 +90,7 @@ document.addEventListener("click", function (e) {
 });
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     });
 
     function addSelectedBook(){
@@ -103,6 +104,8 @@ document.addEventListener("click", function (e) {
         }
     }
 =======
+=======
+>>>>>>> Stashed changes
 function addSelectedBook() {
   const chosenBook = model.viewState.homePage.chooseBook.chosenBook;
   console.log(chosenBook);
@@ -112,4 +115,7 @@ function addSelectedBook() {
     renderBooksInVoting();
   }
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
