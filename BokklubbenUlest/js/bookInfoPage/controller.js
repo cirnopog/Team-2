@@ -32,7 +32,9 @@ function addToFavorites() {
             model.app.currentUser.favorites.splice(favoriteIndex, 1);
         }
 
-        document.getElementById('heart-icon').style.color = '#4A3728';
+        const heartIcon = document.getElementById('heart-icon');
+        heartIcon.classList.remove('fa-solid'); 
+        heartIcon.classList.add('fa-regular');
 
     } else {
         currentBook.isFavorite = true;
@@ -46,7 +48,9 @@ function addToFavorites() {
         if(!isInBooks){
             model.app.currentUser.addedBooks.push(currentBook)
         }
-        document.getElementById('heart-icon').style.color = 'red';
+        const heartIcon = document.getElementById('heart-icon');
+        heartIcon.classList.remove('fa-regular');
+        heartIcon.classList.add('fa-solid');
     }
     syncAndStore('favorite');
     updateCurrentUser();
@@ -166,4 +170,20 @@ function syncAndStore(actionType) {
             model.data.bookList[masterBookIndex].ratings = model.data.bookInfo.ratings;
         }
     }
+}
+
+// Kalkulerer gjennomsnitts-vurdering av bok
+function calculateAverageRating(ratings) {
+    if (ratings.length === 0) {
+        return 'Ikke vurdert';
+    }
+
+    const totalSum = ratings.reduce( (totalSum, ratingObject) => {
+        return totalSum + ratingObject.value; 
+    }, 0);
+
+    const average = totalSum / ratings.length;
+    const roundedAverage = average.toFixed(1); 
+    
+    return `${roundedAverage} av 5 stjerner!`;
 }

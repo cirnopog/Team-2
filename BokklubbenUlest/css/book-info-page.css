@@ -130,6 +130,14 @@
     filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .4));
 }
 
+.fa-regular.fa-heart {
+    color: #4A3728;
+}
+
+.fa-solid.fa-heart {
+    color: red;
+}
+
 /* 9. Added-by-user-container */
 
 .footer-split-left .user-profile-link {

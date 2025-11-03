@@ -19,13 +19,13 @@ function bookInfoPage() {
                         <h4>${model.data.bookInfo.title}</h4>
                     </div>
                     <div class="header-split-right">
-                        <i id="heart-icon" class="fa-solid fa-heart" style="color: ${model.data.bookInfo.isFavorite ? 'red' : '#4A3728'};" onclick="addToFavorites()"></i>
+                        <i id="heart-icon" class="fa-heart ${model.data.bookInfo.isFavorite ? 'fa-solid' : 'fa-regular'}" onclick="addToFavorites()"></i>
                     </div>
                 </div>
                 <div class="left-main-area">
                     <p>Forfatter: ${model.data.bookInfo.author}</p>
                     <P>Utgivelsesår: ${model.data.bookInfo.releaseDate}</p>
-                    <p>Vurdering: ${model.data.bookInfo.ratings}</p>
+                    <p>Samlet vurdering: ${calculateAverageRating(model.data.bookInfo.ratings)}</p>
                     <p>Beskrivelse:</p>
                     <p class="book-description-field">${model.data.bookInfo.description}</p>
                 </div>
