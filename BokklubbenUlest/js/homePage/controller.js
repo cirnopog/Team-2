@@ -1,6 +1,6 @@
 // stemme funksjon
 function findWinner(){
-    var highscore=0
+    var highscore=-1
     for(i in model.data.booksInVoting){
         if(model.data.booksInVoting[i].votes>highscore){
             highscore=model.data.booksInVoting[i].votes
