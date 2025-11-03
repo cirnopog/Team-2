@@ -152,7 +152,6 @@ function deleteBook(list, bookNum){
             model.data.booksInVoting.splice(i , 1)
         }
     }
-    list.splice(bookNum, 1);
     updateCurrentUser();
     saveData();
     if(list===model.app.currentUser.addedBooks ||
