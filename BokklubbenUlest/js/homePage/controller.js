@@ -27,16 +27,24 @@ function vote(bookId, value) {
   saveData();
   renderBooksInVoting();
 }
-
-function accountIsComing() {
-  model.data.meetingAttendees.coming += 1;
-  model.data.meetingAttendees.comingList.push(model.app.currentUser.name);
-  model.app.currentUser.decidedMeeting = false;
-  console.log("coming");
-  updateCurrentUser();
-  saveData();
-  homePage();
+function accountIsComing(){
+  model.data.meetingAttendees.coming+=1
+  model.app.currentUser.decidedMeeting = false
+  console.log("coming")
+  updateCurrentUser()
+  saveData()
+  homePage()
 }
+// function accountIsComing() {
+//   model.data.meetingAttendees.coming += 1;
+//   model.data.meetingAttendees.comingList.push(model.app.currentUser.name);
+//   model.app.currentUser.decidedMeeting = false;
+//   console.log("coming");
+//   updateCurrentUser();
+//   saveData();
+//   homePage();
+// }
+
 function accountIsNotComing() {
   model.data.meetingAttendees.notComing += 1;
   model.data.meetingAttendees.notComingList.push(model.app.currentUser.name);
@@ -89,16 +97,6 @@ document.addEventListener("click", function (e) {
   }
 });
 
-function addSelectedBook(){
-    const chosenBook = model.viewState.homePage.chooseBook.chosenBook;
-    chosenBook.votes=0
-    console.log(chosenBook)
-    if(chosenBook){
-        model.data.booksInVoting.push(chosenBook);
-        saveData()
-        renderBooksInVoting();
-    }
-}
 
     function addSelectedBook(){
         const chosenBook = model.viewState.homePage.chooseBook.chosenBook;
@@ -119,4 +117,3 @@ function addSelectedBook() {
     renderBooksInVoting();
   }
 }
-
