@@ -154,11 +154,13 @@ function votePage() {
             <label for="endDate">Sluttdato:</label>
             <input type="date" id="endDate" class="vote-date-input" name="end" oninput="model.viewState.votePage.endDate = this.value" required>
             
-            
-            <button type="submit">Opprett</button>
+            <div class="btn-container">
+                <button type="submit">Opprett</button>
+                
+                <button type="button" id="resetButton" onclick="cancelMeeting()">Avbryt</button>
+            </div>
             <p id="voteCreatedMessage"></p>
-            <button type="button" id="resetButton" onclick="cancelMeeting()">Avbryt møte</button>
-        </form>
+            </form>
     `;
 
     document.getElementById('votePageForm').addEventListener('submit', (event) => {
