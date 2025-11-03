@@ -17,6 +17,13 @@ function homePage() {
       
     </div>
     `;
+  // Koble knappene til funksjonene i controller
+  document
+    .getElementById("btnComing")
+    ?.addEventListener("click", accountIsComing);
+  document
+    .getElementById("btnNotComing")
+    ?.addEventListener("click", accountIsNotComing);
 
   if (model.app.votingActive) {
     renderBooksInVoting();
@@ -141,17 +148,45 @@ function showAddToVoting() {
 // MEETING BANNER
 //!! må endre 'meeting-attendees' senere !!
 function drawMeetingBanner() {
-  moreHtml = "";
+  let moreHtml = "";
   if (model.app.currentUser && model.app.currentUser.decidedMeeting) {
     moreHtml = `
-    <div class="btn-container">
-        <button onclick="accountIsComing()">Kommer</button>
-        <button onclick="accountIsNotComing()">Kommer ikke</button>
-    </div>
+<div class="btn-container">
+    <button id="btnComing">Kommer</button>
+    <button id="btnNotComing">Kommer ikke</button>
+</div>
+`;
+  }
+  let comingNames = "";
+  if (model.data.meetingAttendees.comingList.length > 0) {
+    comingNames = `
+<div class="attendees-list">
+    <h4>Disse kommer:</h4>
+    <ul>
+    ${model.data.meetingAttendees.comingList
+      .map((name) => `<li>${name}</li>`)
+      .join("")}
+    </ul>
+</div>
 `;
   }
 
-  html = `
+  let notComingNames = "";
+  if (model.data.meetingAttendees.notComingList.length > 0) {
+    notComingNames = `
+<div class="attendees-list">
+    <h4>Disse kommer ikke:</h4>
+    <ul>
+    ${model.data.meetingAttendees.notComingList
+      .map((name) => `<li>${name}</li>`)
+      .join("")}
+    </ul>
+    </div>
+
+    `;
+  }
+
+  let html = `
 <div id="meetingBanner">
     <h2>Neste møte er</h2>
 
@@ -170,6 +205,8 @@ function drawMeetingBanner() {
         Kommer ikke: ${model.data.meetingAttendees.notComing} 
     </p>
     ${moreHtml}
+    ${comingNames}
+    ${notComingNames}
     </div>
 `;
   return html;

@@ -99,3 +99,24 @@ function addSelectedBook(){
         renderBooksInVoting();
     }
 }
+
+    function addSelectedBook(){
+        const chosenBook = model.viewState.homePage.chooseBook.chosenBook;
+        chosenBook.votes=0
+        console.log(chosenBook)
+        if(chosenBook){
+            model.data.booksInVoting.push(chosenBook);
+            saveData()
+            renderBooksInVoting();
+        }
+    }
+function addSelectedBook() {
+  const chosenBook = model.viewState.homePage.chooseBook.chosenBook;
+  console.log(chosenBook);
+  if (chosenBook) {
+    model.data.booksInVoting.push(chosenBook);
+    saveData();
+    renderBooksInVoting();
+  }
+}
+
