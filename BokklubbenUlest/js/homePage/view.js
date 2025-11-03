@@ -1,8 +1,8 @@
-loadData()
-homePage()
+loadData();
+homePage();
 
-function homePage(){
-    document.getElementById("app").innerHTML =`
+function homePage() {
+  document.getElementById("app").innerHTML = `
 
     ${drawMeetingBanner()}
     
@@ -16,48 +16,49 @@ function homePage(){
         </div>
       
     </div>
-    `
+    `;
 
-   if(model.app.votingActive){
-        renderBooksInVoting()
-     }else{
-        drawWinnerBook()
-     }
+  if (model.app.votingActive) {
+    renderBooksInVoting();
+  } else {
+    drawWinnerBook();
+  }
 
-    updateVoteStatus();
+  updateVoteStatus();
 }
 
 // Viser hvor mange dager det er igjen av avstemning
 function updateVoteStatus() {
-    const daysResult = voteDaysLeft();
-    const statusElement = document.getElementById('voteStatus');
+  const daysResult = voteDaysLeft();
+  const statusElement = document.getElementById("voteStatus");
 
-    if (statusElement) {
-        statusElement.textContent = daysResult;
-    }
+  if (statusElement) {
+    statusElement.textContent = daysResult;
+  }
 }
-
 
 // Bøker i avstemning
 function renderBooksInVoting() {
-    var bookList = document.getElementById("bookListContainer"); 
-    if (!bookList) return; 
-    bookList.innerHTML = ""; 
+  var bookList = document.getElementById("bookListContainer");
+  if (!bookList) return;
+  bookList.innerHTML = "";
 
-    var books = model.data.booksInVoting;
-   
-    for (var i = 0; i < books.length; i++) {
-        var book = books[i];
-        
-        
-        if (book.votes === "") book.votes = 0;
-        book.votes = Number(book.votes);
+  var books = model.data.booksInVoting;
 
-        var div = document.createElement("div");
-        div.id = "book" + book.id;
-        div.innerHTML = `
-        ${book.img ?
-        `<img src="${book.img}" alt="${book.title}" onclick="selectBook(${i})" style="width:220px; ">`: ""}
+  for (var i = 0; i < books.length; i++) {
+    var book = books[i];
+
+    if (book.votes === "") book.votes = 0;
+    book.votes = Number(book.votes);
+
+    var div = document.createElement("div");
+    div.id = "book" + book.id;
+    div.innerHTML = `
+        ${
+          book.img
+            ? `<img src="${book.img}" alt="${book.title}" onclick="selectBook(${i})" style="width:220px; ">`
+            : ""
+        }
         <div class="container">
             <h3>${book.title}</h3>
             <div class="btn-container">
@@ -74,10 +75,10 @@ function renderBooksInVoting() {
             </div>
         </div>
         `;
-        console.log(book.img)
-        bookList.appendChild(div);
-    }
-    bookList.innerHTML += /*HTML*/`
+    console.log(book.img);
+    bookList.appendChild(div);
+  }
+  bookList.innerHTML += /*HTML*/ `
         <button onclick="showAddToVoting()" class="add-book-btn">+</button>
         <div id="addBookToVoting" class="hidden">
             <h4>Legg til bok i avstemningen</h4>
@@ -102,28 +103,30 @@ function renderBooksInVoting() {
     `;
 }
 
-
 // dere kan gjøre denne ferdig hvis dere vil
 // bruk flex til å få bok info på høyre side av bok bildet
-function drawWinnerBook(){
-    document.getElementById("bookListContainer").innerHTML=`
+function drawWinnerBook() {
+  document.getElementById("bookListContainer").innerHTML = `
     <div id="winnerBook">
         <h3>${model.data.winnerBook.title} vant bok valget!</h3> 
 
         <div class="winner-container">
             <div class="img-and-btn">
                 <img src="${model.data.winnerBook.img}" width="200">
-                <button onclick="window.location.href='${model.data.winnerBook.purchaseLink}';">Kjøp boken</button>
+                <button onclick="window.location.href='${
+                  model.data.winnerBook.purchaseLink
+                }';">Kjøp boken</button>
             </div>
 
             <div class="winner-info">
                 <p>Forfatter: ${model.data.winnerBook.author}</p>
                 <p>Stemmer: ${model.data.winnerBook.votes}</p>
                 <p>
-                ${model.data.winnerBook.description?
-                    model.data.winnerBook.description
-                    :
-                    "Ingen beskrivelse"}
+                ${
+                  model.data.winnerBook.description
+                    ? model.data.winnerBook.description
+                    : "Ingen beskrivelse"
+                }
                 </p>
             </div>
         </div>
@@ -131,39 +134,32 @@ function drawWinnerBook(){
     `;
 }
 
-function showAddToVoting(){
-    document.getElementById("addBookToVoting").classList.toggle("hidden")
-    
-
+function showAddToVoting() {
+  document.getElementById("addBookToVoting").classList.toggle("hidden");
 }
-
-
-
 
 // MEETING BANNER
 //!! må endre 'meeting-attendees' senere !!
-function drawMeetingBanner(){
-moreHtml = ""
-if( model.app.currentUser &&
-    model.app.currentUser.decidedMeeting){
+function drawMeetingBanner() {
+  moreHtml = "";
+  if (model.app.currentUser && model.app.currentUser.decidedMeeting) {
     moreHtml = `
     <div class="btn-container">
         <button onclick="accountIsComing()">Kommer</button>
         <button onclick="accountIsNotComing()">Kommer ikke</button>
     </div>
-`}
+`;
+  }
 
-
-html=`
+  html = `
 <div id="meetingBanner">
     <h2>Neste møte er</h2>
 
     <div class="meeting-info-container">
         <p>${
-            model.data.meetingdate?
-            `${model.data.meetingdate}`
-            : 
-            `Mer info kommer snart!`
+          model.data.meetingdate
+            ? `${model.data.meetingdate}`
+            : `Mer info kommer snart!`
         }</p>
     </div>
     <p class="meeting-attendees">
@@ -175,8 +171,6 @@ html=`
     </p>
     ${moreHtml}
     </div>
-` 
-return html;
+`;
+  return html;
 }
-
-
