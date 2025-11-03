@@ -76,9 +76,13 @@ function rateBook(ratingValue) {
         const star = allStars[i];
         
         if (i < finalRatingValue) {
-            star.style.color = 'yellow';
+            star.classList.remove('fa-regular')
+            star.classList.add('fa-solid')
+            star.classList.add('active-star')
         } else {
-            star.style.color = '#4A3728'; 
+            star.classList.remove('fa-solid')
+            star.classList.add('fa-regular')
+            star.classList.remove('active-star')
         }
     }
 }

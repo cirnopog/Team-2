@@ -138,6 +138,14 @@
     color: red;
 }
 
+.active-star {
+    color: yellow;
+}
+
+.fa-regular.fa-star {
+    color: #4A3728;
+}
+
 /* 9. Added-by-user-container */
 
 .footer-split-left .user-profile-link {
