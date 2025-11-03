@@ -155,8 +155,8 @@ function votePage() {
             <input type="date" id="endDate" class="vote-date-input" name="end" oninput="model.viewState.votePage.endDate = this.value" required>
             <button type="submit">Opprett</button>
             <p id="voteCreatedMessage"></p>
+            <button type="button" id="resetButton" onclick="cancelMeeting()">Stopp nåværene Møte</button>
         </form>
-        <button id="resetButton" onclick="cancelMeeting()">Stopp nåværene Møte</button>
     `;
 
     document.getElementById('votePageForm').addEventListener('submit', (event) => {
