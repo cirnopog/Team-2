@@ -28,9 +28,9 @@ function homePage() {
   if (model.app.votingActive) {
     renderBooksInVoting();
   }
-  if(model.data.winnerBook !==null) {
-    drawWinnerBook();
-  }
+//   if(model.data.winnerBook !==null) {
+//     drawWinnerBook();
+//   }
 
   updateVoteStatus();
 }
