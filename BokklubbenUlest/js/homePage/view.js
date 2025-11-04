@@ -173,64 +173,55 @@ function showAddToVoting() {
 // MEETING BANNER
 //!! må endre 'meeting-attendees' senere !!
 function drawMeetingBanner() {
-  let moreHtml = "";
-  if (model.app.currentUser && model.app.currentUser.decidedMeeting) {
-    moreHtml = `
-<div class="btn-container">
-    <button id="btnComing">Kommer</button>
-    <button id="btnNotComing">Kommer ikke</button>
-</div>
-`;
-  }
   let attendeesHtml = `
-<div class="attendees-wrapper">
-  <div class="attendees-col">
-    <button id="btnComing">Kommer</button>
-    <div class="attendees coming">
-      <h4><i class="fa-solid fa-thumbs-up"></i> Disse kommer:</h4>
-      <ul>
-        ${model.data.meetingAttendees.comingList
-          .map((name) => `<li><i class="fa-solid fa-user"></i> ${name}</li>`)
-          .join("")}
-      </ul>
-    </div>
-  </div>
+    <div class="attendees-wrapper">
+      <div class="attendees-col">
+        <div class="attendees coming">
+          <h4><i class="fa-solid fa-thumbs-up"></i> Disse kommer:</h4>
+          <ul>
+            ${model.data.meetingAttendees.comingList
+              .map(
+                (name) => `<li><i class="fa-solid fa-user"></i> ${name}</li>`
+              )
+              .join("")}
+          </ul>
+        </div>
+      </div>
 
-  <div class="attendees-col">
-    <button id="btnNotComing">Kommer ikke</button>
-    <div class="attendees not-coming">
-      <h4><i class="fa-solid fa-thumbs-down"></i> Disse kommer ikke:</h4>
-      <ul>
-        ${model.data.meetingAttendees.notComingList
-          .map((name) => `<li><i class="fa-regular fa-user"></i> ${name}</li>`)
-          .join("")}
-      </ul>
+      <div class="attendees-col">
+        <div class="attendees not-coming">
+          <h4><i class="fa-solid fa-thumbs-down"></i> Disse kommer ikke:</h4>
+          <ul>
+            ${model.data.meetingAttendees.notComingList
+              .map(
+                (name) => `<li><i class="fa-regular fa-user"></i> ${name}</li>`
+              )
+              .join("")}
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-`;
+  `;
 
   let html = `
-<div id="meetingBanner">
-    <h2>Neste møte er</h2>
-
-    <div class="meeting-info-container">
+    <div id="meetingBanner">
+      <h2>Neste møte er</h2>
+      <div class="meeting-info-container">
         <p>${
           model.data.meetingdate
-            ? `${model.data.meetingdate}`
+            ? model.data.meetingdate
             : `Mer info kommer snart!`
         }</p>
+      </div>
+
+      <div class="btn-container">
+        <button id="btnComing">Kommer</button>
+        <button id="btnNotComing">Kommer ikke</button>
+      </div>
+
+      ${attendeesHtml}
     </div>
-    <p class="meeting-attendees">
-        <i class="fa-solid fa-thumbs-up"></i>
-        Kommer: ${model.data.meetingAttendees.coming} 
-        &nbsp;
-        <i class="fa-solid fa-thumbs-down"></i>
-        Kommer ikke: ${model.data.meetingAttendees.notComing} 
-    </p>
-    ${moreHtml}
-  ${attendeesHtml}
-    </div>
-`;
+  `;
+
   return html;
 }
