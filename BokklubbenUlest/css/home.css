@@ -286,15 +286,15 @@
 /*=================================================*/
 .attendees-wrapper {
   display: flex;
-  justify-content: center; /* sentrer kolonnene */
-  gap: 2rem; /* avstand mellom kolonnene */
+  justify-content: center;
+  gap: 2rem;
   margin-top: 1rem;
 }
 
 .attendees-col {
   display: flex;
-  flex-direction: column; /* knapp over liste */
-  align-items: center; /* sentrer innhold i kolonne */
+  flex-direction: column;
+  align-items: center;
 }
 
 .attendees-col button {
@@ -308,8 +308,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; /* horisontalt */
-  flex-wrap: wrap; /* bryt linje hvis for mange navn */
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
