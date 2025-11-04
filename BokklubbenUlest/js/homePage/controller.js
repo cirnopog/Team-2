@@ -29,10 +29,22 @@ function vote(bookId, value) {
   renderBooksInVoting();
 }
 // MEETING BANNER ATTENDEES
+
 function accountIsComing() {
-  model.data.meetingAttendees.coming += 1;
-  model.data.meetingAttendees.comingList.push(model.app.currentUser.name);
-  model.app.currentUser.decidedMeeting = false;
+  const name = model.app.currentUser.name;
+
+  const notComingIndex =
+    model.data.meetingAttendees.notComingList.indexOf(name);
+  if (notComingIndex !== -1) {
+    model.data.meetingAttendees.notComingList.splice(notComingIndex, 1);
+    model.data.meetingAttendees.notComing -= 1;
+  }
+
+  if (!model.data.meetingAttendees.comingList.includes(name)) {
+    model.data.meetingAttendees.comingList.push(name);
+    model.data.meetingAttendees.coming += 1;
+  }
+
   console.log("coming");
   updateCurrentUser();
   saveData();
@@ -40,9 +52,19 @@ function accountIsComing() {
 }
 
 function accountIsNotComing() {
-  model.data.meetingAttendees.notComing += 1;
-  model.data.meetingAttendees.notComingList.push(model.app.currentUser.name);
-  model.app.currentUser.decidedMeeting = false;
+  const name = model.app.currentUser.name;
+
+  const comingIndex = model.data.meetingAttendees.comingList.indexOf(name);
+  if (comingIndex !== -1) {
+    model.data.meetingAttendees.comingList.splice(comingIndex, 1);
+    model.data.meetingAttendees.coming -= 1;
+  }
+
+  if (!model.data.meetingAttendees.notComingList.includes(name)) {
+    model.data.meetingAttendees.notComingList.push(name);
+    model.data.meetingAttendees.notComing += 1;
+  }
+
   console.log("not coming");
   updateCurrentUser();
   saveData();
@@ -91,29 +113,29 @@ document.addEventListener("click", function (e) {
   }
 });
 
-function addSelectedBook(){
-    const chosenBook = model.viewState.homePage.chooseBook.chosenBook;
-    chosenBook.votes=0
-    console.log(chosenBook)
-    if(chosenBook){
-        model.data.booksInVoting.push(chosenBook);
-        saveData()
-        renderBooksInVoting();
-     }
+function addSelectedBook() {
+  const chosenBook = model.viewState.homePage.chooseBook.chosenBook;
+  chosenBook.votes = 0;
+  console.log(chosenBook);
+  if (chosenBook) {
+    model.data.booksInVoting.push(chosenBook);
+    saveData();
+    renderBooksInVoting();
+  }
 }
 
 // WINNER BOOK
-function findWinner(){
-  var highscore=0
-  if (model.data.booksInVoting.length === 0){
+function findWinner() {
+  var highscore = 0;
+  if (model.data.booksInVoting.length === 0) {
     model.data.winnerBook = null;
   }
 
-  for(let i = 0; i < model.data.booksInVoting.length; i++){
-      if(model.data.booksInVoting[i].votes>highscore){
-          highscore=model.data.booksInVoting[i].votes
-          model.data.winnerBook=model.data.booksInVoting[i]
-      }
+  for (let i = 0; i < model.data.booksInVoting.length; i++) {
+    if (model.data.booksInVoting[i].votes > highscore) {
+      highscore = model.data.booksInVoting[i].votes;
+      model.data.winnerBook = model.data.booksInVoting[i];
+    }
   }
-  saveData()
+  saveData();
 }
