@@ -154,7 +154,7 @@ function allReadBooksOfAccount(usr){
         </tr>
         </thead>`
         for(i in usr.addedBooks){
-            if(model.app.currentUser.addedBooks[i].title!==undefined){
+            if(usr.addedBooks[i].title!==undefined){
             readBooks+=`<tbody>
             <tr>
             <th class="tablePart" onclick="selectBook(${usr.addedBooks[i].id})">${usr.addedBooks[i].title}</th>
@@ -162,7 +162,7 @@ function allReadBooksOfAccount(usr){
             </tbody>`
             }
         }
-        if(model.app.currentUser.addedBooks.length === 0){
+        if(usr.addedBooks.length === 0){
             readBooks+=`
             <tr>
                 <td>Ingen bøker lagt til</td>
