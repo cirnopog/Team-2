@@ -171,7 +171,7 @@
     font-size: 20px;
     cursor: pointer;
   }
-  .partOfList:hover {
+  .username-text:hover {
     text-decoration: underline;
   }
   #editButton {
@@ -181,7 +181,7 @@
     color: white;
     border: none;
     padding: 5px;   
-    border-radius:8px; 
+    border-radius:8px;
   }
   #deleteButton {
     /* background-color: darkred; */
@@ -190,9 +190,8 @@
     color: white;
     border: 0px;
     padding: 5px 7px; 
-    border-radius:8px; 
+    border-radius:8px;
   }
-
 
   #popup{
     visibility: hidden;
