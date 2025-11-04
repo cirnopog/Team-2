@@ -26,9 +26,13 @@
 
 .tablePart{
   padding: 0.65rem;
- display: flex;
- justify-content: space-between;
- align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.tablePart:hover {
+  text-decoration: underline;
 }
 #undertext{
     color: var(--brown-color);
