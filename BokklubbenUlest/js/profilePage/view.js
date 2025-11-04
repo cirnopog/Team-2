@@ -89,7 +89,7 @@ function favoriteBooksOfAccount(usr){
         </tr>
         </thead>`
         for(i in usr.favorites){
-            if(model.app.currentUser.favorites[i].title!==undefined){
+            if(usr.favorites[i].title!==undefined){
             favorites+=`<tbody>
             <tr>
             <th class="tablePart" onclick="selectBook(${usr.favorites[i].id})">${usr.favorites[i].title}</th>
@@ -97,7 +97,7 @@ function favoriteBooksOfAccount(usr){
             </tbody>`
             }
         }
-        if(model.app.currentUser.favorites.length === 0){
+        if(usr.favorites.length === 0){
             favorites+=`
             <tr>
             <td>Ingen favoritter enda</td>
