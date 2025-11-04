@@ -1,4 +1,4 @@
-// generateYourProfile()
+
 
 function generateProfile(usr){
     if(usr.name==model.app.currentUser.name){
@@ -92,7 +92,7 @@ function favoriteBooksOfAccount(usr){
             if(usr.favorites[i].title!==undefined){
             favorites+=`<tbody>
             <tr>
-            <th class="tablePart" onclick="selectBook(${usr.favorites[i].id})">${usr.favorites[i].title}</th>
+            <td class="tablePart" onclick="selectBook(${usr.favorites[i].id})">${usr.favorites[i].title}</td>
             </tr>
             </tbody>`
             }
@@ -157,7 +157,7 @@ function allReadBooksOfAccount(usr){
             if(usr.addedBooks[i].title!==undefined){
             readBooks+=`<tbody>
             <tr>
-            <th class="tablePart" onclick="selectBook(${usr.addedBooks[i].id})">${usr.addedBooks[i].title}</th>
+                <td class="tablePart" onclick="selectBook(${usr.addedBooks[i].id})">${usr.addedBooks[i].title}</td>
             </tr>
             </tbody>`
             }
