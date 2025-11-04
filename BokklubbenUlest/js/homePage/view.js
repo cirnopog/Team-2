@@ -57,6 +57,11 @@ function updateVoteStatus() {
 // Bøker i avstemning
 function renderBooksInVoting() {
   var bookList = document.getElementById("bookListContainer");
+  const startDate = new Date(model.data.currentVote[0].startDate)
+  const currentDate = new Date()
+  if((currentDate-startDate)<0){
+    return
+  }
   if (!bookList) return;
   bookList.innerHTML = "";
 
