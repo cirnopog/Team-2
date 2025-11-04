@@ -112,6 +112,9 @@ function voteDaysLeft() {
 
     currentVote = model.data.currentVote;
     if (currentVote.length === 0) {
+        if(model.data.winnerBook==null){
+            return 'Ingen aktiv avstemning'
+        }
         if(model.data.winnerBook.title==undefined){
             return 'Ingen aktiv avstemning';
         }
