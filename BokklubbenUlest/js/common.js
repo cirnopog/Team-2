@@ -118,23 +118,18 @@ function voteDaysLeft() {
         drawWinnerBook()
         return 'Ingen aktiv avstemning';
     }
-    let pollStartDate = new Date(currentVote[0].startDate)
     let pollEndDate = new Date(currentVote[0].endDate);
     let today = new Date();
-    let differenceInMillisecondsEnd = pollEndDate - today;
+    let differenceInMilliseconds = pollEndDate - today;
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
-    let daysLeftEnd = Math.floor(differenceInMillisecondsEnd / millisecondsPerDay);
-    let differenceInMillisecondsStart = pollStartDate - today
-    let daysLeftStart = Math.floor(differenceInMillisecondsStart/millisecondsPerDay)
-    if(daysLeftEnd<=0||model.data.currentVote.length===0){
+    let daysLeft = Math.floor(differenceInMilliseconds / millisecondsPerDay);
+    if(daysLeft<=0||model.data.currentVote.length===0){
         findWinner()
         currentVote.splice(0,1)
         saveData()
         return voteDaysLeft()
     }
-    return `
-    ${daysLeftStart} dager til, og    
-    ${daysLeftEnd} dager igjen av avstemning `;
+    return `${daysLeft} dager igjen`;
 }
 
 
