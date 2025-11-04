@@ -32,7 +32,10 @@ let html = /*HTML*/`
             <i onclick="toggleMenu()" class="fa-solid fa-xmark"></i>
             <ul>
                 
-                <li onclick="model.app.currentPage='adminPage'; adminPage();">Admin</li>
+                <li class="admin" onclick="model.app.currentUser?.isAdmin? adminPage() : adminErrorMessage()">
+                Admin
+                <p id="adminErrorMessage" class="hidden">Kun for admin</p>
+                </li>
                 <li onclick="
                 model.app.currentUser !== null ?
                 generateProfile(model.app.currentUser)
@@ -59,6 +62,7 @@ function toggleLogIn(){
 function toggleMenu(){
     document.getElementById("logIn").classList.add("hidden");
     document.getElementById("menu").classList.toggle("hidden");
+    document.getElementById("adminErrorMessage").classList.add("hidden")
 }
 
 
@@ -95,6 +99,10 @@ function checkSavedLogin(){
     if(model.app.savedUser){
         model.app.currentUser = JSON.parse(model.app.savedUser)
     }
+}
+function adminErrorMessage(){
+    const errorMessage = document.getElementById("adminErrorMessage");
+    errorMessage.classList.remove("hidden");
 }
 
 // Finner ut hvor mange dager det er igjen av avstemning

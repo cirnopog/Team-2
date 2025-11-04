@@ -59,7 +59,7 @@ function favoriteBooksOfAccount(usr){
             if(model.app.currentUser.favorites[i].title!==undefined){
             favorites+=`<tbody>
             <tr>
-            <td class="tablePart">
+            <td class="tablePart" onclick="selectBook(${model.app.currentUser.favorites[i].id})">
                 ${model.app.currentUser.favorites[i].title} 
                 <button class="removeButton" onclick="deleteBook(model.app.currentUser.favorites,${i},'favorite')">
                     <i class="fa-solid fa-xmark"></i>
@@ -92,7 +92,7 @@ function favoriteBooksOfAccount(usr){
             if(model.app.currentUser.favorites[i].title!==undefined){
             favorites+=`<tbody>
             <tr>
-            <th class="tablePart">${usr.favorites[i].title}</th>
+            <th class="tablePart" onclick="selectBook(${usr.favorites[i].id})">${usr.favorites[i].title}</th>
             </tr>
             </tbody>`
             }
@@ -123,7 +123,7 @@ function allReadBooksOfAccount(usr){
             if(model.app.currentUser.addedBooks[i].title!==undefined){
             readBooks+=`<tbody>
             <tr>
-                <td class="tablePart">
+                <td class="tablePart" onclick="selectBook(${model.app.currentUser.addedBooks[i].id})">
                     ${model.app.currentUser.addedBooks[i].title}
                     <button class="removeButton" onclick="deleteBook(model.app.currentUser.addedBooks,${i},'added')">
                         <i class="fa-solid fa-xmark"></i>
@@ -157,7 +157,7 @@ function allReadBooksOfAccount(usr){
             if(model.app.currentUser.addedBooks[i].title!==undefined){
             readBooks+=`<tbody>
             <tr>
-            <th class="tablePart">${usr.addedBooks[i].title}</th>
+            <th class="tablePart" onclick="selectBook(${usr.addedBooks[i].id})">${usr.addedBooks[i].title}</th>
             </tr>
             </tbody>`
             }
