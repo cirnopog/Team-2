@@ -89,10 +89,10 @@ function deleteUser(usrNr){
 
 function setNewMeetingDate(){
     model.data.meetingdate = model.viewState.meetingPage.date
-    for(i in model.data.users){
-        model.data.users[i].decidedMeeting=true
-        if(model.app.currentUser.name==model.data.users[i].name){
-            model.app.currentUser=model.data.users[i]
+    for(i of model.data.users){
+        i.decidedMeeting=true
+        if(model.app.currentUser.name==i){
+            model.app.currentUser=i
         }
     }
     model.data.meetingAttendees.coming=0
@@ -130,8 +130,8 @@ function startVote() {
     model.data.votingActive=true;
     document.getElementById('votePageForm').reset();
 
-    for(i in model.data.bookList){
-        model.data.bookList[i].usersWhoHaveVoted=[]
+    for(i of model.data.bookList){
+        i.usersWhoHaveVoted=[]
     }
 
     document.getElementById('voteCreatedMessage').textContent = 'Ny avstemning er opprettet på forsiden!';

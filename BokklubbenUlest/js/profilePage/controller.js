@@ -1,8 +1,8 @@
 function findProfile(usrId){
     var user;
-    for(i in model.data.users){
-        if(model.data.users[i].name==usrId){
-            user=model.data.users[i]
+    for(i of model.data.users){
+        if(i.name==usrId){
+            user=i
             generateProfile(user)
         }
     }
