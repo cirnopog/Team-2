@@ -45,7 +45,6 @@ function accountIsComing() {
     model.data.meetingAttendees.coming += 1;
   }
 
-  console.log("coming");
   updateCurrentUser();
   saveData();
   homePage();
@@ -65,7 +64,6 @@ function accountIsNotComing() {
     model.data.meetingAttendees.notComing += 1;
   }
 
-  console.log("not coming");
   updateCurrentUser();
   saveData();
   homePage();

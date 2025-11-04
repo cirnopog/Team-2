@@ -54,7 +54,7 @@ checkSavedLogin()
 createHeader()
 
 
-
+// TOGGLE POP-UPS
 function toggleLogIn(){
     document.getElementById("menu").classList.add("hidden");
     document.getElementById("logIn").classList.toggle("hidden");
@@ -66,6 +66,7 @@ function toggleMenu(){
 }
 
 
+// LOGIN 
 function validateLogin(){
     const user = model.data.users.find(
         user => user.name === model.viewState.logInPage.name &&
@@ -100,6 +101,7 @@ function checkSavedLogin(){
         model.app.currentUser = JSON.parse(model.app.savedUser)
     }
 }
+// ADMIN ERROR MESSAGE
 function adminErrorMessage(){
     const errorMessage = document.getElementById("adminErrorMessage");
     errorMessage.classList.remove("hidden");
@@ -112,6 +114,9 @@ function voteDaysLeft() {
 
     currentVote = model.data.currentVote;
     if (currentVote.length === 0) {
+        if(model.data.winnerBook==null){
+            return 'Ingen aktiv avstemning'
+        }
         if(model.data.winnerBook.title==undefined){
             return 'Ingen aktiv avstemning';
         }
