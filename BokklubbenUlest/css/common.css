@@ -51,7 +51,9 @@ header > div >.avatar{
     height: 57px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center;
     cursor: pointer;
+    
 }
 header > h1{
     font-family: var(--logo-font);

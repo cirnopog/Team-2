@@ -49,6 +49,8 @@ const model = {
       "moose.png",
       "robot.png",
       "wizard.png",
+      "fox.png",
+      "man.png",
     ],
     meetingdate: "",
     meetingAttendees: {
