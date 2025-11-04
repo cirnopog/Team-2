@@ -31,6 +31,17 @@ header {
   align-items: center;
   position: relative;
 }
+header #adminErrorMessage{
+    position: absolute;
+    font-size: 12px;
+    font-weight: 600;
+    top:93px;
+    color: red;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    padding: 10px;
+}
+
 header > div{
     display: flex;
     align-items: center;
