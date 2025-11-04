@@ -48,8 +48,6 @@ function userRegistrationPage() {
 // USER LIST
 function showUserList(){
     let fullList = `
-    <br>
-    <br>
     <div id="centerArea">
     <table class="lists">
     
