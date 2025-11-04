@@ -148,19 +148,19 @@ function loadData(){
 
 function deleteBook(list, bookNum){
     let book=list[bookNum]
-    for(i in model.data.booksInVoting){
-        if(model.data.booksInVoting[i].title==book.title){
-            model.data.booksInVoting.splice(i , 1)
+    for(i in list){
+        if(list[i].title==book.title){
+            list.splice(i , 1)
         }
     }
-    updateCurrentUser();
-    saveData();
     if(list===model.app.currentUser.addedBooks ||
         list===model.app.currentUser.favorites){
             generateProfile(model.app.currentUser);
         }else{
           homePage()  
         }
+    updateCurrentUser();
+    saveData();
 }
 
 // For å finne bruker-avatar til bokinfo-siden

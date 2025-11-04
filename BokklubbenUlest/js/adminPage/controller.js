@@ -101,6 +101,13 @@ function setNewMeetingDate(){
     
 }
 
+function cancelMeeting(){
+    model.data.meetingdate = ""
+    updateCurrentUser()
+    saveData()
+}
+
+
 
 
 
@@ -122,6 +129,10 @@ function startVote() {
     model.data.votingActive=true;
     document.getElementById('votePageForm').reset();
 
+    for(i in model.data.bookList){
+        model.data.bookList[i].usersWhoHaveVoted=[]
+    }
+
     document.getElementById('voteCreatedMessage').textContent = 'Ny avstemning er opprettet på forsiden!';
 
     voteDaysLeft();
@@ -130,4 +141,9 @@ function startVote() {
 }
 
 
-
+function cancelVote(){
+    findWinner()
+    model.data.currentVote=[]
+    model.data.votingActive=false;
+    saveData()
+}
