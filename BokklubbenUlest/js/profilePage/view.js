@@ -61,7 +61,7 @@ function favoriteBooksOfAccount(usr){
             <tr>
             <td class="tablePart" onclick="selectBook(${model.app.currentUser.favorites[i].id})">
                 ${model.app.currentUser.favorites[i].title} 
-                <button class="removeButton" onclick="deleteBook(model.app.currentUser.favorites,${i})">
+                <button class="removeButton" onclick="deleteBook(model.app.currentUser.favorites,${i},'favorite')">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </td>
@@ -125,7 +125,7 @@ function allReadBooksOfAccount(usr){
             <tr>
                 <td class="tablePart" onclick="selectBook(${model.app.currentUser.addedBooks[i].id})">
                     ${model.app.currentUser.addedBooks[i].title}
-                    <button class="removeButton" onclick="deleteBook(model.app.currentUser.addedBooks,${i})">
+                    <button class="removeButton" onclick="deleteBook(model.app.currentUser.addedBooks,${i},'added')">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </td>

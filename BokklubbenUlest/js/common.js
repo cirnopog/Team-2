@@ -146,8 +146,16 @@ function loadData(){
     }
 }
 
-function deleteBook(list, bookNum){
+function deleteBook(list, bookNum, str){
     let book=list[bookNum]
+    if(str=="favorite"){
+        for(i of model.data.bookList){
+            if(i.name==book.name){
+                i.isFavorite=false
+            }
+        }
+        model.data.bookInfo.isFavorite=false
+    }
     for(i in list){
         if(list[i].title==book.title){
             list.splice(i , 1)
@@ -166,12 +174,4 @@ function deleteBook(list, bookNum){
 // For å finne bruker-avatar til bokinfo-siden
 function findUserByUsername(username) {
     return model.data.users.find(user => user.name === username);
-}
-
-
-function cancelMeeting(){
-    findWinner()
-    model.data.currentVote=[]
-    model.data.votingActive=false;
-    saveData()
 }

@@ -86,7 +86,7 @@ function renderBooksInVoting() {
                 <button onclick="vote(${book.id},-1)">
                     <i class="fa-solid fa-thumbs-down"></i>
                 </button>
-                <button class="dlt-btn" onclick="deleteBook(model.data.booksInVoting, ${i})">
+                <button class="dlt-btn" onclick="deleteBook(model.data.booksInVoting, ${i},'voting')">
                 x
                 </button>
             </div>
