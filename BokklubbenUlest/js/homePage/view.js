@@ -7,15 +7,16 @@ function homePage() {
     ${drawMeetingBanner()}
     
     <div id="bookVoting">
-    ${model.data.votingActive?
-    `
+    ${
+      model.data.votingActive
+        ? `
     <div class="container">
             <h2>Bok avstemning</h2>
             <h3 id="voteStatus"></h3>
         </div>
     `
-    :
-    ``}
+        : ``
+    }
         
 
         <div id="bookListContainer">
@@ -34,12 +35,11 @@ function homePage() {
   if (model.data.votingActive) {
     renderBooksInVoting();
   }
-  if(model.data.winnerBook !==null &&
-    !model.data.votingActive) {
+  if (model.data.winnerBook !== null && !model.data.votingActive) {
     drawWinnerBook();
   }
-   if(!model.data.votingActive) {
-    noVotingView()
+  if (!model.data.votingActive) {
+    noVotingView();
   }
   updateVoteStatus();
 }
@@ -125,7 +125,6 @@ function renderBooksInVoting() {
     `;
 }
 
-
 function drawWinnerBook() {
   document.getElementById("bookListContainer").innerHTML = `
     <div id="winnerBook">
@@ -154,14 +153,13 @@ function drawWinnerBook() {
     </div>
     `;
 }
-function noVotingView(){
-    document.getElementById("bookListContainer").innerHTML = `
+function noVotingView() {
+  document.getElementById("bookListContainer").innerHTML = `
     <div class="no-voting">
         <h2>Ingen aktiv bokavstemning</h2>
         <p>Mer info kommer snart</p>
     </div>
     `;
-
 }
 
 function showAddToVoting() {
@@ -180,34 +178,27 @@ function drawMeetingBanner() {
 </div>
 `;
   }
-  let comingNames = "";
-  if (model.data.meetingAttendees.comingList.length > 0) {
-    comingNames = `
-<div class="attendees-list">
-    <h4>Disse kommer:</h4>
+  let attendeesHtml = `
+<div class="attendees-wrapper">
+  <div class="attendees coming">
+    <h4><i class="fa-solid fa-thumbs-up"></i> Disse kommer:</h4>
     <ul>
-    ${model.data.meetingAttendees.comingList
-      .map((name) => `<li>${name}</li>`)
-      .join("")}
+      ${model.data.meetingAttendees.comingList
+        .map((name) => `<li><i class="fa-solid fa-user"></i> ${name}</li>`)
+        .join("")}
     </ul>
+  </div>
+
+  <div class="attendees not-coming">
+    <h4><i class="fa-solid fa-thumbs-down"></i> Disse kommer ikke:</h4>
+    <ul>
+      ${model.data.meetingAttendees.notComingList
+        .map((name) => `<li><i class="fa-regular fa-user"></i> ${name}</li>`)
+        .join("")}
+    </ul>
+  </div>
 </div>
 `;
-  }
-
-  let notComingNames = "";
-  if (model.data.meetingAttendees.notComingList.length > 0) {
-    notComingNames = `
-<div class="attendees-list">
-    <h4>Disse kommer ikke:</h4>
-    <ul>
-    ${model.data.meetingAttendees.notComingList
-      .map((name) => `<li>${name}</li>`)
-      .join("")}
-    </ul>
-    </div>
-
-    `;
-  }
 
   let html = `
 <div id="meetingBanner">
@@ -228,8 +219,7 @@ function drawMeetingBanner() {
         Kommer ikke: ${model.data.meetingAttendees.notComing} 
     </p>
     ${moreHtml}
-    ${comingNames}
-    ${notComingNames}
+  ${attendeesHtml}
     </div>
 `;
   return html;

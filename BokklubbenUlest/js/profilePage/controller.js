@@ -6,28 +6,25 @@ function findProfile(usrId){
             generateProfile(user)
         }
     }
+  }
+
+function chooseAvatar() {
+  const avatarPopup = document.getElementById("avatarPopup");
+  avatarPopup.style.visibility = "visible";
 }
 
-function chooseAvatar(){
-    const avatarPopup = document.getElementById("avatarPopup")
-    avatarPopup.style.visibility="visible"
-    
+function avatarChosen(newAvatar) {
+  const avatarPopup = document.getElementById("avatarPopup");
+  model.app.currentUser.avatar = newAvatar;
+  avatarPopup.style.visibility = "hidden";
+  updateCurrentUser();
+  generateProfile(model.app.currentUser);
+  createHeader();
 }
 
-function avatarChosen(newAvatar){
-    const avatarPopup = document.getElementById("avatarPopup")
-    model.app.currentUser.avatar=newAvatar
-    avatarPopup.style.visibility="hidden"
-    updateCurrentUser()
-    generateProfile(model.app.currentUser)
-    createHeader()
-    
+function logOut() {
+  model.app.currentUser = null;
+  localStorage.removeItem("currentUser");
+  createHeader();
+  homePage();
 }
-
-function logOut(){
-    model.app.currentUser = null;
-    localStorage.removeItem('currentUser');
-    createHeader();
-    homePage();
-}
-
