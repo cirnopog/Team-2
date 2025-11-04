@@ -61,7 +61,7 @@ function showUserList(){
         fullList+= /*HTML*/`
         <tbody>
             <tr>
-                <td class="partOfList">${itemName}
+                <td class="partOfList" onclick="goToUser('${itemName}')">${itemName}
 
                 <div class="btn-container">
                 <button id="editButton" onclick="showEditPage(${i})">

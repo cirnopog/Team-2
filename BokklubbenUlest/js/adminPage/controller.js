@@ -45,13 +45,6 @@ function registerNewUser(event) {
     errorElement.textContent = 'Ny bruker er registrert!';
 }
 
-
-
-
-
-
-
-
 // USER LIST
 // Bare for å tenke hvordan en kan gjøre endringer i brukere
 function removeEditPage(){
@@ -77,12 +70,16 @@ function deleteUser(usrNr){
     showUserList()
 }
 
+function goToUser(username) {
+    const userObject = findUserByUsername(username); 
 
-
-
-
-
-
+    if (userObject) {
+        model.app.currentPage = 'userProfile';
+        generateProfile(userObject);
+    } else {
+        console.error("Brukeren '" + username + "' ble ikke funnet.");
+    }
+}
 
 // NEW MEETING
 
@@ -106,14 +103,6 @@ function cancelMeeting(){
     updateCurrentUser()
     saveData()
 }
-
-
-
-
-
-
-
-
 
 // VOTE START
 // Når du trykker på opprett-knapp i avstemning
