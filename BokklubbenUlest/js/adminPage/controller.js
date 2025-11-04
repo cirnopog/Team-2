@@ -45,13 +45,6 @@ function registerNewUser(event) {
     errorElement.textContent = 'Ny bruker er registrert!';
 }
 
-
-
-
-
-
-
-
 // USER LIST
 // Bare for å tenke hvordan en kan gjøre endringer i brukere
 function removeEditPage(){
@@ -74,24 +67,29 @@ function editUser(usrNr){
 }
 function deleteUser(usrNr){
     model.data.users.splice(usrNr,1)
+    saveData()
     showUserList()
 }
 
+function goToUser(username) {
+    const userObject = findUserByUsername(username); 
 
-
-
-
-
-
+    if (userObject) {
+        model.app.currentPage = 'userProfile';
+        generateProfile(userObject);
+    } else {
+        console.error("Brukeren '" + username + "' ble ikke funnet.");
+    }
+}
 
 // NEW MEETING
 
 function setNewMeetingDate(){
     model.data.meetingdate = model.viewState.meetingPage.date
-    for(i in model.data.users){
-        model.data.users[i].decidedMeeting=true
-        if(model.app.currentUser.name==model.data.users[i].name){
-            model.app.currentUser=model.data.users[i]
+    for(i of model.data.users){
+        i.decidedMeeting=true
+        if(model.app.currentUser.name==i){
+            model.app.currentUser=i
         }
     }
     model.data.meetingAttendees.coming=0
@@ -107,14 +105,6 @@ function cancelMeeting(){
     saveData()
 }
 
-
-
-
-
-
-
-
-
 // VOTE START
 // Når du trykker på opprett-knapp i avstemning
 function startVote() {
@@ -129,8 +119,8 @@ function startVote() {
     model.data.votingActive=true;
     document.getElementById('votePageForm').reset();
 
-    for(i in model.data.bookList){
-        model.data.bookList[i].usersWhoHaveVoted=[]
+    for(i of model.data.bookList){
+        i.usersWhoHaveVoted=[]
     }
 
     document.getElementById('voteCreatedMessage').textContent = 'Ny avstemning er opprettet på forsiden!';

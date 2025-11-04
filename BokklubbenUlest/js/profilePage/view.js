@@ -39,8 +39,8 @@ function generateProfile(usr){
 
 function createAvatarList(){
     var allAvatars = ""
-    for(i in model.data.avatars){
-        allAvatars += `<img src="img/${model.data.avatars[i]}" class="avtImg" alt="${model.data.avatars[i]}" height="25%" width="25%" onclick="avatarChosen('${model.data.avatars[i]}')">`
+    for(i of model.data.avatars){
+        allAvatars += `<img src="img/${i}" class="avtImg" alt="${i}" height="25%" width="25%" onclick="avatarChosen('${model.data.avatars[i]}')">`
     }
     return allAvatars
 
@@ -88,11 +88,11 @@ function favoriteBooksOfAccount(usr){
         <th>Favoritter</th>
         </tr>
         </thead>`
-        for(i in usr.favorites){
+        for(i of usr.favorites){
             if(usr.favorites[i].title!==undefined){
             favorites+=`<tbody>
             <tr>
-            <td class="tablePart" onclick="selectBook(${usr.favorites[i].id})">${usr.favorites[i].title}</td>
+            <td class="tablePart" onclick="selectBook(${i.id})">${i.title}</td>
             </tr>
             </tbody>`
             }
@@ -153,11 +153,11 @@ function allReadBooksOfAccount(usr){
         <th>Leste Bøker</th>
         </tr>
         </thead>`
-        for(i in usr.addedBooks){
+        for(i of usr.addedBooks){
             if(usr.addedBooks[i].title!==undefined){
             readBooks+=`<tbody>
             <tr>
-                <td class="tablePart" onclick="selectBook(${usr.addedBooks[i].id})">${usr.addedBooks[i].title}</td>
+                <td class="tablePart" onclick="selectBook(${i.id})">${i.title}</td>
             </tr>
             </tbody>`
             }
