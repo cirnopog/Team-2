@@ -122,6 +122,10 @@ function startVote() {
     model.data.votingActive=true;
     document.getElementById('votePageForm').reset();
 
+    for(i in model.data.bookList){
+        model.data.bookList[i].usersWhoHaveVoted=[]
+    }
+
     document.getElementById('voteCreatedMessage').textContent = 'Ny avstemning er opprettet på forsiden!';
 
     voteDaysLeft();
