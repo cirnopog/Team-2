@@ -57,10 +57,10 @@ function updateVoteStatus() {
 // Bøker i avstemning
 function renderBooksInVoting() {
   var bookList = document.getElementById("bookListContainer");
-  const startDate = new Date(model.data.currentVote[0].startDate)
-  const currentDate = new Date()
-  if((currentDate-startDate)<0){
-    return
+  const startDate = new Date(model.data.currentVote[0].startDate);
+  const currentDate = new Date();
+  if (currentDate - startDate < 0) {
+    return;
   }
   if (!bookList) return;
   bookList.innerHTML = "";
@@ -184,22 +184,28 @@ function drawMeetingBanner() {
   }
   let attendeesHtml = `
 <div class="attendees-wrapper">
-  <div class="attendees coming">
-    <h4><i class="fa-solid fa-thumbs-up"></i> Disse kommer:</h4>
-    <ul>
-      ${model.data.meetingAttendees.comingList
-        .map((name) => `<li><i class="fa-solid fa-user"></i> ${name}</li>`)
-        .join("")}
-    </ul>
+  <div class="attendees-col">
+    <button id="btnComing">Kommer</button>
+    <div class="attendees coming">
+      <h4><i class="fa-solid fa-thumbs-up"></i> Disse kommer:</h4>
+      <ul>
+        ${model.data.meetingAttendees.comingList
+          .map((name) => `<li><i class="fa-solid fa-user"></i> ${name}</li>`)
+          .join("")}
+      </ul>
+    </div>
   </div>
 
-  <div class="attendees not-coming">
-    <h4><i class="fa-solid fa-thumbs-down"></i> Disse kommer ikke:</h4>
-    <ul>
-      ${model.data.meetingAttendees.notComingList
-        .map((name) => `<li><i class="fa-regular fa-user"></i> ${name}</li>`)
-        .join("")}
-    </ul>
+  <div class="attendees-col">
+    <button id="btnNotComing">Kommer ikke</button>
+    <div class="attendees not-coming">
+      <h4><i class="fa-solid fa-thumbs-down"></i> Disse kommer ikke:</h4>
+      <ul>
+        ${model.data.meetingAttendees.notComingList
+          .map((name) => `<li><i class="fa-regular fa-user"></i> ${name}</li>`)
+          .join("")}
+      </ul>
+    </div>
   </div>
 </div>
 `;
