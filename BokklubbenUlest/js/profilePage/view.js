@@ -40,7 +40,7 @@ function generateProfile(usr){
 function createAvatarList(){
     var allAvatars = ""
     for(i of model.data.avatars){
-        allAvatars += `<img src="img/${i}" class="avtImg" alt="${i}" height="25%" width="25%" onclick="avatarChosen('${model.data.avatars[i]}')">`
+        allAvatars += `<img src="img/${i}" class="avtImg" alt="${i}" height="25%" width="25%" onclick="avatarChosen('${i}')">`
     }
     return allAvatars
 
