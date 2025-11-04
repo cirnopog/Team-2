@@ -91,12 +91,13 @@ function renderBooksInVoting() {
                 <button onclick="vote(${book.id},-1)">
                     <i class="fa-solid fa-thumbs-down"></i>
                 </button>
-                ${model.app.currentUser?.isAdmin?
-                `<button class="dlt-btn" onclick="deleteBook(model.data.booksInVoting, ${i},'voting')">
+                ${
+                  model.app.currentUser?.isAdmin
+                    ? `<button class="dlt-btn" onclick="deleteBook(model.data.booksInVoting, ${i},'voting')">
                 x
                 </button>`
-                :
-                ``}
+                    : ``
+                }
                 
             </div>
         </div>
