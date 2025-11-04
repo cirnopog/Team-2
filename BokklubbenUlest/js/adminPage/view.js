@@ -128,6 +128,7 @@ function newMeeting(){
     <h4>Dato for nytt møte</h4>
     <input id="meetingInput" type="date" onchange="model.viewState.meetingPage.date = this.value">
     <button onclick="setNewMeetingDate()">Opprett</button>
+    <button onclick="cancelMeeting()">Avbryt</button>
     </form>
     `
     return html;
@@ -157,7 +158,7 @@ function votePage() {
             <div class="btn-container">
                 <button type="submit">Opprett</button>
                 
-                <button type="button" id="resetButton" onclick="cancelMeeting()">Avbryt</button>
+                <button type="button" id="resetButton" onclick="cancelVote()">Avbryt</button>
             </div>
             <p id="voteCreatedMessage"></p>
             </form>
