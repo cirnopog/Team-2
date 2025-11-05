@@ -25,7 +25,7 @@ function homePage() {
     </div>
     `;
   // Koble knappene til funksjonene i controller
-  if(model.data.meetingdate!=[]){
+  if(model.data.meetingdate!=""){
     document
       .getElementById("btnComing")
       ?.addEventListener("click", accountIsComing);
