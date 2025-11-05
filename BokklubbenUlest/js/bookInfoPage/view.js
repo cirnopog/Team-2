@@ -9,6 +9,17 @@ function bookInfoPage() {
 
     const addedUserAvatar = addedUserObject ? addedUserObject.avatar : 'default-avatar.png';
 
+
+    console.log(addedUserObject)
+
+    const foundBook = model.app.currentUser.favorites.find((book) => book.title == model.data.bookInfo.title)
+    if(foundBook!= null){
+        console.log(foundBook)
+        model.data.bookInfo.isFavorite=true
+    }
+    else{
+        model.data.bookInfo.isFavorite=false
+    }
     // Bokinfo-sidens html
     document.getElementById('app').innerHTML = /*HTML*/`
         <h1 class="bookInfoHeading">Om boken<h1>
