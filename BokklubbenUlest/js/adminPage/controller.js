@@ -107,12 +107,18 @@ function setNewMeetingDate(){
     }
     model.data.meetingAttendees.coming=0
     model.data.meetingAttendees.notComing=0
+    model.data.meetingAttendees.comingList=[]
+    model.data.meetingAttendees.notComingList=[]
     updateCurrentUser()
     saveData()
     
 }
 
 function cancelMeeting(){
+    model.data.meetingAttendees.coming=0
+    model.data.meetingAttendees.notComing=0
+    model.data.meetingAttendees.comingList=[]
+    model.data.meetingAttendees.notComingList=[]
     model.data.meetingdate = ""
     updateCurrentUser()
     saveData()
