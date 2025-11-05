@@ -1,6 +1,9 @@
 
 // Når du klikker på en bok
 function selectBook(id) {
+    if(model.app.currentUser==null){
+        return
+    }
 
     const selectedBook = model.data.bookList.find((book) => book.id==id)
 
