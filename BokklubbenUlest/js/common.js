@@ -41,7 +41,7 @@ let html = /*HTML*/`
                 generateProfile(model.app.currentUser)
                 : toggleLogIn()">
                 Profil</li>
-                <li onclick="model.app.currentPage='adminPage'; newBookPage()">Legg til bok</li>
+                <li onclick="model.app.currentUser!=null ? openBookCreationpage() : toggleLogIn()">Legg til bok</li>
                 
             </ul>
         </div>
@@ -54,6 +54,11 @@ checkSavedLogin()
 createHeader()
 
 
+function openBookCreationpage(){
+    console.log("test")
+    model.app.currentPage='adminPage';
+    newBookPage()
+}
 // TOGGLE POP-UPS
 function toggleLogIn(){
     document.getElementById("menu").classList.add("hidden");
