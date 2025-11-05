@@ -108,7 +108,7 @@ function renderBooksInVoting() {
     bookList.appendChild(div);
   }
   bookList.innerHTML += /*HTML*/ `
-        <button onclick="showAddToVoting()" class="add-book-btn">+</button>
+        <button onclick="model.app.currentUser!=null ? showAddToVoting() : toggleLogIn()" class="add-book-btn">+</button>
         <div id="addBookToVoting" class="hidden">
             <h4>Legg til bok i avstemningen</h4>
 
