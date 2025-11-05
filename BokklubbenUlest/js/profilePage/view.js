@@ -89,7 +89,7 @@ function favoriteBooksOfAccount(usr){
         </tr>
         </thead>`
         for(i of usr.favorites){
-            if(usr.favorites[i].title!==undefined){
+            if(i.title!==undefined){
             favorites+=`<tbody>
             <tr>
             <td class="tablePart" onclick="selectBook(${i.id})">${i.title}</td>
@@ -154,7 +154,7 @@ function allReadBooksOfAccount(usr){
         </tr>
         </thead>`
         for(i of usr.addedBooks){
-            if(usr.addedBooks[i].title!==undefined){
+            if(i.title!==undefined){
             readBooks+=`<tbody>
             <tr>
                 <td class="tablePart" onclick="selectBook(${i.id})">${i.title}</td>
