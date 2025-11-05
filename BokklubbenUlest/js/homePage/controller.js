@@ -7,8 +7,8 @@ function vote(bookId, value) {
   for (var i = 0; i < books.length; i++) {
     if (books[i].id == bookId) {
       bookPos = i;
-      for (i in books[i].usersWhoHaveVoted) {
-        if (model.app.currentUser.name == books[i].usersWhoHaveVoted[i].name) {
+      for (j in books[i].usersWhoHaveVoted) {
+        if (model.app.currentUser.name == books[i].usersWhoHaveVoted[j].name) {
           return;
         }
       }
