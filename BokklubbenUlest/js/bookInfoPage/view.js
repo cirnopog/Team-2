@@ -30,10 +30,12 @@ function bookInfoPage() {
                 </div>
                 <div class="left-footer">
                     <div class="footer-split-left">
-                        <div class="user-profile-link" onclick="linkToProfile()">
+                        <div class="user-profile-link">
                             <p>Lagt til av:</p>
-                            <img src="img/${addedUserAvatar}" alt="${addedByUser}'s avatar" class="avatar-small">
-                            <p>${addedByUser}</p>
+                            <div id="clickOnUser" onclick="linkToProfile()">
+                                <img src="img/${addedUserAvatar}" alt="${addedByUser}'s avatar" class="avatar-small">
+                                <p>${addedByUser}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="footer-split-right">
