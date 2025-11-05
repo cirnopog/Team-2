@@ -84,9 +84,9 @@
     background-color: var(--contrast-accent);
 }
 
-/* Opprett avstemning */
+/* Opprett avstemning OG nytt møte skjema*/
 
-#votePageForm {
+#votePageForm, #meetingPageForm {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -101,15 +101,15 @@
     color: var(--brown-color);
 }
 
-#votePageForm > input {
+#votePageForm > input, #meetingPageForm > input {
     padding: 5px;
     font-size: 1.1rem;
     font-family: var(--regular-text);
 }
-#votePageForm > label{
+#votePageForm > label, #meetingPageForm > label {
     font-weight: 600;
 }
-#votePageForm button {
+#votePageForm button, #meetingPageForm button {
     width: fit-content;
     padding: 6px 9px;
     letter-spacing: 1px;
@@ -124,12 +124,12 @@
     cursor: pointer;
 }
 
-#votePageForm .btn-container{
+#votePageForm .btn-container, #meetingPageForm .btn-container {
   display: flex;
   gap: 10px;
 }
 
-#votePageForm  button:hover {
+#votePageForm  button:hover, #meetingPageForm button:hover {
     cursor: pointer;
     transform: scale(1.01);
     background-color: var(--contrast-accent);
@@ -157,7 +157,7 @@
   .lists th{
     padding: 25px 40px;
     text-align: start;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   .partOfList{
     border-top: black solid 0.05rem;
@@ -259,4 +259,6 @@
   #newPassword{
     width: 90%;
   }
+ 
+  /* New meeting page*/
  
