@@ -25,13 +25,15 @@ function homePage() {
     </div>
     `;
   // Koble knappene til funksjonene i controller
-  document
-    .getElementById("btnComing")
-    ?.addEventListener("click", accountIsComing);
-  document
-    .getElementById("btnNotComing")
-    ?.addEventListener("click", accountIsNotComing);
+  if(model.data.meetingdate!=[]){
+    document
+      .getElementById("btnComing")
+      ?.addEventListener("click", accountIsComing);
+    document
+      .getElementById("btnNotComing")
+      ?.addEventListener("click", accountIsNotComing);
 
+  }
   if (model.data.votingActive) {
     renderBooksInVoting();
   }
