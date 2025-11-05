@@ -66,7 +66,6 @@ function editUser(usrNr){
     removeEditPage()
 }
 function deleteUser(usrNr){
-    /*
     const usr = model.data.users[usrNr]
     for(i in model.data.meetingAttendees.comingList){
         if(model.data.meetingAttendees.comingList[i] == usr.name){
@@ -79,7 +78,7 @@ function deleteUser(usrNr){
             model.data.meetingAttendees.notComingList.splice(i,1)
             model.data.meetingAttendees.notComing
         }
-    }*/
+    }
     model.data.users.splice(usrNr,1)
     saveData()
     showUserList()
