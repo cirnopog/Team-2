@@ -1,14 +1,17 @@
 // stemme funksjon
 
 function vote(bookId, value) {
+  if(model.app.currentUser==null){
+    return
+  }
   var books = model.data.booksInVoting;
   var bookPos = 0;
   // console.log(bookId)
   for (var i = 0; i < books.length; i++) {
     if (books[i].id == bookId) {
       bookPos = i;
-      for (i in books[i].usersWhoHaveVoted) {
-        if (model.app.currentUser.name == books[i].usersWhoHaveVoted[i].name) {
+      for (j in books[i].usersWhoHaveVoted) {
+        if (model.app.currentUser.name == books[i].usersWhoHaveVoted[j].name) {
           return;
         }
       }

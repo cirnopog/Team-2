@@ -59,8 +59,8 @@ function favoriteBooksOfAccount(usr){
             if(model.app.currentUser.favorites[i].title!==undefined){
             favorites+=`<tbody>
             <tr>
-            <td class="tablePart" onclick="selectBook(${model.app.currentUser.favorites[i].id})">
-                ${model.app.currentUser.favorites[i].title} 
+            <td class="tablePart">
+                <span onclick="selectBook(${model.app.currentUser.favorites[i].id})">${model.app.currentUser.favorites[i].title}</span> 
                 <button class="removeButton" onclick="deleteBook(model.app.currentUser.favorites,${i},'favorite')">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -92,7 +92,7 @@ function favoriteBooksOfAccount(usr){
             if(i.title!==undefined){
             favorites+=`<tbody>
             <tr>
-            <td class="tablePart" onclick="selectBook(${i.id})">${i.title}</td>
+            <td class="tablePart"><span onclick="selectBook(${i.id})">${i.title}</span></td>
             </tr>
             </tbody>`
             }
@@ -123,8 +123,8 @@ function allReadBooksOfAccount(usr){
             if(model.app.currentUser.addedBooks[i].title!==undefined){
             readBooks+=`<tbody>
             <tr>
-                <td class="tablePart" onclick="selectBook(${model.app.currentUser.addedBooks[i].id})">
-                    ${model.app.currentUser.addedBooks[i].title}
+                <td class="tablePart">
+                    <span onclick="selectBook(${model.app.currentUser.addedBooks[i].id})">${model.app.currentUser.addedBooks[i].title}</span>
                     <button class="removeButton" onclick="deleteBook(model.app.currentUser.addedBooks,${i},'added')">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
@@ -157,7 +157,7 @@ function allReadBooksOfAccount(usr){
             if(i.title!==undefined){
             readBooks+=`<tbody>
             <tr>
-                <td class="tablePart" onclick="selectBook(${i.id})">${i.title}</td>
+                <td class="tablePart"><span onclick="selectBook(${i.id})">${i.title}</span></td>
             </tr>
             </tbody>`
             }
