@@ -9,6 +9,17 @@ function bookInfoPage() {
 
     const addedUserAvatar = addedUserObject ? addedUserObject.avatar : 'default-avatar.png';
 
+
+    console.log(addedUserObject)
+
+    const foundBook = model.app.currentUser.favorites.find((book) => book.title == model.data.bookInfo.title)
+    if(foundBook!= null){
+        console.log(foundBook)
+        model.data.bookInfo.isFavorite=true
+    }
+    else{
+        model.data.bookInfo.isFavorite=false
+    }
     // Bokinfo-sidens html
     document.getElementById('app').innerHTML = /*HTML*/`
         <h1 class="bookInfoHeading">Om boken<h1>
@@ -30,10 +41,12 @@ function bookInfoPage() {
                 </div>
                 <div class="left-footer">
                     <div class="footer-split-left">
-                        <div class="user-profile-link" onclick="linkToProfile()">
+                        <div class="user-profile-link">
                             <p>Lagt til av:</p>
-                            <img src="img/${addedUserAvatar}" alt="${addedByUser}'s avatar" class="avatar-small">
-                            <p>${addedByUser}</p>
+                            <div id="clickOnUser" onclick="linkToProfile()">
+                                <img src="img/${addedUserAvatar}" alt="${addedByUser}'s avatar" class="avatar-small">
+                                <p>${addedByUser}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="footer-split-right">

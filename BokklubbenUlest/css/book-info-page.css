@@ -152,7 +152,6 @@
 .footer-split-left .user-profile-link {
     display: flex;
     align-items: center;
-    cursor: pointer;
 }
 
 .footer-split-left .user-profile-link .avatar-small {
@@ -163,6 +162,19 @@
     object-fit: cover;
 }
 
-.footer-split-left .user-profile-link p {
+.footer-split-left #clickOnUser p {
     margin: 0 5px;
+}
+
+#clickOnUser {
+    display: flex;
+    margin-left: 10px;
+    transition: transform 0.5s, filter 0.5s ease;
+    filter: brightness(95%);
+}
+
+#clickOnUser:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    filter: brightness(110%);
 }
