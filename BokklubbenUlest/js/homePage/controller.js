@@ -1,6 +1,9 @@
 // stemme funksjon
 
 function vote(bookId, value) {
+  if(model.app.currentUser==null){
+    return
+  }
   var books = model.data.booksInVoting;
   var bookPos = 0;
   // console.log(bookId)
