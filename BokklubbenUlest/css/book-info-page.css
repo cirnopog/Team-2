@@ -27,7 +27,12 @@
     border-right: 2px solid var(--brown-lighter);
     box-sizing: border-box;
 }
-
+.header-split-left h4{
+    font-family: var(--heading-font);
+    color: var(--brown-color);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    
+}
 /* 4. Headers og footers */
 .left-header, .left-footer {
     display: flex;
@@ -133,10 +138,13 @@
 
 .fa-regular.fa-heart {
     color: #4A3728;
+    transition: 0.2s;
 }
-
+.fa-regular.fa-heart:hover{
+    color: var(--alert);
+}
 .fa-solid.fa-heart {
-    color: red;
+    color: var(--alert);
 }
 
 .active-star {

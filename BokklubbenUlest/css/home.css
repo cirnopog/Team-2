@@ -25,13 +25,13 @@
   font-weight: 600;
   color: var(--brown-color);
 }
-#meetingBanner > .meeting-attendees {
+/* #meetingBanner > .meeting-attendees {
   margin-top: 0.7rem;
   color: var(--background-color);
   font-family: var(--regular-text);
   font-size: 14px;
   letter-spacing: 1px;
-}
+} */
 #meetingBanner > .btn-container {
   display: flex;
   width: 100%;
@@ -54,11 +54,93 @@
   background-color: var(--contrast-accent);
   transition: 0.3s;
 }
+.attendees-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 3rem; /* litt mer luft mellom kolonner */
+    margin-top: 1.5rem;
+    flex-wrap: wrap; /* hvis skjerm er smal */
+  }
+  
+  .attendees-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .attendees-col button {
+    margin-bottom: 0.8rem;
+    padding: 8px 18px;
+    font-size: 16px;
+    font-family: var(--regular-text);
+    font-weight: 600;
+    color: var(--background-color);
+    background-color: var(--brown-lighter);
+    border: var(--brown-color) 1.5px solid;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .attendees-col button:hover {
+    background-color: var(--contrast-accent);
+  }
+  
+  .attendees {
+    background-color: rgba(255, 255, 255, 0.1); /* litt bakgrunn for lesbarhet */
+    padding: 1rem;
+    border-radius: 1rem;
+    min-width: 200px;
+    max-width: 250px;
+  }
+  
+  .attendees h4 {
+    font-family: var(--heading-font);
+    font-size: 1.1rem;
+    color: var(--background-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .attendees ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .attendees li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: var(--regular-text);
+    color: var(--background-color);
+  }
+  
+  .attendees li i {
+    font-size: 14px;
+    color: var(--background-color);
+  }
+
+
+
+
+
+
+
 /*=================================================*/
 
 /*=========== < VOTING SECTION > ==================*/
 #bookVoting {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 #bookVoting > .container {
   display: flex;
@@ -257,8 +339,8 @@
   max-width: 350px;
 }
 .winner-info .book-description {
-  font-size: 13px;
-  line-height: 160%;
+  font-size: 14px;
+  line-height: 180%;
   padding: 10px 2px;
 }
 /* UNACTIVE VOTING STATE */
@@ -284,78 +366,40 @@
 }
 
 /*=================================================*/
-.attendees-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 3rem; /* litt mer luft mellom kolonner */
-  margin-top: 1.5rem;
-  flex-wrap: wrap; /* hvis skjerm er smal */
-}
 
-.attendees-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.attendees-col button {
-  margin-bottom: 0.8rem;
-  padding: 8px 18px;
-  font-size: 16px;
-  font-family: var(--regular-text);
-  font-weight: 600;
-  color: var(--background-color);
-  background-color: var(--brown-lighter);
-  border: var(--brown-color) 1.5px solid;
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-.attendees-col button:hover {
-  background-color: var(--contrast-accent);
-}
+@media screen and (max-width: 1710px) {
+    #meetingBanner{
+        padding: 1.5rem;
+    }
+    #meetingBanner > h2{
+        font-size: 3rem;
+        line-height: 100%;
+    }
+    #meetingBanner .btn-container{
+        margin-top: 1rem;
+    }
+    .attendees-wrapper{
+        margin-top: 0.8rem;
+    }
 
-.attendees {
-  background-color: rgba(255, 255, 255, 0.1); /* litt bakgrunn for lesbarhet */
-  padding: 1rem;
-  border-radius: 1rem;
-  min-width: 200px;
-  max-width: 250px;
-}
+    #winnerBook{
+        margin-top: 0.5rem;
+    }
+    #winnerBook h3{
+        font-size: 1.9rem;
+        line-height: 140%;
+    }
 
-.attendees h4 {
-  font-family: var(--heading-font);
-  font-size: 1.2rem;
-  color: var(--background-color);
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.attendees ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.attendees li {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-family: var(--regular-text);
-  color: var(--background-color);
-}
-
-.attendees li i {
-  font-size: 14px;
-  color: var(--background-color);
+    /* books in voting */
+    #bookVoting > .container > h2{
+        font-size: 2rem;
+    }
+    #bookListContainer{
+        padding: 0;
+    }
+    #bookListContainer > div > img{
+        width: 190px !important
+    }
 }
