@@ -1,12 +1,26 @@
 // stemme funksjon
 
 function vote(bookId, value) {
-  if(model.app.currentUser==null){
-    return
+  if(model.app.currentUser===null){
+    return;
   }
   var books = model.data.booksInVoting;
+//   var book = books.find(b => b.id == bookID);
   var bookPos = 0;
   // console.log(bookId)
+//   if(!book){
+//     console.log("book not found")
+//   }
+
+//   const hasVoted = book.usersWhoHaveVoted?.some(
+//     user => user.name === model.app.currentUser.name
+//   );
+//   if (hasVoted) {
+//     console.log("User already voted");
+//     return;
+// }
+// book.usersWhoHaveVoted.push(model.app.currentUser);
+
   for (var i = 0; i < books.length; i++) {
     if (books[i].id == bookId) {
       bookPos = i;
