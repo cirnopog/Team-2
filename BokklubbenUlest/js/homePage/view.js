@@ -80,7 +80,7 @@ function renderBooksInVoting() {
     div.innerHTML = `
         ${
           book.img
-            ? `<img src="${book.img}" alt="${book.title}" onclick="selectBook(${book.id})" style="width:220px; ">`
+            ? `<img src="${book.img}" alt="${book.title}" onclick="selectBook(${book.id})" style="width:210px; ">`
             : ""
         }
         <div class="container">
@@ -146,8 +146,8 @@ function drawWinnerBook() {
             </div>
 
             <div class="winner-info">
-                <p>Forfatter: ${model.data.winnerBook.author}</p>
-                <p>Stemmer: ${model.data.winnerBook.votes}</p>
+                <p><b>Forfatter</b>: ${model.data.winnerBook.author}</p>
+                <p><b>Stemmer</b>: ${model.data.winnerBook.votes}</p>
                 <p class="book-description">
                 ${
                   model.data.winnerBook.description

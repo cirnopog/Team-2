@@ -183,3 +183,8 @@ font-size: 16px;
 
 
 
+@media screen and (max-width: 1710px){
+    header{
+        height: 80px;
+    }
+}
