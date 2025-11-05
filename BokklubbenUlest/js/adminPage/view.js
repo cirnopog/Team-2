@@ -124,7 +124,7 @@ function newMeeting(){
     document.getElementById('adminStuff').innerHTML = /*HTML*/`
     <form id="meetingPageForm">
     <h3>Dato for nytt møte</h3>
-    <input id="meetingInput" type="date" onchange="model.viewState.meetingPage.date = this.value" required>
+    <input id="meetingInput" type="date" onchange="model.viewState.meetingPage.date = this.value" required value="${model.data.meetingdate}">
     <div class="btn-container">
         <button id="newMeeting-btn" onclick="setNewMeetingDate()">Opprett</button>
         <button id="cancelMeeting-btn" onclick="cancelMeeting()">Avbryt</button>
