@@ -115,7 +115,7 @@ function newMeeting(){
 
 // Fjerner bekreftelse ved ny input i avstemningsskjema
 function clearConfirmationMessage() {
-    document.getElementById('voteCreatedMessage').textContent = '';
+    document.getElementById('confirmationMsg').textContent = '';
 }
 
 // Viser page for å opprette avstemning
@@ -124,16 +124,16 @@ function votePage() {
         <form id="votePageForm">
             <h3>Ny avstemning</h3>
             <label for="startDate">Startdato:</label>
-            <input type="date" id="startDate" class="vote-date-input" name="start" oninput="model.viewState.votePage.startDate = this.value" required>
+            <input type="date" id="startDate" class="vote-date-input" name="start" oninput="model.viewState.votePage.startDate = this.value" required value="${model.viewState.votePage.startDate}">
             <label for="endDate">Sluttdato:</label>
-            <input type="date" id="endDate" class="vote-date-input" name="end" oninput="model.viewState.votePage.endDate = this.value" required>
+            <input type="date" id="endDate" class="vote-date-input" name="end" oninput="model.viewState.votePage.endDate = this.value" required value="${model.viewState.votePage.endDate}">
             
             <div class="btn-container">
                 <button type="submit">Opprett</button>
                 
                 <button type="button" id="resetButton" onclick="cancelVote()">Avbryt</button>
             </div>
-            <p id="voteCreatedMessage"></p>
+            <p id="confirmationMsg"></p>
             </form>
     `;
 

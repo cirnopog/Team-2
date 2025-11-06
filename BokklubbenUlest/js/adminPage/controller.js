@@ -55,12 +55,17 @@ function editUser(usrNr){
     const error = document.getElementById("registration-error")
     const strongPasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{10,}$");
     let usr = model.data.users[usrNr]
+    
     if(!strongPasswordRegex.test(model.viewState.profileEditing.password)){
         error.textContent="Passordet må inneholde min. 10 tegn og inkludere: en stor bokstav, en liten bokstav, et tall, og et symbol!"
         return
     }
     usr.name=model.viewState.profileEditing.name
     usr.password=model.viewState.profileEditing.password
+    if(usr.isAdmin){
+        model.app.currentUser.name=model.viewState.profileEditing.name
+        model.app.currentUser.password=model.viewState.profileEditing.password
+    }
     saveData();
     showUserList()
     removeEditPage()
@@ -142,11 +147,13 @@ function startVote() {
         i.usersWhoHaveVoted=[]
     }
 
-    document.getElementById('voteCreatedMessage').textContent = 'Ny avstemning er opprettet på forsiden!';
+    let confirmationMsg = document.getElementById('confirmationMsg');
+    confirmationMsg.textContent = 'Ny avstemning er opprettet på forsiden!';
+    confirmationMsg.style.color = 'green';
 
     voteDaysLeft();
     updateVoteStatus();
-    saveData()
+    saveData();
 }
 
 
@@ -154,5 +161,9 @@ function cancelVote(){
     findWinner()
     model.data.currentVote=[]
     model.data.votingActive=false;
-    saveData()
+    let confirmationMsg = document.getElementById('confirmationMsg');
+    confirmationMsg.textContent = 'Avstemningen er avsluttet!';
+    confirmationMsg.style.color = 'red';
+    updateVoteStatus();
+    saveData();
 }

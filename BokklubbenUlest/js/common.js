@@ -63,10 +63,12 @@ function openBookCreationpage(){
 function toggleLogIn(){
     document.getElementById("menu").classList.add("hidden");
     document.getElementById("logIn").classList.toggle("hidden");
+    document.getElementById("logIn").style.zIndex = "10";
 }
 function toggleMenu(){
     document.getElementById("logIn").classList.add("hidden");
     document.getElementById("menu").classList.toggle("hidden");
+    document.getElementById("menu").style.zIndex = "10";
     document.getElementById("adminErrorMessage").classList.add("hidden")
 }
 
