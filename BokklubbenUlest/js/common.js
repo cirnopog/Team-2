@@ -171,11 +171,13 @@ function deleteBook(list, bookNum){
         const favBook = model.data.bookList.find((b)=>b.title === book.title);
         favBook.isFavorite=false;
         model.data.bookInfo.isFavorite=false
+        console.log("favorites")
     }
+    const favIndex = model.app.currentUser.favorites.findIndex((b)=>b.title === book.title);
     if(list === model.app.currentUser.addedBooks &&
-        model.app.currentUser.favorites.includes(book)){
-        const favIndex = model.app.currentUser.favorites.findIndex((b)=>b.title === book.title);
-        model.app.currentUser.favorites.splice(favIndex, 1)    
+        favIndex>=0){
+        model.app.currentUser.favorites.splice(favIndex, 1)      
+        console.log("addedbooks")  
     }
 
     list.splice(bookNum, 1)
