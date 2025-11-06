@@ -172,7 +172,11 @@ function deleteBook(list, bookNum){
         favBook.isFavorite=false;
         model.data.bookInfo.isFavorite=false
     }
-    if(list === model.app.currentUser.addedBooks)
+    if(list === model.app.currentUser.addedBooks &&
+        model.app.currentUser.favorites.includes(book)){
+        const favIndex = model.app.currentUser.favorites.findIndex((b)=>b.title === book.title);
+        model.app.currentUser.favorites.splice(favIndex, 1)    
+    }
 
     list.splice(bookNum, 1)
     
