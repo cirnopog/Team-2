@@ -34,6 +34,14 @@ function homePage() {
       ?.addEventListener("click", accountIsNotComing);
 
   }
+  else{
+    document
+      .getElementById("btnComing")
+      ?.addEventListener("click", toggleLogIn);
+    document
+      .getElementById("btnNotComing")
+      ?.addEventListener("click", toggleLogIn);
+  }
   if (model.data.votingActive) {
     renderBooksInVoting();
   }
