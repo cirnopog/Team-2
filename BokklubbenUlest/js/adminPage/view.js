@@ -50,10 +50,10 @@ function showUserList(){
                 <td class="partOfList"><div class="username-text" onclick="goToUser('${itemName}')">${itemName}</div>
 
                 <div class="btn-container">
-                <button id="editButton" onclick="model.app.currentUser.name==model.data.users[${i}].name ? goToUser('${itemName}') : showEditPage(${i})">
+                <button id="editButton" onclick="showEditPage(${i})">
                     <i class="fa-solid fa-pencil"></i>
                 </button>
-                <button id="deleteButton" onclick="model.app.currentUser.name==model.data.users[${i}].name ? goToUser('${itemName}') :deleteUser(${i}) ">
+                <button id="deleteButton" onclick="deleteUser(${i})">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
                 </div>
