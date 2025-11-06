@@ -70,14 +70,19 @@ function accountIsNotComing() {
 // SELECT BOOK FOR VOTING
 function filterBooks(searchInput) {
   const dropdown = document.getElementById("bookDropdown");
-  const filtered = model.data.bookList.filter(
-    (book) =>
-      book.title.toLowerCase().includes(searchInput.toLowerCase()) &&
-      book.author &&
-      !model.data.booksInVoting.includes(book)
-  );
+  const bookIds = model.data.booksInVoting.map(book => book.id);
+  
+  const filtered = model.data.bookList.filter((book) =>{
+    const searchMatches = book.title.toLowerCase().includes(searchInput.toLowerCase() ) && book.author;
+    const notInVoting = !bookIds.includes(book.id);
 
-  dropdown.innerHTML = filtered
+    return searchMatches && notInVoting 
+      });
+
+  if (filtered.length === 0) {
+    dropdown.innerHTML = '<div class="dropdown-item">Ingen bøker funnet</div>';
+  }else{
+    dropdown.innerHTML = filtered
     .map(
       (book) => `
         <div class="dropdown-item" onclick="selectBookVoting(${book.id})">
@@ -89,6 +94,7 @@ function filterBooks(searchInput) {
         `
     )
     .join("");
+  }
   dropdown.classList.remove("hidden");
 }
 
@@ -111,6 +117,10 @@ document.addEventListener("click", function (e) {
 
 function addSelectedBook() {
   const chosenBook = model.viewState.homePage.chooseBook.chosenBook;
+  if (!chosenBook) {
+    console.log("No book chosen");
+    return;
+  }
   chosenBook.votes = 0;
   console.log(chosenBook);
   if (chosenBook) {
