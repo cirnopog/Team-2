@@ -1,10 +1,5 @@
 // REGISTRATION
 
-// adminPage()
-// showUserList()
-// showEditPage()
-
-
 // Viser admin-pagen med navigasjon
 function adminPage() {
     document.getElementById('app').innerHTML = /*HTML*/`
@@ -20,7 +15,6 @@ function adminPage() {
     `;
     userRegistrationPage();
 }
-
 
 // Viser page for registrering av ny bruker
 function userRegistrationPage() {
@@ -38,12 +32,6 @@ function userRegistrationPage() {
         </form>
     `;
 }
-
-
-
-
-
-
 
 // USER LIST
 function showUserList(){
@@ -81,11 +69,11 @@ function showUserList(){
     adminStuff.innerHTML = fullList
     adminStuff.innerHTML += `
     <div id="popup">
-        <h1>Rediger bruker</h1>
-        <label for="newName">Navn</label>
+        <h2>Rediger bruker</h2>
+        <label for="newName">Navn:</label>
         <input type="text" id="newName" name="newName">
 
-        <label for="newPassword">Passord</label>
+        <label for="newPassword">Passord:</label>
         <input type="password" id="newPassword" name="newPassword">
 
         <div class="btn-container">
@@ -96,6 +84,7 @@ function showUserList(){
     </div>`
 
 }
+
 function showEditPage(usrNr){
     let popup = document.getElementById("popup")
     let newName = document.getElementById("newName")
@@ -107,18 +96,7 @@ function showEditPage(usrNr){
     popup.style.visibility="visible"
 }
 
-
-
-
-
-
-
-
-
 // NEW MEETING
-
-
-
 
 function newMeeting(){
     document.getElementById('adminStuff').innerHTML = /*HTML*/`
@@ -132,10 +110,6 @@ function newMeeting(){
     </form>
     `;
 }
-
-
-
-
 
 // VOTE START
 
