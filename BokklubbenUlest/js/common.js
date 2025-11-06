@@ -63,10 +63,12 @@ function openBookCreationpage(){
 function toggleLogIn(){
     document.getElementById("menu").classList.add("hidden");
     document.getElementById("logIn").classList.toggle("hidden");
+    document.getElementById("logIn").style.zIndex = "10";
 }
 function toggleMenu(){
     document.getElementById("logIn").classList.add("hidden");
     document.getElementById("menu").classList.toggle("hidden");
+    document.getElementById("menu").style.zIndex = "10";
     document.getElementById("adminErrorMessage").classList.add("hidden")
 }
 
@@ -171,8 +173,14 @@ function deleteBook(list, bookNum){
         const favBook = model.data.bookList.find((b)=>b.title === book.title);
         favBook.isFavorite=false;
         model.data.bookInfo.isFavorite=false
+        console.log("favorites")
     }
-    if(list === model.app.currentUser.addedBooks)
+    const favIndex = model.app.currentUser.favorites.findIndex((b)=>b.title === book.title);
+    if(list === model.app.currentUser.addedBooks &&
+        favIndex>=0){
+        model.app.currentUser.favorites.splice(favIndex, 1)      
+        console.log("addedbooks")  
+    }
 
     list.splice(bookNum, 1)
     
