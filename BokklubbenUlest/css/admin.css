@@ -48,6 +48,8 @@
 #userRegistrationForm > input {
     padding: 5px;
     font-size: 1.1rem;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
 }
 #userRegistrationForm > label{
     font-weight: 600;
@@ -105,6 +107,8 @@
     padding: 5px;
     font-size: 1.1rem;
     font-family: var(--regular-text);
+    border-radius: 8px;
+    border: 1px solid lightgrey;
 }
 #votePageForm > label, #meetingPageForm > label {
     font-weight: 600;
@@ -215,6 +219,8 @@
     padding: 8px;
     width: 100%;
     font-size: 17px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
   }
   #popup label{
     font-weight: 600;
