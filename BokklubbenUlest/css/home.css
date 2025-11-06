@@ -25,13 +25,7 @@
   font-weight: 600;
   color: var(--brown-color);
 }
-/* #meetingBanner > .meeting-attendees {
-  margin-top: 0.7rem;
-  color: var(--background-color);
-  font-family: var(--regular-text);
-  font-size: 14px;
-  letter-spacing: 1px;
-} */
+
 #meetingBanner > .btn-container {
   display: flex;
   width: 100%;
@@ -129,9 +123,6 @@
     font-size: 14px;
     color: var(--background-color);
   }
-
-
-
 
 
 
@@ -255,6 +246,12 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+}
+.add-to-vote-container button:hover{
+    background-color: var(--accent-color);
+    transform: scale(1.01);
 }
 .searchable-select {
   position: relative;

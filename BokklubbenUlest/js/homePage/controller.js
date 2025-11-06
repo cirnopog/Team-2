@@ -1,47 +1,28 @@
 // stemme funksjon
 
 function vote(bookId, value) {
+  var books = model.data.booksInVoting;
+  var book = books.find(b => b.id == bookId);
+  const hasVoted = book.usersWhoHaveVoted?.some(
+    user => user.name === model.app.currentUser.name
+  );
+
+  if(!book){
+    console.log("book not found")
+  }
   if(model.app.currentUser===null){
     return;
   }
-  var books = model.data.booksInVoting;
-//   var book = books.find(b => b.id == bookID);
-  var bookPos = 0;
-  // console.log(bookId)
-//   if(!book){
-//     console.log("book not found")
-//   }
-
-//   const hasVoted = book.usersWhoHaveVoted?.some(
-//     user => user.name === model.app.currentUser.name
-//   );
-//   if (hasVoted) {
-//     console.log("User already voted");
-//     return;
-// }
-// book.usersWhoHaveVoted.push(model.app.currentUser);
-
-  for (var i = 0; i < books.length; i++) {
-    if (books[i].id == bookId) {
-      bookPos = i;
-      for (j in books[i].usersWhoHaveVoted) {
-        if (model.app.currentUser.name == books[i].usersWhoHaveVoted[j].name) {
-          return;
-        }
-      }
-    }
+  if (hasVoted) {
+    console.log("User already voted");
+    return;
   }
-  model.data.booksInVoting[bookPos].usersWhoHaveVoted.push(
-    model.app.currentUser
-  );
-  for (var i = 0; i < books.length; i++) {
-    if (books[i].id == bookId) {
-      books[i].votes += value;
-      break;
-    } else {
-      console.log("no match");
-    }
-  }
+ if (!book.usersWhoHaveVoted){
+    book.usersWhoHaveVoted = []
+ }
+  book.usersWhoHaveVoted.push(model.app.currentUser);
+  book.votes += value;
+
   saveData();
   renderBooksInVoting();
 }
