@@ -43,6 +43,13 @@ function homePage() {
   if (!model.data.votingActive) {
     noVotingView();
   }
+  if(model.data.meetingdate == ''){
+   document.querySelectorAll(".banner-toggle").forEach(div =>{
+    div.style.setProperty('opacity', '0', 'important');
+    div.style.marginTop = "-10px"
+   })
+   document.querySelector("#meetingBanner h2").style.marginTop = "3.3rem"
+}
   updateVoteStatus();
 }
 
@@ -77,6 +84,7 @@ function renderBooksInVoting() {
 
     var div = document.createElement("div");
     div.id = "book" + book.id;
+    div.classList.add("book")
     div.innerHTML = `
         ${
           book.img
@@ -177,7 +185,7 @@ function showAddToVoting() {
 //!! må endre 'meeting-attendees' senere !!
 function drawMeetingBanner() {
   let attendeesHtml = `
-    <div class="attendees-wrapper">
+    <div class="attendees-wrapper banner-toggle">
       <div class="attendees-col">
         <div class="attendees coming">
           <h4><i class="fa-solid fa-thumbs-up"></i> Disse kommer:</h4>
@@ -217,14 +225,14 @@ function drawMeetingBanner() {
         }</p>
       </div>
 
-      <div class="btn-container">
+      <div class="btn-container banner-toggle">
         <button id="btnComing">Kommer</button>
         <button id="btnNotComing">Kommer ikke</button>
       </div>
 
-      ${attendeesHtml}
+      ${ attendeesHtml}
     </div>
   `;
-
+    
   return html;
 }

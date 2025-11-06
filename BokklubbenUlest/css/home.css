@@ -163,10 +163,17 @@
   color: var(--brown-color);
   min-height: 350px;
 }
+#bookListContainer > .book{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 #bookListContainer > div > img {
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+  
 }
 #bookListContainer > div > img:hover {
   transform: scale(1.01);
@@ -182,8 +189,8 @@
   align-items: center;
 }
 #bookListContainer > div > .container > h3 {
-  font-weight: 800;
-  line-height: 130%;
+  font-weight: 700;
+  line-height: 140%;
 }
 #bookListContainer > div > .container > .btn-container > button {
   font-size: 16px;
@@ -227,6 +234,7 @@
 }
 /* add book to voting */
 #addBookToVoting {
+
   position: absolute;
   background-color: var(--background-color);
   padding: 1.5rem;
