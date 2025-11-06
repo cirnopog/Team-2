@@ -377,6 +377,7 @@
 @media screen and (max-width: 1710px) {
     #meetingBanner{
         padding: 1.5rem;
+        height: 303px;
     }
     #meetingBanner > h2{
         font-size: 3rem;

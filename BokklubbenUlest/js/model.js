@@ -83,18 +83,7 @@ const model = {
     ],
     winnerBook:
       null,
-    //   {
-    //     id: 2,
-    //     img: "img/dune.webp",
-    //     author: "Frank Herbert",
-    //     title: "Dune",
-    //     purchaseLink:
-    //       "https://www.norli.no/boker/boker-pa-andre-sprak/engelske-boker/dune",
-    //     votes: 0,
-    //     usersWhoHaveVoted: [],
-    //   },
-
-    // evt egen for user info?
+   
     users: [
       {
         name: "Geir",

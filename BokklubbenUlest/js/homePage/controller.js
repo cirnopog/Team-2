@@ -122,12 +122,13 @@ function addSelectedBook() {
     return;
   }
   chosenBook.votes = 0;
-  console.log(chosenBook);
   if (chosenBook) {
     model.data.booksInVoting.push(chosenBook);
     saveData();
     renderBooksInVoting();
   }
+  model.viewState.homePage.chooseBook.chosenBook = null;
+  document.getElementById("bookSearch").value = '';
 }
 
 // WINNER BOOK

@@ -165,21 +165,17 @@ function loadData(){
     }
 }
 
-function deleteBook(list, bookNum, str){
+function deleteBook(list, bookNum){
     let book=list[bookNum]
-    if(str=="favorite"){
-        for(i of model.data.bookList){
-            if(i.name==book.name){
-                i.isFavorite=false
-            }
-        }
+    if(list === model.app.currentUser.favorites){
+        const favBook = model.data.bookList.find((b)=>b.title === book.title);
+        favBook.isFavorite=false;
         model.data.bookInfo.isFavorite=false
     }
-    for(i in list){
-        if(list[i].title==book.title){
-            list.splice(i , 1)
-        }
-    }
+    if(list === model.app.currentUser.addedBooks)
+
+    list.splice(bookNum, 1)
+    
     if(list===model.app.currentUser.addedBooks ||
         list===model.app.currentUser.favorites){
             generateProfile(model.app.currentUser);
