@@ -142,11 +142,13 @@ function startVote() {
         i.usersWhoHaveVoted=[]
     }
 
-    document.getElementById('voteCreatedMessage').textContent = 'Ny avstemning er opprettet på forsiden!';
+    let confirmationMsg = document.getElementById('confirmationMsg');
+    confirmationMsg.textContent = 'Ny avstemning er opprettet på forsiden!';
+    confirmationMsg.style.color = 'green';
 
     voteDaysLeft();
     updateVoteStatus();
-    saveData()
+    saveData();
 }
 
 
@@ -154,5 +156,9 @@ function cancelVote(){
     findWinner()
     model.data.currentVote=[]
     model.data.votingActive=false;
-    saveData()
+    let confirmationMsg = document.getElementById('confirmationMsg');
+    confirmationMsg.textContent = 'Avstemningen er avsluttet!';
+    confirmationMsg.style.color = 'red';
+    updateVoteStatus();
+    saveData();
 }
