@@ -83,7 +83,6 @@ const model = {
     ],
     winnerBook:
       null,
-   
     users: [
       {
         name: "Geir",

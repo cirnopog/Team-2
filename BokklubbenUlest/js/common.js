@@ -178,6 +178,10 @@ function deleteBook(list, bookNum){
     const favIndex = model.app.currentUser.favorites.findIndex((b)=>b.title === book.title);
     if(list === model.app.currentUser.addedBooks &&
         favIndex>=0){
+        const allBookIndex = model.data.bookList.findIndex((b) =>b.title === book.title)
+        const booksInVotingIndex = model.data.booksInVoting.findIndex((b) =>b.title === book.title)
+        model.data.bookList.splice(allBookIndex,1)
+        model.data.booksInVoting.splice(booksInVotingIndex,1)
         model.app.currentUser.favorites.splice(favIndex, 1)      
         console.log("addedbooks")  
     }
