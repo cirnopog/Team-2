@@ -42,14 +42,6 @@ function addToFavorites() {
         currentBook.isFavorite = true;
         model.app.currentUser.favorites.push(currentBook);
         var isInBooks = false
-        for(i of model.app.currentUser.addedBooks){
-            if(i.title==currentBook.title){
-                isInBooks=true
-            }
-        }
-        if(!isInBooks){
-            model.app.currentUser.addedBooks.push(currentBook)
-        }
         const heartIcon = document.getElementById('heart-icon');
         heartIcon.classList.remove('fa-regular');
         heartIcon.classList.add('fa-solid');
