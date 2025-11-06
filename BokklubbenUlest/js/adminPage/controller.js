@@ -63,8 +63,9 @@ function editUser(usrNr){
     usr.name=model.viewState.profileEditing.name
     usr.password=model.viewState.profileEditing.password
     if(usr.isAdmin){
-        model.app.currentUser.name=model.viewState.profileEditing.name
-        model.app.currentUser.password=model.viewState.profileEditing.password
+        model.app.currentUser.name=model.viewState.profileEditing.name;
+        model.app.currentUser.password=model.viewState.profileEditing.password;
+        updateCurrentUser();
     }
     saveData();
     showUserList()

@@ -53,9 +53,16 @@ function showUserList(){
                 <button id="editButton" onclick="showEditPage(${i})">
                     <i class="fa-solid fa-pencil"></i>
                 </button>
+                ${model.data.users[i].isAdmin?
+                ""
+                :
+                `
                 <button id="deleteButton" onclick="deleteUser(${i})">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
+                `
+        }
+                
                 </div>
                 </td>
                 
