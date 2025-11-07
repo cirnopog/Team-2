@@ -6,7 +6,7 @@ let html = /*HTML*/`
     <div>
         <i onclick="toggleMenu()" class="fa-solid fa-bars"></i>
         ${model.app.currentUser !== null?
-        `<img onclick="model.app.currentPage='userProfile'; generateProfile(model.app.currentUser)" src="img/${model.app.currentUser.avatar}" alt="Profile" class="avatar">`
+        `<img onclick="generateProfile(model.app.currentUser)" src="img/${model.app.currentUser.avatar}" alt="Profile" class="avatar">`
         :
         `<button onclick="toggleLogIn()">Logg inn</button>`   
         }
