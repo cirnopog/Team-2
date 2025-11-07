@@ -125,7 +125,7 @@ function allReadBooksOfAccount(usr){
             <tr>
                 <td class="tablePart">
                     <span onclick="selectBook(${model.app.currentUser.addedBooks[i].id})">${model.app.currentUser.addedBooks[i].title}</span>
-                    <button class="removeButton" onclick="deleteBook(model.app.currentUser.addedBooks,${i},'added')">
+                    <button class="removeButton" onclick="deleteBook(model.app.currentUser.addedBooks,${i})">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </td>
