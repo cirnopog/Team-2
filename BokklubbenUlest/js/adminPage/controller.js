@@ -165,7 +165,9 @@ function cancelVote(){
     let confirmationMsg = document.getElementById('confirmationMsg');
     confirmationMsg.textContent = 'Avstemningen er avsluttet!';
     confirmationMsg.style.color = 'red';
+    model.viewState.votePage.endDate=""
+    model.viewState.votePage.startDate=""
+    newMeeting();
     updateVoteStatus();
     saveData();
-    newMeeting();
 }
