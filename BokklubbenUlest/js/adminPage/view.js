@@ -112,7 +112,7 @@ function newMeeting(){
     <input id="meetingInput" type="date" onchange="model.viewState.meetingPage.date = this.value" required value="${model.data.meetingdate}">
     <div class="btn-container">
         <button id="newMeeting-btn" onclick="setNewMeetingDate()">Opprett</button>
-        <button id="cancelMeeting-btn" onclick="cancelMeeting()">Avbryt</button>
+        <button id="cancelMeeting-btn" onclick="cancelMeeting()">Avslutt</button>
     </div>
     </form>
     `;
@@ -138,7 +138,7 @@ function votePage() {
             <div class="btn-container">
                 <button type="submit">Opprett</button>
                 
-                <button type="button" id="resetButton" onclick="cancelVote()">Avbryt</button>
+                <button type="button" id="resetButton" id="cancelMeeting-btn" onclick="cancelVote()">Avslutt</button>
             </div>
             <p id="confirmationMsg"></p>
             </form>
