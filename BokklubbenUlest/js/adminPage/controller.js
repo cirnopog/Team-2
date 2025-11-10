@@ -167,4 +167,5 @@ function cancelVote(){
     confirmationMsg.style.color = 'red';
     updateVoteStatus();
     saveData();
+    newMeeting();
 }
